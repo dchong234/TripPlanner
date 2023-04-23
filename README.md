@@ -1,14 +1,14 @@
 # Travel Planner
  
- > Authors: [Andrew Khadder](https://github.com/khandrew1),
- >          [Keshav Mannem](https://github.com/KeshavMannem),
- >          [Colin Thekkindath](https://github.com/colinthekkinedath),
- >          [David Chong](https://github.com/dchong234),
- >          [Varun Saraf](https://github.com/varun1724)
+Authors: [Andrew Khadder](https://github.com/khandrew1),
+          [Keshav Mannem](https://github.com/KeshavMannem),
+          [Colin Thekkindath](https://github.com/colinthekkinedath),
+          [David Chong](https://github.com/dchong234),
+          [Varun Saraf](https://github.com/varun1724)
 
 ## Project Description
- > Our Travel Planner is a multi user platform designed to streamline our user's vacations by providing an all in one hub for their trips. Users will be able to create accounts and from there be able to book flights, hotels, and activites in their desired vacation spot. They will be able to compare prices, hotel choices, and special packages to choose what would be the best for them. They will have access to a schedule for all their events for the duration of their trip and will be able to easily edit it should any new activites come up. We plan to implement this project through the CLI, building it with C++ and storing our database using SQL. This project is important to us because vacations are really hard to plan and can get messy quick, and we hope this project will be able to make the planning process easier so users can enjoy their vacation without worrying about every little detail.
- 
+ Our Travel Planner is a multi user platform designed to streamline our user's vacations by providing an all in one hub for their trips. Users will be able to create accounts and from there be able to book flights, hotels, and activites in their desired vacation spot. They will be able to compare prices, hotel choices, and special packages to choose what would be the best for them. They will have access to a schedule for all their events for the duration of their trip and will be able to easily edit it should any new activites come up. We plan to implement this project through the CLI, building it with C++ and storing our database using SQL. This project is important to us because vacations are really hard to plan and can get messy quick, and we hope this project will be able to make the planning process easier so users can enjoy their vacation without worrying about every little detail.
+
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
