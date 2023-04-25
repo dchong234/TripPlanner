@@ -17,7 +17,7 @@ The user will be able to create an account in order to easily track their vacati
  This project is important to us because vacations are really hard to plan and can get messy quick, and we hope this project will be able to make the planning process easier so users can enjoy their vacation without worrying about every little detail. In our personal experiences, our vacations usually get messy due to poor planning and not enough research done before the trip. We hope our application can help remedy some of the stress that comes with planning on a vacation and so our users can simply focus on fun.
 
 **Languages and Tools:**  
- **C++** - We will primarily code this project using C++
+ **C++** - We will primarily code this project using C++  
  **Visual Studio Code** - This is an IDE we will be using in order to write and run our code  
  **Git** - Our version control software we will be using in order to keep our project streamlined, organized, and clean  
  **Github** - Our project will be hosted on Github, free and open source. We will be using its multiple features in order to better collaborate as a team  
