@@ -16,6 +16,9 @@ The user will be able to create an account in order to easily track their vacati
 **Why it is important:**  
  This project is important to us because vacations are really hard to plan and can get messy quick, and we hope this project will be able to make the planning process easier so users can enjoy their vacation without worrying about every little detail. In our personal experiences, our vacations usually get messy due to poor planning and not enough research done before the trip. We hope our application can help remedy some of the stress that comes with planning on a vacation and so our users can simply focus on fun.
 
+**Input/Output:**  
+The first thing this program will do is ask a user to create an account or log in to an existing account. Afterwards they will be asked what they would like to do, book a trip, flight, hotel, packages or simply view their schedule. If the user decided to book something they will be prompted to choose a location they would like to travel to. Afterwards they will be given different options and prices to see what works best for them. As soon as they select a package, it will automatically get added to their schedule so they can have easy and quick access to it.
+
 **Languages and Tools:**  
  **C++** - We will primarily code this project using C++  
  **Visual Studio Code** - This is an IDE we will be using in order to write and run our code  
