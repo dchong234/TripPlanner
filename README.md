@@ -30,7 +30,6 @@ The Navigation Diagram below displays the interface that the user will be intera
 <img width="1208" alt="Screen Shot 2023-05-06 at 1 22 03 PM" src="https://user-images.githubusercontent.com/48158202/236645213-45c28027-7391-454e-a389-1f690eb6f11d.png">
 
 ### Screen Layouts
-> Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs, expected output, and buttons (if applicable). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 
 **Main Page**  
 This page serves as the main hub before user logs in.
