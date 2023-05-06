@@ -47,6 +47,68 @@ The Navigation Diagram below displays the interface that the user will be intera
 ### Screen Layouts
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs, expected output, and buttons (if applicable). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 
+**Main Page**  
+This page serves as the main hub before user logs in.
+```
+---Travel Planner---
+1. Login
+2. Create Account
+Enter an Option:
+```
+
+**Login Page**  
+This page is opened once the user opts to login.
+```
+Please Enter Credentials 
+Enter Username:
+Enter Password:
+```
+
+**Create Account Page**  
+This page allows the user to create an account.
+```
+Welcome! Please create an account
+Enter a Username:
+Enter a Password:
+```
+
+**Main Menu**  
+This is the main hub once the user logins where they can choose the main options as well as have the option to logout.
+```
+Welcome USERNAME!
+1. View Trips
+2. View Schedule
+3. Plan Trip
+4. Logout
+Enter an Option:
+```
+
+**View Trips Page**  
+Here the user is prompted options to view the trips they've booked as well cancel any booked trips.
+```
+1. Previous Trips
+2. Upcoming Schedule
+3. Cancel Trip
+Enter an Option:
+```
+
+**View Schedule Page**  
+Here the user can view the schedule and add/cancel activities for the trip.
+```
+1. Cancel Activities
+2. Add Activities
+Enter an Option:
+```
+
+**Book Menu Page**  
+Here the user can book flights,activities, and hotels
+```
+1. Book Flight
+2. Book Activities
+3. Book Hotel
+Enter an Option:
+```
+
 ## Class Diagram
  > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
  
