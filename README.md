@@ -42,6 +42,8 @@ The first thing this program will do is ask a user to create an account or log i
 ### Navigation Diagram
 > Draw a diagram illustrating how the user can navigate from one screen to another. Here is an [example](https://creately.com/diagram/example/ikfqudv82/user-navigation-diagram-classic?r=v). It can be useful to label each symbol that represents a screen so that you can reference the screens in the next section or the rest of the document if necessary. Give a brief description of what the diagram represents.
 
+<img width="1208" alt="Screen Shot 2023-05-06 at 1 22 03 PM" src="https://user-images.githubusercontent.com/48158202/236645213-45c28027-7391-454e-a389-1f690eb6f11d.png">
+
 ### Screen Layouts
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs, expected output, and buttons (if applicable). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 
