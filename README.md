@@ -109,8 +109,11 @@ Here the user can book flights,activities, and hotels
 Enter an Option:
 ```
 
-## Class Diagram
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+## Class Diagram  
+In our UML, we have 6 classes. The User class is the class that will contain all information about our user, including their name, username, and password. We will also have a schedule class that will contain a list of Trip objects in order to easily build a schedule for the user. We have a Flight, Activity, and Hotel class that will all inherit from the Trip class through aggregation in order to easily build our Trip for the schedule. Our Trip class has a viewTrip method that will easily output all activities, hotels and flights planned for that trip. This method will also be used to build our schedule.
+
+ <img width="1234" alt="Screen Shot 2023-05-06 at 2 22 26 PM" src="https://user-images.githubusercontent.com/94719795/236647089-11dfa729-bdeb-404d-a571-427b72e8ae83.png">
+
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
