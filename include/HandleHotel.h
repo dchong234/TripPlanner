@@ -1,7 +1,7 @@
-#include "Hotel.h"
-
 #ifndef HANDLEHOTEL_H
 #define HANDLEHOTEL_H
+
+#include "Hotel.h"
 #include <string>
 
 class HandleHotel {

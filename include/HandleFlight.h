@@ -1,7 +1,7 @@
-#include "Flight.h"
-
 #ifndef HANDLEFLIGHT_H
 #define HANDLEFLIGHT_H
+
+#include "Flight.h"
 #include <string>
 
 class HandleFlight {
