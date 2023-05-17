@@ -96,7 +96,7 @@ Enter an Option:
 ## Class Diagram  
 In our UML, we have 6 classes. The User class is the class that will contain all information about our user, including their name, username, and password. We will also have a schedule class that will contain a list of Trip objects in order to easily build a schedule for the user. We have a Flight, Activity, and Hotel class that will all inherit from the Trip class through aggregation in order to easily build our Trip for the schedule. Our Trip class has a viewTrip method that will easily output all activities, hotels and flights planned for that trip. This method will also be used to build our schedule.
 
- <img width="1234" alt="Screen Shot 2023-05-06 at 2 22 26 PM" src="https://user-images.githubusercontent.com/94719795/236647089-11dfa729-bdeb-404d-a571-427b72e8ae83.png">
+![image](https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/54488379/fdf87ad1-a867-4c80-8782-30930973498a)
 
  
  > ## Phase III
