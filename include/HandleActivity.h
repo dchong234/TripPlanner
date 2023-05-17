@@ -1,0 +1,4 @@
+#ifndef HANDLEACTIVITY_H
+#define HANDLEACTIVITY_H
+
+#endif
