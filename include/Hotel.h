@@ -11,6 +11,6 @@ class Hotel {
     public:
         Hotel();
         string getHotel();
-}
+};
 
 #endif

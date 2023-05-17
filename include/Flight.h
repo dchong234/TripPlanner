@@ -10,6 +10,6 @@ class Flight {
     public:
         Flight();
         string getFlight();
-}
+};
 
 #endif
