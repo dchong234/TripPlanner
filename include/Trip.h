@@ -17,6 +17,9 @@ class Trip {
     public: 
         Trip(string);
         string getTripName();
+        vector<Flight> getFlights();
+        vector<Hotel> getHotels();
+        vector<Activity> getActivities();
 
 };
 
