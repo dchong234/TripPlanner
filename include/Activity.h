@@ -8,8 +8,11 @@ class Activity {
         string time;
         double price;
     public:
-        Activity();
+        Activity(string, string, double);
         string getActivity();
+        string getTime();
+        string getName();
+        string getPrice();
 };
 
 #endif
