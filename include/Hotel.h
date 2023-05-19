@@ -4,17 +4,17 @@
 
 class Hotel {
     private:
-        string name;
-        string location;
+        std::string name;
+        std::string location;
         double price;
         int rating;
     public:
         Hotel(string, string, double, int);
-        string getName();
-        string getLocation();
+        std::string getName();
+        std::string getLocation();
         doubble getPrice();
         int getRating();
-        string getHotel();
+        std::string getHotel();
 };
 
 #endif
