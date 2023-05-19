@@ -1,8 +1,8 @@
 #include "Flight.h"
 #include <string>
 
-Flight::Flight(string airline, string departureTime, string arrivalTime,
-string origin, string desination, double price) {
+Flight::Flight(std::string airline, std::string departureTime, std::string arrivalTime,
+std::string origin, std::string desination, double price) {
     this->airline = airline;
     this->departureTime = departureTime;
     this->arrivalTime = arrivalTime;
@@ -11,19 +11,19 @@ string origin, string desination, double price) {
     this->price = price;
 }
 
-string Flight::getAirline() {
+std::string Flight::getAirline() {
     return this->airline;
 }
 
-string Flight::getDepartureTime() {
+std::string Flight::getDepartureTime() {
     return this->departureTime;
 }
 
-string Flight::getArrivalTime() {
+std::string Flight::getArrivalTime() {
     return this->arrivalTime;
 }
 
-string Flight::getOrigin() {
+std::string Flight::getOrigin() {
     return this->origin;
 }
 
@@ -31,12 +31,12 @@ string Flight::getDestination() {
     return this->destination;
 }
 
-string Flight::getPrice() {
+std::string Flight::getPrice() {
     return this->price;
 }
 
-string Flight::getFlight() {
-    string flightInformation = "Airline: " + this->airline + "\n"
+std::string Flight::getFlight() {
+    std::string flightInformation = "Airline: " + this->airline + "\n"
     + "Departure Time: " + this->departureTime + "\n" 
     + "Arrival Time: " + this->arrivalTime + "\n" 
     + "Origin: " + this->origin + "\n"

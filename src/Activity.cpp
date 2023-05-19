@@ -8,26 +8,26 @@ Activity::Activity(string name, string time, double price)
   this->price = price;
 }
 
-string Activity::getActivity()
+std::string Activity::getActivity()
 {
-  string actvityInfo = "Activity Name: " + name + "\n";
+  std::string actvityInfo = "Activity Name: " + name + "\n";
   actvityInfo += "Time: " + time + "\n";
   activityInfo += "Price: $" + to_string(price) + "\n";
 
   return activityInfo;
 }
 
-string Activity::getTime()
+std::string Activity::getTime()
 {
   return this->time;
 }
 
-string Activity::getName()
+std::string Activity::getName()
 {
   return this->name;
 }
 
-string Activity::getPrice()
+std::string Activity::getPrice()
 {
   return this->price;
 }

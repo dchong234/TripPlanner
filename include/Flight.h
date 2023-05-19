@@ -4,22 +4,22 @@
 
 class Flight {
     private:
-        string airline;
-        string departureTime;
-        string arrivalTime;
-        string origin;
-        string desination;
+        std::string airline;
+        std::string departureTime;
+        std::string arrivalTime;
+        std::string origin;
+        std::string desination;
         double price;
     public:
-        Flight(string airline, string departureTime, string arrivalTime,
-        string origin, string desination, double price);
-        string getAirline();
-        string getDepartureTime();
-        string getArrivalTime();
-        string getOrigin();
-        string getDestination();
-        string getPrice();
-        string getFlight();
+        Flight(std::string airline, std::string departureTime, std::string arrivalTime,
+        std::string origin, std::string desination, double price);
+        std::string getAirline();
+        std::string getDepartureTime();
+        std::string getArrivalTime();
+        std::string getOrigin();
+        std::string getDestination();
+        std::string getPrice();
+        std::string getFlight();
 };
 
 #endif

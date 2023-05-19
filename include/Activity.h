@@ -4,15 +4,15 @@
 
 class Activity {
     private:
-        string name;
-        string time;
+        std::string name;
+        std::string time;
         double price;
     public:
-        Activity(string, string, double);
-        string getActivity();
-        string getTime();
-        string getName();
-        string getPrice();
+        Activity(std::string, std::string, double);
+        std::string getActivity();
+        std::string getTime();
+        std::string getName();
+        std::string getPrice();
 };
 
 #endif
