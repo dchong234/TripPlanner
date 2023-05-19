@@ -10,16 +10,16 @@
 
 class Trip {
     private:
-        string name;
-        vector<Flight> flights;
-        vector<Hotel> hotels;
-        vector<Activity> activities;
+        std::string name;
+        std::vector<Flight> flights;
+        std::vector<Hotel> hotels;
+        std::vector<Activity> activities;
     public: 
         Trip(string);
-        string getTripName();
-        vector<Flight> getFlights();
-        vector<Hotel> getHotels();
-        vector<Activity> getActivities();
+        std::string getTripName();
+        std::vector<Flight> getFlights();
+        std::vector<Hotel> getHotels();
+        std::vector<Activity> getActivities();
 
 };
 

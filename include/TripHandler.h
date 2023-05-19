@@ -3,10 +3,16 @@
 #include "Trip.h"
 #include "Activity.h"
 #include "Hotel.h"
+#include <vector>
 
 class TripHandler {
     private:
         Trip& trip;
+        
+        // helper functions
+        std::vector<Flight>::iterator getFlightPosition();
+        std::vector<Hotel>::iterator getHotelPosition();
+        std::vector<Activity>::iterator getActivityPosition();
     public:
         TripHandler(Trip& trip);
         void addActivity(Activity& activity);
