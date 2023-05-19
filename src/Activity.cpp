@@ -1,7 +1,7 @@
 #include "Activity.h"
 #include <iostream>
 
-Activity::Activity(string name, string time, double price)
+Activity::Activity(std::string name, std::string time, double price)
 {
   this->name = name;
   this->time = time;
