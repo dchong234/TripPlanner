@@ -9,7 +9,11 @@ class Hotel {
         double price;
         int rating;
     public:
-        Hotel();
+        Hotel(string, string, double, int);
+        string getName();
+        string getLocation();
+        doubble getPrice();
+        int getRating();
         string getHotel();
 };
 
