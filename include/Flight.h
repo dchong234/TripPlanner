@@ -4,8 +4,11 @@
 
 class Flight {
     private:
-        string name;
-        string time;
+        string airline;
+        string departureTime;
+        string arrivalTime;
+        string origin;
+        string desination;
         double price;
     public:
         Flight();
