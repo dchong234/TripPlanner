@@ -27,7 +27,7 @@ The first thing this program will do is ask a user to create an account or log i
 ### Navigation Diagram
 The Navigation Diagram below displays the interface that the user will be interacting with when they want to view the travel planner. They will start with a log in and create an account option, and then they will be able to see the Main Menu. In the Main Menu, they will be allowed to view their trips, view their schedules, and plan a new trip. In the view trips menu, they can see their past and previous trips, as well as cancel future trips. In the schedule menu, the user can add or cancel activities on their trip. In the plan a new trip menu, the user will be able to book a flight, hotel, and trip activities of their choice. 
 
-<img width="1208" alt="Screen Shot 2023-05-06 at 1 22 03 PM" src="https://user-images.githubusercontent.com/48158202/236645213-45c28027-7391-454e-a389-1f690eb6f11d.png">
+![image](https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/54488379/4b8dc62f-a166-44c9-98d8-c720e9902208)
 
 ### Screen Layouts
 
@@ -98,7 +98,7 @@ Enter an Option:
 ## Class Diagram  
 In our UML, we have 6 classes. The User class is the class that will contain all information about our user, including their name, username, and password. We will also have a schedule class that will contain a list of Trip objects in order to easily build a schedule for the user. We have a Flight, Activity, and Hotel class that will all inherit from the Trip class through aggregation in order to easily build our Trip for the schedule. Our Trip class has a viewTrip method that will easily output all activities, hotels and flights planned for that trip. This method will also be used to build our schedule.
 
-![image](https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/54488379/fdf87ad1-a867-4c80-8782-30930973498a)
+![image](https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/54488379/6713aa45-955d-47b2-9444-283d5a74383d)
 
  
  > ## Phase III
