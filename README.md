@@ -67,20 +67,22 @@ Welcome USERNAME!
 Enter an Option:
 ```
 
-**View Trips Page**  
-Here the user is prompted options to view the trips they've booked as well cancel any booked trips.
-```
-1. Previous Trips
-2. Upcoming Schedule
-3. Cancel Trip
-Enter an Option:
-```
-
 **View Schedule Page**  
 Here the user can view the schedule and add/cancel activities for the trip.
 ```
-1. Cancel Activities
-2. Add Activities
+Which trip do you want to access? 
+(LIST OF USER TRIPS GO HERE)
+1. Trip 1
+2. Trip 2
+3. Etc.
+Enter an Option:
+```
+
+**Trip Activities Page**
+Here the user can add or cancel activities that are on the trip.
+```
+1. Add Activity
+2. Cancel Activity
 Enter an Option:
 ```
 
