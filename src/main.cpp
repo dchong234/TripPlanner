@@ -1,5 +1,7 @@
 #include <iostream>
 #include "../include/MainMenu.h"
+#include "../include/AccountHandler.h"
+
 
 int takeInput()
 {
@@ -11,9 +13,12 @@ int takeInput()
 
 int main()
 {
-  MainMenu menu;
-  menu.viewOptions();
-  int userIntput = takeInput();
-  std::cout << "User inputted: " << userIntput << std::endl;
+  // MainMenu menu;
+  AccountHandler test;
+  test.printAccounts();
+  // test.createAccount();
+  // menu.viewOptions();
+  // int userIntput = takeInput();
+  // std::cout << "User inputted: " << userIntput << std::endl;
   return 0;
 }
