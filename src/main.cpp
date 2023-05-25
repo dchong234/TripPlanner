@@ -15,7 +15,8 @@ int main()
 {
   // MainMenu menu;
   AccountHandler test;
-  test.printAccounts();
+  test.login();
+  // test.printAccounts();
   // test.createAccount();
   // menu.viewOptions();
   // int userIntput = takeInput();
