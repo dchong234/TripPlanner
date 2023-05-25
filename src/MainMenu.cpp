@@ -13,7 +13,7 @@ void MainMenu::viewOptions() {
 
 void MainMenu::viewTrip() {
     std::cout << "Select your trip:" << std::endl;
-    // TODO: Add input handling
+    // TODO: Add User based Trips
 }
 
 void MainMenu::viewBookingMenu() {
@@ -23,5 +23,8 @@ void MainMenu::viewBookingMenu() {
 }
 
 void MainMenu::viewSchedule() {
-    // TODO: Implement based on trip.
+    std::cout << "Which trip do you want to access?" << std::endl;
+    std::cout << "1. TEST TRIP 1" << std::endl;
+    std::cout << "2. TEST TRIP 2" << std::endl;
+    std::cout << "3. TEST TRIP 3" << std::endl;
 }
