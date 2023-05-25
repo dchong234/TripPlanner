@@ -28,3 +28,9 @@ void MainMenu::viewSchedule() {
     std::cout << "2. TEST TRIP 2" << std::endl;
     std::cout << "3. TEST TRIP 3" << std::endl;
 }
+
+void MainMenu::viewLogin() {
+    std::cout << "--Travel Planner--" << std::endl;
+    std::cout << "1. Login" << std::endl;
+    std::cout << "2. Create Account" << std::endl;
+}

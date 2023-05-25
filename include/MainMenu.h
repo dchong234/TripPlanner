@@ -12,6 +12,7 @@ class MainMenu {
         void viewTrip();
         void viewSchedule();
         void viewBookingMenu();
+        void viewLogin();
         MainMenu();
 };
 
