@@ -1,25 +1,25 @@
-#include "MainMenu.h"
+#include "../include/MainMenu.h"
 #include <iostream>
 
 MainMenu::MainMenu() {}
 
 void MainMenu::viewOptions() {
-    cout << "Welcome!" << endl; // TODO: Add username
-    cout << "1. View Trips" << endl;
-    cout << "2. View Schedule" << endl;
-    cout << "3. Plan Trip" << endl
-    cout << "4. Logout" << endl;
+    std::cout << "Welcome!" << std::endl; // TODO: Add username
+    std::cout << "1. View Trips" << std::endl;
+    std::cout << "2. View Schedule" << std::endl;
+    std::cout << "3. Plan Trip" << std::endl;
+    std::cout << "4. Logout" << std::endl;
 }
 
 void MainMenu::viewTrip() {
-    cout << "Select your trip:" << endl;
+    std::cout << "Select your trip:" << std::endl;
     // TODO: Add input handling
 }
 
 void MainMenu::viewBookingMenu() {
-    cout << "1. Book Flight" << endl;
-    cout << "2. Book Activities" << endl;
-    cout << "3. Book Hotel" << endl;
+    std::cout << "1. Book Flight" << std::endl;
+    std::cout << "2. Book Activities" << std::endl;
+    std::cout << "3. Book Hotel" << std::endl;
 }
 
 void MainMenu::viewSchedule() {
