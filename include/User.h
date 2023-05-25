@@ -12,7 +12,6 @@ class User {
     public:
         string getName();
         string getUsername();
-
 };
 
 #endif

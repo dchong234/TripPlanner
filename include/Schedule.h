@@ -2,11 +2,11 @@
 #define SCHEDULE_H
 
 #include "Trip.h"
-#include <list>
+#include <vector>
 
 class Schedule {
     private:
-        list<Trip> trips;
+        vector<Trip> trips;
     public:
         void getSchedule();
         void addActvity();
