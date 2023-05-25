@@ -2,12 +2,34 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <stdexcept>
 
 void AccountHandler::login() {
+    bool flagFound = false;
     std::cout << "Enter a username: ";
     std::cin >> username;
+    for (unsigned i = 0; i < usernameStorage.size(); ++i) {
+        if (usernameStorage.at(i) == username) {
+            flagFound = true;
+            break;
+        }
+    }
+    if (flagFound == false) {
+        throw std::runtime_error("Username not found");
+    }
+
+    flagFound = false;
     std::cout << std::endl << "Enter a password: ";
     std::cin >> password;
+    for (unsigned i = 0; i < passwordStorage.size(); ++i) {
+        if (passwordStorage.at(i) == password) {
+            flagFound = true;
+            break;
+        }
+    }
+    if (flagFound == false) {
+        throw std::runtime_error("Password incorrect");
+    }
 }
 
 // void AccountHander::logout() {
