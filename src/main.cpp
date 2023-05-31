@@ -23,8 +23,6 @@ int main()
   MainMenu menu;
   AccountHandler accountHandler;
 
-  accountHandler.printAccounts();
-
   string input;
   bool validInput = false;
 
@@ -56,6 +54,8 @@ int main()
 
   menu.viewOptions();
   validInput = false;
+
+  input = "";
 
   while(!validInput)
   {
