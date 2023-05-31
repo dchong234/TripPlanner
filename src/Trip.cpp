@@ -1,8 +1,8 @@
-#include "Trip.h"
+#include "../include/Trip.h"
 #include <string>
 #include <vector>
 
-Trip::Trip(string name){
+Trip::Trip(std::string name){
     this->name = name;
 }
 
