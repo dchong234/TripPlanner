@@ -3,9 +3,9 @@
 
 #include <string>
 #include <vector>
-#include "Flight.h"
-#include "Hotel.h"
-#include "Activity.h"
+#include "../include/Flight.h"
+#include "../include/Hotel.h"
+#include "../include/Activity.h"
 
 
 class Trip {
