@@ -1,4 +1,4 @@
-#include "Activity.h"
+#include "../include/Activity.h"
 #include <iostream>
 
 Activity::Activity(std::string name, std::string time, double price)
@@ -10,9 +10,9 @@ Activity::Activity(std::string name, std::string time, double price)
 
 std::string Activity::getActivity()
 {
-  std::string actvityInfo = "Activity Name: " + name + "\n";
-  actvityInfo += "Time: " + time + "\n";
-  activityInfo += "Price: $" + to_string(price) + "\n";
+  std::string activityInfo = "Activity Name: " + name + "\n";
+  activityInfo += "Time: " + time + "\n";
+  activityInfo += "Price: $" + std::to_string(price) + "\n";
 
   return activityInfo;
 }
@@ -27,7 +27,7 @@ std::string Activity::getName()
   return this->name;
 }
 
-std::string Activity::getPrice()
+double Activity::getPrice()
 {
   return this->price;
 }

@@ -12,7 +12,7 @@ class Activity {
         std::string getActivity();
         std::string getTime();
         std::string getName();
-        std::string getPrice();
+        double getPrice();
 };
 
 #endif
