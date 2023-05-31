@@ -19,6 +19,7 @@ int main()
 {
   MainMenu menu;
   AccountHandler accountHandler;
+
   int input;
   bool validInput = false;
 

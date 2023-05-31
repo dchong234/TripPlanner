@@ -1,6 +1,6 @@
 # Travel Planner
  
-Authors: [Andrew Khadder](https://github.com/khandrew1),
+Authors:  [Andrew Khadder](https://github.com/khandrew1),
           [Keshav Mannem](https://github.com/KeshavMannem),
           [Colin Thekkindath](https://github.com/colinthekkinedath),
           [David Chong](https://github.com/dchong234)

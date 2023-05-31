@@ -1,4 +1,6 @@
 #include "../include/AccountHandler.h"
+#include "../include/User.h"
+
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -8,27 +10,14 @@ void AccountHandler::login() {
     bool flagFound = false;
     std::cout << "Enter a username: ";
     std::cin >> username;
-    for (unsigned i = 0; i < usernameStorage.size(); ++i) {
-        if (usernameStorage.at(i) == username) {
-            flagFound = true;
-            break;
-        }
-    }
-    if (flagFound == false) {
-        throw std::runtime_error("Username not found");
-    }
 
-    flagFound = false;
-    std::cout << std::endl << "Enter a password: ";
+    std::cout << "Enter a password: ";
     std::cin >> password;
-    for (unsigned i = 0; i < passwordStorage.size(); ++i) {
-        if (passwordStorage.at(i) == password) {
-            flagFound = true;
-            break;
+
+    for (auto x : userStorage) {
+        if (x.getUsername() != username && x.getPassword() != password) {
+            throw std::runtime_error("Incorrect username or password");
         }
-    }
-    if (flagFound == false) {
-        throw std::runtime_error("Password incorrect");
     }
 }
 
@@ -38,16 +27,15 @@ void AccountHandler::login() {
 
 AccountHandler::AccountHandler(){
     std::ifstream inFS;
+
     inFS.open("data/AccountStorage", std::ios::in);
     if (inFS.is_open()) {
         while(inFS >> username) {
-            usernameStorage.push_back(username);
             if (inFS >> password) {
-                passwordStorage.push_back(password);
+                userStorage.push_back(User(this->username, this->password));
             }
         }
     }
-
     else {
         std::cerr << "Failed to open the file." << std::endl;
     }
@@ -77,11 +65,7 @@ void AccountHandler::createAccount() {
 }
 
 void AccountHandler::printAccounts() {
-    for (auto name : usernameStorage) {
-        std::cout << name << std::endl;
-    }
-
-    for (auto pw : passwordStorage) {
-        std::cout << pw << std::endl;
+    for (auto x : userStorage) {
+        std::cout << x << std::endl;
     }
 }
