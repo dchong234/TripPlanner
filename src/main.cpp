@@ -1,15 +1,18 @@
 #include <iostream>
 #include <stdexcept>
+#include <limits>
+#include <string>
 #include "../include/MainMenu.h"
 #include "../include/AccountHandler.h"
 
 using std::cout;
 using std::endl;
 using std::cin;
+using std::string;
 
-int takeInput()
+string takeInput()
 {
-  int input;
+  string input;
   cout << "Enter an option:" << endl;
   cin >> input;
   return input;
@@ -20,7 +23,7 @@ int main()
   MainMenu menu;
   AccountHandler accountHandler;
 
-  int input;
+  string input;
   bool validInput = false;
 
   menu.viewLogin();
@@ -29,12 +32,12 @@ int main()
   while(!validInput)
   {
     try {
-      if(input == 1)
+      if(input == "1")
       {
         accountHandler.login();
         validInput = true;
       }
-      else if(input == 2)
+      else if(input == "2")
       {
         accountHandler.createAccount();
         validInput = true;
@@ -52,27 +55,29 @@ int main()
   menu.viewOptions();
   validInput = false;
 
+  input = "";
+
   while(!validInput)
   {
-    if(input == 1)
+    if(input == "1")
     {
       menu.viewTrip();
       input = takeInput();
       validInput = true;
     }
-    else if(input == 2)
+    else if(input == "2")
     {
       menu.viewSchedule();
       input = takeInput();
       validInput = true;
     }
-    else if(input == 3)
+    else if(input == "3")
     {
       menu.viewBookingMenu();
       input = takeInput();
       validInput = true;
     }
-    else if(input == 4)
+    else if(input == "4")
     {
       return 0;
     }

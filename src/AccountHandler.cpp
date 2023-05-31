@@ -5,25 +5,41 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include <limits>
 
 void AccountHandler::login() {
-    bool flagFound = false;
+    bool flag = false;
+
     std::cout << "Enter a username: ";
     std::cin >> username;
-
+    
     std::cout << "Enter a password: ";
     std::cin >> password;
 
     for (auto x : userStorage) {
-        if (x.getUsername() != username && x.getPassword() != password) {
-            throw std::runtime_error("Incorrect username or password");
+        if (x.getUsername() == username) {
+            flag = true;
+            break;
         }
     }
+
+    if (!flag) {
+        throw std::runtime_error("Username not found");
+    }
+
+    flag = false;
+
+    for (auto x : userStorage) {
+        if (x.getPassword() == password) {
+            flag = true;
+            break;
+        }
+    }
+
+    if (!flag) {
+        throw std::runtime_error("Password not found");
+    }
 }
-
-// void AccountHander::logout() {
-
-// }
 
 AccountHandler::AccountHandler(){
     std::ifstream inFS;
