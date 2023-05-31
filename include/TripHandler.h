@@ -1,8 +1,9 @@
 #ifndef TRIPHANDLER_H
 #define TRIPHANDLER_H
-#include "Trip.h"
-#include "Activity.h"
-#include "Hotel.h"
+#include "../include/Trip.h"
+#include "../include/Activity.h"
+#include "../include/Hotel.h"
+#include "../include/Flight.h"
 #include <vector>
 
 class TripHandler {
@@ -21,6 +22,6 @@ class TripHandler {
         void removeHotel(Hotel& hotel);
         void addFlight(Flight& flight);
         void removeFlight(Flight& flight);
-}
+};
 
 #endif

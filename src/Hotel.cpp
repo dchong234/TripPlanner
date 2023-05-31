@@ -1,4 +1,4 @@
-#include "Hotel.h"
+#include "../include/Hotel.h"
 #include <string>
 
 Hotel::Hotel(std::string name, std::string location, double price, int rating){
@@ -27,8 +27,8 @@ int Hotel::getRating(){
 std::string Hotel::getHotel(){
     std::string hotelInfo = "Hotel Name: " + this->name + "\n";
     hotelInfo += "Location: " + this->location + "\n";
-    hotelInfo += "Price: $" + to_string(this->price) + "\n";
-    hotelInfo += "Rating: " + to_string(this->rating) + " stars\n";
+    hotelInfo += "Price: $" + std::to_string(this->price) + "\n";
+    hotelInfo += "Rating: " + std::to_string(this->rating) + " stars\n";
     
     return hotelInfo;
 }

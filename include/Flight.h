@@ -8,7 +8,7 @@ class Flight {
         std::string departureTime;
         std::string arrivalTime;
         std::string origin;
-        std::string desination;
+        std::string destination;
         double price;
     public:
         Flight(std::string airline, std::string departureTime, std::string arrivalTime,
@@ -18,7 +18,7 @@ class Flight {
         std::string getArrivalTime();
         std::string getOrigin();
         std::string getDestination();
-        std::string getPrice();
+        double getPrice();
         std::string getFlight();
 };
 
