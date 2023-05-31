@@ -3,6 +3,7 @@
 #include "../include/Trip.h"
 #include "../include/Activity.h"
 #include "../include/Hotel.h"
+#include "../include/Flight.h"
 #include <vector>
 
 class TripHandler {
