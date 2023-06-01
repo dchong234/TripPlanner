@@ -4,6 +4,9 @@
 #include <string>
 #include "../include/MainMenu.h"
 #include "../include/AccountHandler.h"
+#include "../include/Trip.h"
+#include "../include/TripHandler.h"
+#include "../include/Schedule.h"
 
 using std::cout;
 using std::endl;
@@ -18,75 +21,92 @@ string takeInput()
   return input;
 }
 
-int main()
-{
-  MainMenu menu;
-  AccountHandler accountHandler;
+int main() {
+  Trip* trip = new Trip("test");
+  TripHandler tripHandler(trip);
+  Schedule schedule(trip);
+  Activity activity("ACTIVITY 1", 830, 9.95);
 
-  string input;
-  bool validInput = false;
+  cout << activity.getActivity() << std::endl;
 
-  menu.viewLogin();
-  input = takeInput();
-  
-  while(!validInput)
-  {
-    try {
-      if(input == "1")
-      {
-        accountHandler.login();
-        validInput = true;
-      }
-      else if(input == "2")
-      {
-        accountHandler.createAccount();
-        validInput = true;
-      }
-      else
-      {
-        input = takeInput();
-      }
-    } catch (std::runtime_error& e) {
-      cout << e.what() << endl;
-      return 1;
-    }
-  }
+  tripHandler.addActivity(&activity);
 
-  menu.viewOptions();
-  validInput = false;
+  schedule.printStuff();
 
-  input = "";
-
-  while(!validInput)
-  {
-    if(input == "1")
-    {
-      menu.viewTrip();
-      input = takeInput();
-      validInput = true;
-    }
-    else if(input == "2")
-    {
-      menu.viewSchedule();
-      input = takeInput();
-      validInput = true;
-    }
-    else if(input == "3")
-    {
-      menu.viewBookingMenu();
-      input = takeInput();
-      validInput = true;
-    }
-    else if(input == "4")
-    {
-      return 0;
-    }
-    else
-    {
-      input = takeInput();
-    }
-  }
-  
+  schedule.getSchedule();
 
   return 0;
 }
+
+// int main()
+// {
+//   MainMenu menu;
+//   AccountHandler accountHandler;
+
+//   string input;
+//   bool validInput = false;
+
+//   menu.viewLogin();
+//   input = takeInput();
+  
+//   while(!validInput)
+//   {
+//     try {
+//       if(input == "1")
+//       {
+//         accountHandler.login();
+//         validInput = true;
+//       }
+//       else if(input == "2")
+//       {
+//         accountHandler.createAccount();
+//         validInput = true;
+//       }
+//       else
+//       {
+//         input = takeInput();
+//       }
+//     } catch (std::runtime_error& e) {
+//       cout << e.what() << endl;
+//       return 1;
+//     }
+//   }
+
+//   menu.viewOptions();
+//   validInput = false;
+
+//   input = "";
+
+//   while(!validInput)
+//   {
+//     if(input == "1")
+//     {
+//       menu.viewTrip();
+//       input = takeInput();
+//       validInput = true;
+//     }
+//     else if(input == "2")
+//     {
+//       menu.viewSchedule();
+//       input = takeInput();
+//       validInput = true;
+//     }
+//     else if(input == "3")
+//     {
+//       menu.viewBookingMenu();
+//       input = takeInput();
+//       validInput = true;
+//     }
+//     else if(input == "4")
+//     {
+//       return 0;
+//     }
+//     else
+//     {
+//       input = takeInput();
+//     }
+//   }
+  
+
+//   return 0;
+// }

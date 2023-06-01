@@ -15,6 +15,8 @@ class Schedule {
         void cancelActivity();
         void viewPrevTrip();
         void viewUpcomingTrip();
+
+        void printStuff();
 };
 
 #endif
