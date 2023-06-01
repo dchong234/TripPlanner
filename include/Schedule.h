@@ -7,11 +7,11 @@
 
 class Schedule {
     private:
-        Trip trip;
+        Trip* trip;
     public:
-        Schedule(Trip);
+        Schedule(Trip*);
         void getSchedule();
-        void addActvity(Activity);
+        void addActvity(Activity*);
         void cancelActivity();
         void viewPrevTrip();
         void viewUpcomingTrip();
