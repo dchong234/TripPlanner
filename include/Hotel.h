@@ -8,6 +8,7 @@ class Hotel {
         std::string location;
         double price;
         int rating;
+        int time;
     public:
         Hotel(std::string, std::string, double, int);
         std::string getName();
@@ -15,6 +16,7 @@ class Hotel {
         double getPrice();
         int getRating();
         std::string getHotel();
+        int getHotelTime();
 };
 
 #endif

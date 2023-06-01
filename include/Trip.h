@@ -15,6 +15,7 @@ class Trip {
         std::vector<Hotel> hotels;
         std::vector<Activity> activities;
     public: 
+        Trip() : name("") {}
         Trip(std::string);
         std::string getTripName();
         std::vector<Flight> getFlights();

@@ -25,7 +25,7 @@ void TripHandler::removeHotel(Hotel& hotel) {
     trip.getHotels().erase(it);
 }
 
-void TripHandler::addFlights(Flight& flight) {
+void TripHandler::addFlight(Flight& flight) {
     std::vector<Flight> flightVector = trip.getFlights();
     flightVector.push_back(flight);
 }
@@ -44,6 +44,8 @@ std::vector<Activity>::iterator TripHandler::getActivityPosition(Activity& activ
             return it;
         }
     }
+
+    return activitiesVector.end();
 }
 
 std::vector<Hotel>::iterator TripHandler::getHotelPosition(Hotel& hotel) {
@@ -54,14 +56,18 @@ std::vector<Hotel>::iterator TripHandler::getHotelPosition(Hotel& hotel) {
             return it;
         }
     }
+
+    return hotelVector.end();
 }
 
 std::vector<Flight>::iterator TripHandler::getFlightPosition(Flight& flight) {
     std::vector<Flight> flightsVector = trip.getFlights();
 
     for (auto it = flightsVector.begin(); it != flightsVector.end(); ++it) {
-        if (it->getName() == flight.getName()) {
+        if (it->getAirline() == flight.getAirline()) {
             return it;
         }
     }
+
+    return flightsVector.end();
 }

@@ -1,7 +1,7 @@
 #include "../include/Activity.h"
 #include <iostream>
 
-Activity::Activity(std::string name, std::string time, double price)
+Activity::Activity(std::string name, int time, double price)
 {
   this->name = name;
   this->time = time;
@@ -11,13 +11,13 @@ Activity::Activity(std::string name, std::string time, double price)
 std::string Activity::getActivity()
 {
   std::string activityInfo = "Activity Name: " + name + "\n";
-  activityInfo += "Time: " + time + "\n";
+  activityInfo += "Time: " + std::to_string(time) + "\n";
   activityInfo += "Price: $" + std::to_string(price) + "\n";
 
   return activityInfo;
 }
 
-std::string Activity::getTime()
+int Activity::getTime()
 {
   return this->time;
 }
