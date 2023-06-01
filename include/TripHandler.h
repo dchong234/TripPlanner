@@ -8,20 +8,20 @@
 
 class TripHandler {
     private:
-        Trip* trip;
+        Trip& trip;
         
         // helper functions
-        std::vector<Flight*>::iterator getFlightPosition(Flight*);
-        std::vector<Hotel*>::iterator getHotelPosition(Hotel*);
-        std::vector<Activity*>::iterator getActivityPosition(Activity*);
+        std::vector<Flight>::iterator getFlightPosition(Flight&);
+        std::vector<Hotel>::iterator getHotelPosition(Hotel&);
+        std::vector<Activity>::iterator getActivityPosition(Activity&);
     public:
-        TripHandler(Trip* trip);
-        void addActivity(Activity* activity);
-        void removeActivity(Activity* activity);
-        void addHotel(Hotel* hotel);
-        void removeHotel(Hotel* hotel);
-        void addFlight(Flight* flight);
-        void removeFlight(Flight* flight);
+        TripHandler(Trip& trip);
+        void addActivity(Activity& activity);
+        void removeActivity(Activity& activity);
+        void addHotel(Hotel& hotel);
+        void removeHotel(Hotel& hotel);
+        void addFlight(Flight& flight);
+        void removeFlight(Flight& flight);
 };
 
 #endif
