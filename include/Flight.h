@@ -5,17 +5,17 @@
 class Flight {
     private:
         std::string airline;
-        std::string departureTime;
-        std::string arrivalTime;
+        int departureTime;
+        int arrivalTime;
         std::string origin;
         std::string destination;
         double price;
     public:
-        Flight(std::string airline, std::string departureTime, std::string arrivalTime,
+        Flight(std::string airline, int departureTime, int arrivalTime,
         std::string origin, std::string desination, double price);
         std::string getAirline();
-        std::string getDepartureTime();
-        std::string getArrivalTime();
+        int getDepartureTime();
+        int getArrivalTime();
         std::string getOrigin();
         std::string getDestination();
         double getPrice();

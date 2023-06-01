@@ -11,9 +11,9 @@ class TripHandler {
         Trip& trip;
         
         // helper functions
-        std::vector<Flight>::iterator getFlightPosition();
-        std::vector<Hotel>::iterator getHotelPosition();
-        std::vector<Activity>::iterator getActivityPosition();
+        std::vector<Flight>::iterator getFlightPosition(Flight&);
+        std::vector<Hotel>::iterator getHotelPosition(Hotel&);
+        std::vector<Activity>::iterator getActivityPosition(Activity&);
     public:
         TripHandler(Trip& trip);
         void addActivity(Activity& activity);
