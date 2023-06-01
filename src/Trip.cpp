@@ -10,14 +10,14 @@ std::string Trip::getTripName(){
     return this->name;
 }
 
-std::vector<Flight> Trip::getFlights() {
+std::vector<Flight*> Trip::getFlights() {
     return this->flights;
 };
 
-std::vector<Hotel> Trip::getHotels() {
+std::vector<Hotel*> Trip::getHotels() {
     return this->hotels;
 };
 
-std::vector<Activity> Trip::getActivities() {
+std::vector<Activity*> Trip::getActivities() {
     return this->activities;
 };
