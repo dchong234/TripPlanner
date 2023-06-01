@@ -14,6 +14,6 @@ class DummyData {
         std::vector<Activity*> activities;
     public:
         DummyData();
-}
+};
 
 #endif
