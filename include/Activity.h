@@ -5,12 +5,12 @@
 class Activity {
     private:
         std::string name;
-        int time;
+        double time;
         double price;
     public:
-        Activity(std::string, int, double);
+        Activity(std::string, double, double);
         std::string getActivity();
-        int getTime();
+        double getTime();
         std::string getName();
         double getPrice();
         void extractActivity(std::string);

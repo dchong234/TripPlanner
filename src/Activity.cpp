@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 
-Activity::Activity(std::string name, int time, double price)
+Activity::Activity(std::string name, double time, double price)
 {
   this->name = name;
   this->time = time;
@@ -18,7 +18,7 @@ std::string Activity::getActivity()
   return activityInfo;
 }
 
-int Activity::getTime()
+double Activity::getTime()
 {
   return this->time;
 }
