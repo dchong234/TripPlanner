@@ -17,6 +17,7 @@ class Hotel {
         int getRating();
         std::string getHotel();
         int getHotelTime();
+        void extractHotel(std::string);
 };
 
 #endif
