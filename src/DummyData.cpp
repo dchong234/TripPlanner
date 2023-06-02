@@ -70,34 +70,34 @@
 
 
         // Activity 1
-        activities.push_back(new Activity("City Tour", 120, 50.00));
+        activities.push_back(new Activity("City Tour", 1130, 50.00));
         // Activity 2
-        activities.push_back(new Activity("Beach Volleyball", 90, 20.00));
+        activities.push_back(new Activity("Beach Volleyball", 800, 20.00));
         // Activity 3
-        activities.push_back(new Activity("Hiking Adventure", 180, 40.00));
+        activities.push_back(new Activity("Hiking Adventure", 1000, 40.00));
         // Activity 4
-        activities.push_back(new Activity("Cooking Class", 150, 60.00));
+        activities.push_back(new Activity("Cooking Class", 1730, 60.00));
         // Activity 5
-        activities.push_back(new Activity("Wine Tasting", 120, 70.00));
+        activities.push_back(new Activity("Wine Tasting", 2100, 70.00));
         // Activity 6
-        activities.push_back(new Activity("Scuba Diving", 240, 100.00));
+        activities.push_back(new Activity("Scuba Diving", 1245, 100.00));
         // Activity 7
-        activities.push_back(new Activity("Sightseeing Cruise", 180, 85.00));
+        activities.push_back(new Activity("Sightseeing Cruise", 1500, 85.00));
         // Activity 8
-        activities.push_back(new Activity("Cultural Dance Show", 120, 30.00));
+        activities.push_back(new Activity("Cultural Dance Show", 1700, 30.00));
         // Activity 9
-        activities.push_back(new Activity("Zip Line Adventure", 90, 50.00));
+        activities.push_back(new Activity("Zip Line Adventure", 1300, 50.00));
         // Activity 10
-        activities.push_back(new Activity("Guided Museum Tour", 120, 25.00));
+        activities.push_back(new Activity("Guided Museum Tour", 1000, 25.00));
         // Activity 11
-        activities.push_back(new Activity("Bike Rental", 60, 15.00));
+        activities.push_back(new Activity("Bike Rental", 800, 15.00));
         // Activity 12
-        activities.push_back(new Activity("Helicopter Ride", 60, 200.00));
+        activities.push_back(new Activity("Helicopter Ride", 1500, 200.00));
         // Activity 13
-        activities.push_back(new Activity("Yoga Retreat", 120, 40.00));
+        activities.push_back(new Activity("Yoga Retreat", 600, 40.00));
         // Activity 14
-        activities.push_back(new Activity("Surfing Lesson", 90, 50.00));
+        activities.push_back(new Activity("Surfing Lesson", 1030, 50.00));
         // Activity 15
-        activities.push_back(new Activity("Wildlife Safari", 240, 120.00));
+        activities.push_back(new Activity("Wildlife Safari", 930, 120.00));
 
     }
