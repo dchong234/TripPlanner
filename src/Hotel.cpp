@@ -1,11 +1,12 @@
 #include "../include/Hotel.h"
 #include <string>
 
-Hotel::Hotel(std::string name, std::string location, double price, int rating){
+Hotel::Hotel(std::string name, std::string location, double price, int rating, double time){
     this->name = name;
     this->location = location;
     this->price = price;
     this->rating = rating;
+    this->time = time;
 }
 
 std::string Hotel::getName(){
@@ -24,7 +25,7 @@ int Hotel::getRating(){
     return this->rating;
 }
 
-int Hotel::getHotelTime(){
+double Hotel::getHotelTime(){
     return this->time;
 }
 
@@ -36,4 +37,23 @@ std::string Hotel::getHotel(){
     hotelInfo += "Check-in Time: " + std::to_string(this->time) + "\n";
     
     return hotelInfo;
+}
+
+void Hotel::extractHotel(std::string) {
+    std::ofstream outFS;
+    outFS.open(filename, std::fstream::app);
+
+    if(outFS.is_open)
+    {
+        outFS << "hotel ";
+        outFS << name << " " << location << " " << price << " " << rating << " " << time << " " << std::endl;
+
+        outFS.close();
+    }
+    else 
+    {
+        std::cerr << "Failed to open the file." << std::endl;
+    }
+
+
 }
