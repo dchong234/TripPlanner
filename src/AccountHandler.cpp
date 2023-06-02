@@ -7,8 +7,9 @@
 #include <stdexcept>
 #include <limits>
 
-void AccountHandler::login() {
+User AccountHandler::login() {
     bool flag = false;
+    int idx = 0;
 
     std::cout << "Enter a username: ";
     std::cin >> username;
@@ -21,24 +22,14 @@ void AccountHandler::login() {
             flag = true;
             break;
         }
+        ++idx;
     }
 
-    if (!flag) {
-        throw std::runtime_error("Username not found");
+    if (!flag || userStorage.at(idx).getPassword() != password) {
+        throw std::runtime_error("Incorrect username or password");
     }
 
-    flag = false;
-
-    for (auto x : userStorage) {
-        if (x.getPassword() == password) {
-            flag = true;
-            break;
-        }
-    }
-
-    if (!flag) {
-        throw std::runtime_error("Password not found");
-    }
+    return userStorage.at(idx);
 }
 
 AccountHandler::AccountHandler(){
