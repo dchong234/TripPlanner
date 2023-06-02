@@ -82,7 +82,7 @@
         // Activity 6
         activities.push_back(new Activity("Scuba Diving", 240, 100.00));
         // Activity 7
-        activities.push_back(new Activity("Sightseeing Cruise", 180, 80.00));
+        activities.push_back(new Activity("Sightseeing Cruise", 180, 85.00));
         // Activity 8
         activities.push_back(new Activity("Cultural Dance Show", 120, 30.00));
         // Activity 9
