@@ -6,7 +6,7 @@
 
     DummyData::DummyData(){
         // Flight 1
-        flights.push_back(new Flight("United Airlines", 800, 1130, "New York", "Los Angeles", 250.00));
+        flights.push_back(new Flight("United Airlines", 800, 1130, "New York City", "Los Angeles", 250.00));
         // Flight 2
         flights.push_back(new Flight("Delta Air Lines", 1030, 1415, "Chicago", "Atlanta", 180.50));
         // Flight 3
@@ -14,15 +14,15 @@
         // Flight 4
         flights.push_back(new Flight("Southwest Airlines", 915, 1145, "Dallas", "Houston", 120.00));
         // Flight 5
-        flights.push_back(new Flight("JetBlue Airways", 730, 945, "Boston", "Washington D.C.", 150.25));
+        flights.push_back(new Flight("JetBlue Airways", 730, 945, "Washington D.C.", "Boston", 150.25));
         // Flight 6
         flights.push_back(new Flight("Air Canada", 1500, 1930, "Toronto", "Vancouver", 380.50));
         // Flight 7
         flights.push_back(new Flight("Lufthansa", 645, 930, "Frankfurt", "London", 280.75));
         // Flight 8
-        flights.push_back(new Flight("Emirates", 1130, 1615, "Dubai", "Sydney", 850.00));
+        flights.push_back(new Flight("Emirates", 1130, 1615, "Sydney", "Dubai", 850.00));
         // Flight 9
-        flights.push_back(new Flight("British Airways", 1415, 1900, "London", "New York", 550.25));
+        flights.push_back(new Flight("British Airways", 1415, 1900, "London", "New York City", 550.25));
         // Flight 10
         flights.push_back(new Flight("Singapore Airlines", 2130, 545, "Singapore", "Tokyo", 670.50));
         // Flight 11
@@ -30,7 +30,7 @@
         // Flight 12
         flights.push_back(new Flight("Cathay Pacific", 1200, 1830, "Hong Kong", "San Francisco", 720.75));
         // Flight 13
-        flights.push_back(new Flight("Air France", 615, 1400, "Paris", "Johannesburg", 580.00));
+        flights.push_back(new Flight("Air France", 615, 1400, "Johannesburg", "Paris", 580.00));
         // Flight 14
         flights.push_back(new Flight("KLM Royal Dutch Airlines", 1045, 1330, "Amsterdam", "Rome", 320.25));
         // Flight 15
@@ -44,7 +44,7 @@
         // Hotel 3
         hotels.push_back(new Hotel("Cozy Inn", "Paris", 150.00, 3));
         // Hotel 4
-        hotels.push_back(new Hotel("Seaside Retreat", "Miami Beach", 300.00, 4));
+        hotels.push_back(new Hotel("Seaside Retreat", "Miami", 300.00, 4));
         // Hotel 5
         hotels.push_back(new Hotel("Mountain View Lodge", "Aspen", 250.00, 4));
         // Hotel 6
@@ -56,7 +56,7 @@
         // Hotel 9
         hotels.push_back(new Hotel("City Center Hotel", "London", 190.00, 3));
         // Hotel 10
-        hotels.push_back(new Hotel("Ski Lodge", "Whistler", 280.00, 4));
+        hotels.push_back(new Hotel("Ski Lodge", "Vancouver", 280.00, 4));
         // Hotel 11
         hotels.push_back(new Hotel("Desert Retreat", "Dubai", 400.00, 5));
         // Hotel 12
