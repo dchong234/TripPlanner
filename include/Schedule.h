@@ -10,6 +10,7 @@ class Schedule {
         Trip* trip;
     public:
         Schedule(Trip*);
+        ~Schedule();
         void getSchedule();
         void addActvity(Activity*);
         void cancelActivity();

@@ -5,6 +5,23 @@ Schedule::Schedule(Trip* trip){
   this->trip = trip;
 }
 
+Schedule::~Schedule() {
+  delete trip;
+  trip = nullptr;
+  
+  for (auto flight : *(this->trip->getFlights())) {
+    delete flight;
+  }
+
+  for (auto hotel : *(this->trip->getHotels())) {
+    delete hotel;
+  }
+
+  for (auto activity : *(this->trip->getActivities())) {
+    delete activity;
+  }
+}
+
 void Schedule::getSchedule(){
   int time = 800;
 

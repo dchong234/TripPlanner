@@ -3,6 +3,23 @@
 
 TripHandler::TripHandler(Trip* trip) : trip(trip) {}
 
+TripHandler::~TripHandler() {
+    delete trip;
+    trip = nullptr;
+
+    for (unsigned i = 0; i < trip->getHotels().size(); ++i) {
+        delete trip->getHotels().at(i);
+    }
+
+    for (unsigned i = 0; i < trip->getActivities().size(); ++i) {
+        delete trip->getActivities().at(i);
+    }
+
+    for (unsigned i = 0; i < trip->getFlights().size(); ++i) {
+        delete trip->getFlights().at(i);
+    }
+}
+
 void TripHandler::addActivity(Activity* activity) {
     trip->getActivities()->push_back(activity);
 }

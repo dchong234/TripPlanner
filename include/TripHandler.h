@@ -16,6 +16,7 @@ class TripHandler {
         std::vector<Activity*>::iterator getActivityPosition(Activity*);
     public:
         TripHandler(Trip* trip);
+        ~TripHandler();
         void addActivity(Activity* activity);
         void removeActivity(Activity* activity);
         void addHotel(Hotel* hotel);
