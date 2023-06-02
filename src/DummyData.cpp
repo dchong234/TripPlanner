@@ -38,35 +38,35 @@
 
 
         // Hotel 1
-        hotels.push_back(new Hotel("Grand Hotel", "New York City", 200.00, 4));
+        hotels.push_back(new Hotel("Grand Hotel", "New York City", 200.00, 4, 800));
         // Hotel 2
-        hotels.push_back(new Hotel("Luxury Resort", "Maldives", 500.00, 5));
+        hotels.push_back(new Hotel("Luxury Resort", "Maldives", 500.00, 5, 800));
         // Hotel 3
-        hotels.push_back(new Hotel("Cozy Inn", "Paris", 150.00, 3));
+        hotels.push_back(new Hotel("Cozy Inn", "Paris", 150.00, 3, 800));
         // Hotel 4
-        hotels.push_back(new Hotel("Seaside Retreat", "Miami", 300.00, 4));
+        hotels.push_back(new Hotel("Seaside Retreat", "Miami", 300.00, 4, 800));
         // Hotel 5
-        hotels.push_back(new Hotel("Mountain View Lodge", "Aspen", 250.00, 4));
+        hotels.push_back(new Hotel("Mountain View Lodge", "Aspen", 250.00, 4, 800));
         // Hotel 6
-        hotels.push_back(new Hotel("Urban Oasis", "Tokyo", 180.00, 3));
+        hotels.push_back(new Hotel("Urban Oasis", "Tokyo", 180.00, 3, 800));
         // Hotel 7
-        hotels.push_back(new Hotel("Historic Inn", "Boston", 220.00, 4));
+        hotels.push_back(new Hotel("Historic Inn", "Boston", 220.00, 4, 800));
         // Hotel 8
-        hotels.push_back(new Hotel("Beachfront Resort", "Bali", 350.00, 5));
+        hotels.push_back(new Hotel("Beachfront Resort", "Bali", 350.00, 5, 800));
         // Hotel 9
-        hotels.push_back(new Hotel("City Center Hotel", "London", 190.00, 3));
+        hotels.push_back(new Hotel("City Center Hotel", "London", 190.00, 3, 800));
         // Hotel 10
-        hotels.push_back(new Hotel("Ski Lodge", "Vancouver", 280.00, 4));
+        hotels.push_back(new Hotel("Ski Lodge", "Vancouver", 280.00, 4, 800));
         // Hotel 11
-        hotels.push_back(new Hotel("Desert Retreat", "Dubai", 400.00, 5));
+        hotels.push_back(new Hotel("Desert Retreat", "Dubai", 400.00, 5, 800));
         // Hotel 12
-        hotels.push_back(new Hotel("Charming Cottage", "Cape Town", 180.00, 3));
+        hotels.push_back(new Hotel("Charming Cottage", "Cape Town", 180.00, 3, 800));
         // Hotel 13
-        hotels.push_back(new Hotel("Riverside Inn", "Prague", 220.00, 4));
+        hotels.push_back(new Hotel("Riverside Inn", "Prague", 220.00, 4, 800));
         // Hotel 14
-        hotels.push_back(new Hotel("Tropical Paradise Resort", "Phuket", 320.00, 5));
+        hotels.push_back(new Hotel("Tropical Paradise Resort", "Phuket", 320.00, 5, 800));
         // Hotel 15
-        hotels.push_back(new Hotel("Historic Mansion", "Rome", 250.00, 4));
+        hotels.push_back(new Hotel("Historic Mansion", "Rome", 250.00, 4, 800));
 
 
         // Activity 1
