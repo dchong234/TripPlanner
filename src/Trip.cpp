@@ -10,18 +10,18 @@ Trip::Trip(std::string name){
 }
 
 Trip::~Trip() {
-    for (unsigned i = 0; i < this->flights.size(); ++i) {
-        delete this->flights.at(i);
+    for (unsigned i = 0; i < this->flights->size(); ++i) {
+        delete this->flights->at(i);
     }
     delete this->flights;
 
-    for (unsigned i = 0; i < this->hotels.size(); ++i) {
-        delete this->hotels.at(i);
+    for (unsigned i = 0; i < this->hotels->size(); ++i) {
+        delete this->hotels->at(i);
     }
     delete this->hotels;
 
-    for (unsigned i = 0; i < this->activities.size(); ++i) {
-        delete this->activities.at(i);
+    for (unsigned i = 0; i < this->activities->size(); ++i) {
+        delete this->activities->at(i);
     }
     delete this->activities;
 }

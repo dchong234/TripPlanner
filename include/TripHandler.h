@@ -23,6 +23,8 @@ class TripHandler {
         void removeHotel(Hotel* hotel);
         void addFlight(Flight* flight);
         void removeFlight(Flight* flight);
+
+        void extractTrip(User&);
 };
 
 #endif

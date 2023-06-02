@@ -1,6 +1,7 @@
 #ifndef FLIGHT_H
 #define FLIGHT_H
 #include <string>
+#include <fstream>
 
 class Flight {
     private:
@@ -20,7 +21,7 @@ class Flight {
         std::string getDestination();
         double getPrice();
         std::string getFlight();
-        void extractFlight(std::string filename);
+        void extractFlight(std::ofstream&);
 };
 
 #endif

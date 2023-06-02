@@ -1,6 +1,7 @@
 #ifndef ACTIVITY_H
 #define ACTIVITY_H
 #include <string>
+#include <fstream>
 
 class Activity {
     private:
@@ -13,7 +14,7 @@ class Activity {
         double getTime();
         std::string getName();
         double getPrice();
-        void extractActivity(std::string);
+        void extractActivity(std::ofstream&);
 };
 
 #endif

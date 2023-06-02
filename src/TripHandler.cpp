@@ -1,23 +1,24 @@
 #include "../include/TripHandler.h"
 #include <vector>
+#include <fstream>
 
 TripHandler::TripHandler(Trip* trip) : trip(trip) {}
 
 TripHandler::~TripHandler() {
+    for (unsigned i = 0; i < trip->getHotels()->size(); ++i) {
+        delete trip->getHotels()->at(i);
+    }
+
+    for (unsigned i = 0; i < trip->getActivities()->size(); ++i) {
+        delete trip->getActivities()->at(i);
+    }
+
+    for (unsigned i = 0; i < trip->getFlights()->size(); ++i) {
+        delete trip->getFlights()->at(i);
+    }
+
     delete trip;
     trip = nullptr;
-
-    for (unsigned i = 0; i < trip->getHotels().size(); ++i) {
-        delete trip->getHotels().at(i);
-    }
-
-    for (unsigned i = 0; i < trip->getActivities().size(); ++i) {
-        delete trip->getActivities().at(i);
-    }
-
-    for (unsigned i = 0; i < trip->getFlights().size(); ++i) {
-        delete trip->getFlights().at(i);
-    }
 }
 
 void TripHandler::addActivity(Activity* activity) {
@@ -86,4 +87,32 @@ std::vector<Flight*>::iterator TripHandler::getFlightPosition(Flight* flight) {
     }
 
     return flightsVector->end();
+}
+
+void TripHandler::extractTrip(User& user) {
+    std::string filename = "data/" + user.getUsername() + "Trips.dat";
+
+    std::ofstream outFS(filename, std::fstream::app);
+
+    if (outFS.is_open()) {
+        outFS << trip->getTripName() << std::endl;
+        
+        for (auto x : *(trip->getActivities())) {
+            x->extractActivity(outFS);
+        }
+
+        for (auto x : *(trip->getFlights())) {
+            x->extractFlight(outFS);
+        }
+
+        for (auto x : *(trip->getHotels())) {
+            x->extractHotel(outFS);
+        }
+    } else {
+        std::cerr << "Failed to open the file." << std::endl;
+    }
+
+
+
+    outFS.close();
 }

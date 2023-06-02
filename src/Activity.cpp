@@ -33,20 +33,8 @@ double Activity::getPrice()
   return this->price;
 }
 
-void Activity::extractActivity(std::string filename)
+void Activity::extractActivity(std::ofstream& outFS)
 {
-  std::ofstream outFS;
-  outFS.open(filename, std::fstream::app);
-
-  if(outFS.is_open)
-  {
-    outFS << "activity ";
-    outFS << name << " " << time << " " << price << std::endl;
-
-    outFS.close();
-  }
-  else 
-  {
-    std::cerr << "Failed to open the file." << std::endl;
-  }
+  outFS << "activity ";
+  outFS << name << " " << time << " " << price << std::endl;
 }
