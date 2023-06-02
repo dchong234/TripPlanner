@@ -1,4 +1,5 @@
 #include "../include/Activity.h"
+#include <string>
 #include <iostream>
 
 Activity::Activity(std::string name, int time, double price)
@@ -40,7 +41,7 @@ void Activity::extractActivity(std::string filename)
   if(outFS.is_open)
   {
     outFS << "activity ";
-    outFS << name << " " << time << " " << price << " ";
+    outFS << name << " " << time << " " << price << std::endl;
 
     outFS.close();
   }

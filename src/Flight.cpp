@@ -1,5 +1,6 @@
 #include "../include/Flight.h"
 #include <string>
+#include <iostream>
 
 Flight::Flight(std::string airline, int departureTime, int arrivalTime,
 std::string origin, std::string destination, double price) {
@@ -44,4 +45,23 @@ std::string Flight::getFlight() {
     + "Price: $" + std::to_string(this->price) + "\n";
 
     return flightInformation;
+}
+
+void Flight::extractFlight(std::string filename)
+{
+  std::ofstream outFS;
+  outFS.open(filename, std::fstream::app);
+
+  if(outFS.is_open)
+  {
+    outFS << "flight ";
+    outFS << airline << " " << departureTime << " " << arrivalTime << " "
+    << " " << origin << " " << destination << " " << price << std::endl;
+
+    outFS.close();
+  }
+  else 
+  {
+    std::cerr << "Failed to open the file." << std::endl;
+  }
 }
