@@ -17,6 +17,7 @@ class Trip {
     public: 
         Trip() : name("") {}
         Trip(std::string);
+        ~Trip();
         std::string getTripName();
         std::vector<Flight*> * getFlights();
         std::vector<Hotel*> * getHotels();
