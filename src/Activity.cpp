@@ -32,7 +32,7 @@ double Activity::getPrice()
   return this->price;
 }
 
-void Activity::extractActivity(string filename)
+void Activity::extractActivity(std::string filename)
 {
   std::ofstream outFS;
   outFS.open(filename, std::fstream::app);

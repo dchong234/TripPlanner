@@ -13,7 +13,7 @@ class Activity {
         int getTime();
         std::string getName();
         double getPrice();
-        void extractActivity(string);
+        void extractActivity(std::string);
 };
 
 #endif
