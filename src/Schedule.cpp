@@ -6,9 +6,6 @@ Schedule::Schedule(Trip* trip){
 }
 
 Schedule::~Schedule() {
-  delete trip;
-  trip = nullptr;
-  
   for (auto flight : *(this->trip->getFlights())) {
     delete flight;
   }
@@ -20,6 +17,9 @@ Schedule::~Schedule() {
   for (auto activity : *(this->trip->getActivities())) {
     delete activity;
   }
+
+  delete trip;
+  trip = nullptr;
 }
 
 void Schedule::getSchedule(){

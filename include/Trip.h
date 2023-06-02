@@ -6,6 +6,7 @@
 #include "../include/Flight.h"
 #include "../include/Hotel.h"
 #include "../include/Activity.h"
+#include "../include/User.h"
 
 
 class Trip {

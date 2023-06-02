@@ -1,5 +1,7 @@
 #include "../include/Hotel.h"
 #include <string>
+#include <fstream>
+#include <iostream>
 
 Hotel::Hotel(std::string name, std::string location, double price, int rating, double time){
     this->name = name;
@@ -39,21 +41,7 @@ std::string Hotel::getHotel(){
     return hotelInfo;
 }
 
-void Hotel::extractHotel(std::string) {
-    std::ofstream outFS;
-    outFS.open(filename, std::fstream::app);
-
-    if(outFS.is_open)
-    {
-        outFS << "hotel ";
-        outFS << name << " " << location << " " << price << " " << rating << " " << time << " " << std::endl;
-
-        outFS.close();
-    }
-    else 
-    {
-        std::cerr << "Failed to open the file." << std::endl;
-    }
-
-
+void Hotel::extractHotel(std::ofstream& outFS) {
+    outFS << "hotel ";
+    outFS << name << " " << location << " " << price << " " << rating << " " << time << " " << std::endl;
 }

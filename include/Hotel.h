@@ -1,6 +1,7 @@
 #ifndef HOTEL_H
 #define HOTEL_H
 #include <string>
+#include <fstream>
 
 class Hotel {
     private:
@@ -17,7 +18,7 @@ class Hotel {
         int getRating();
         std::string getHotel();
         double getHotelTime();
-        void extractHotel(std::string);
+        void extractHotel(std::ofstream&);
 };
 
 #endif
