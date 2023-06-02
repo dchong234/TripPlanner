@@ -18,8 +18,8 @@ class AccountHandler {
         std::vector<std::string> passwordStorage;
     public:
         AccountHandler();
-        void login();
-        void logout();
+        User login();
+        User logout();
         void createAccount();
         void printAccounts();
 };
