@@ -6,27 +6,13 @@ Schedule::Schedule(Trip* trip){
 }
 
 Schedule::~Schedule() {
-  for (auto flight : *(this->trip->getFlights())) {
-    delete flight;
-  }
-
-  for (auto hotel : *(this->trip->getHotels())) {
-    delete hotel;
-  }
-
-  for (auto activity : *(this->trip->getActivities())) {
-    delete activity;
-  }
-
-  delete trip;
-  trip = nullptr;
 }
 
 void Schedule::getSchedule(){
   int time = 800;
 
   for(int i = 0; i < 10; i++){
-    for (auto x : *(this->trip->getFlights())) {
+    for (auto x :  *(this->trip->getFlights())) {
       if (x->getDepartureTime() == time) {
         std::cout << time << " " << x->getAirline() << std::endl;
         time += 30;

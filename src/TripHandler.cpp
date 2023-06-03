@@ -5,20 +5,6 @@
 TripHandler::TripHandler(Trip* trip) : trip(trip) {}
 
 TripHandler::~TripHandler() {
-    for (unsigned i = 0; i < trip->getHotels()->size(); ++i) {
-        delete trip->getHotels()->at(i);
-    }
-
-    for (unsigned i = 0; i < trip->getActivities()->size(); ++i) {
-        delete trip->getActivities()->at(i);
-    }
-
-    for (unsigned i = 0; i < trip->getFlights()->size(); ++i) {
-        delete trip->getFlights()->at(i);
-    }
-
-    delete trip;
-    trip = nullptr;
 }
 
 void TripHandler::addActivity(Activity* activity) {
@@ -32,8 +18,8 @@ void TripHandler::removeActivity(Activity* activity) {
 }
 
 void TripHandler::addHotel(Hotel* hotel) {
-    std::vector<Hotel*> * hotelVector = trip->getHotels();
-    hotelVector->push_back(hotel);
+    //std::vector<Hotel*> * hotelVector = trip->getHotels();
+    trip->getHotels()->push_back(hotel);
 }
 
 void TripHandler::removeHotel(Hotel* hotel) {
@@ -43,8 +29,8 @@ void TripHandler::removeHotel(Hotel* hotel) {
 }
 
 void TripHandler::addFlight(Flight* flight) {
-    std::vector<Flight*> * flightVector = trip->getFlights();
-    flightVector->push_back(flight);
+    //std::vector<Flight*> * flightVector = trip->getFlights();
+    trip->getFlights()->push_back(flight);
 }
 
 void TripHandler::removeFlight(Flight* flight) {
@@ -54,39 +40,39 @@ void TripHandler::removeFlight(Flight* flight) {
 }
 
 std::vector<Activity*>::iterator TripHandler::getActivityPosition(Activity* activity) {
-    std::vector<Activity*> * activitiesVector = trip->getActivities();
+    //std::vector<Activity*> * activitiesVector = trip->getActivities();
 
-    for (auto it = activitiesVector->begin(); it != activitiesVector->end(); ++it) {
+    for (auto it = trip->getActivities()->begin(); it != trip->getActivities()->end(); ++it) {
         if ((*it)->getName() == activity->getName()) {
             return it;
         }
     }
 
-    return activitiesVector->end();
+    return trip->getActivities()->end();
 }
 
 std::vector<Hotel*>::iterator TripHandler::getHotelPosition(Hotel* hotel) {
-    std::vector<Hotel*> * hotelVector = trip->getHotels();
+    //std::vector<Hotel*> * hotelVector = trip->getHotels();
 
-    for (auto it = hotelVector->begin(); it != hotelVector->end(); ++it) {
+    for (auto it = trip->getHotels()->begin(); it != trip->getHotels()->end(); ++it) {
         if ((*it)->getName() == hotel->getName()) {
             return it;
         }
     }
 
-    return hotelVector->end();
+    return trip->getHotels()->end();
 }
 
 std::vector<Flight*>::iterator TripHandler::getFlightPosition(Flight* flight) {
-    std::vector<Flight*> * flightsVector = trip->getFlights();
+    //std::vector<Flight*> * flightsVector = trip->getFlights();
 
-    for (auto it = flightsVector->begin(); it != flightsVector->end(); ++it) {
+    for (auto it = trip->getFlights()->begin(); it != trip->getFlights()->end(); ++it) {
         if ((*it)->getAirline() == flight->getAirline()) {
             return it;
         }
     }
 
-    return flightsVector->end();
+    return trip->getFlights()->end();
 }
 
 void TripHandler::extractTrip(User& user) {
