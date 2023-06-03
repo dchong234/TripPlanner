@@ -2,6 +2,13 @@
 #include <string>
 #include <vector>
 
+Trip::Trip() {
+    this->name = "";
+    this->flights = new std::vector<Flight*>();
+    this->hotels = new std::vector<Hotel*>();
+    this->activities = new std::vector<Activity*>();
+}
+
 Trip::Trip(std::string name){
     this->name = name;
     this->flights = new std::vector<Flight*>();

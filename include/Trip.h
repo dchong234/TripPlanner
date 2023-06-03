@@ -3,11 +3,10 @@
 
 #include <string>
 #include <vector>
+
 #include "../include/Flight.h"
 #include "../include/Hotel.h"
 #include "../include/Activity.h"
-#include "../include/User.h"
-
 
 class Trip {
     private:
@@ -16,7 +15,7 @@ class Trip {
         std::vector<Hotel*> * hotels;
         std::vector<Activity*> * activities;
     public: 
-        Trip() : name("") {}
+        Trip();
         Trip(std::string);
         ~Trip();
         std::string getTripName();
