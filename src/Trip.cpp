@@ -17,12 +17,23 @@ Trip::Trip(std::string name){
 }
 
 Trip::~Trip() {
-    delete this->flights;
-    this->flights = nullptr;
-    delete this->hotels;
-    this->hotels = nullptr;
-    delete this->activities;
-    this->activities = nullptr;
+    for (Flight* flight : *flights) {
+        delete flight;
+    }
+    delete flights;
+    flights = nullptr;
+
+    for (Hotel* hotel : *hotels) {
+        delete hotel;
+    }
+    delete hotels;
+    hotels = nullptr;
+
+    for (Activity* activity : *activities) {
+        delete activity;
+    }
+    delete activities;
+    activities = nullptr;
 }
 
 std::string Trip::getTripName(){
