@@ -22,6 +22,10 @@ class Trip {
         std::vector<Flight*> * getFlights();
         std::vector<Hotel*> * getHotels();
         std::vector<Activity*> * getActivities();
+        friend std::ostream& operator<<(std::ostream& os, const Trip& trip) {
+            os << "Trip Name operator: " << trip.name << std::endl;
+            return os;
+        }
 
 };
 #endif
