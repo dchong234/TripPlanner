@@ -102,15 +102,15 @@ DummyData::DummyData(){
 }
 
 DummyData::~DummyData(){
-    for (Flight* flight : *flights) {
+    for (Flight* flight : flights) {
         delete flight;
     }
 
-    for (Hotel* hotel : *hotels) {
+    for (Hotel* hotel : hotels) {
         delete hotel;
     }
 
-    for (Activity* activity : *activities) {
+    for (Activity* activity : activities) {
         delete activity;
     }
 }
