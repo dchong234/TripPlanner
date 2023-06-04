@@ -73,16 +73,24 @@ int main()
     }
   }
 
-  Trip trip("test");
-  TripHandler tripHandler(&trip);
-  Schedule schedule(&trip);
-  Activity activity("ACTIVITY", 830, 9.95);
+  // Trip trip("test");
+  // TripHandler tripHandler(&trip);
+  // Schedule schedule(&trip);
+  // Activity* activity = new Activity("ACTIVITY", 830, 9.95);
+  // Flight* flight = new Flight("AIRLINE", 930, 1000, "ORIGIN", "DEST", 11.95);
+  // Hotel* hotel = new Hotel("HOTEL", "LOCATION", 9.95, 5, 1200);
 
-  tripHandler.addActivity(&activity);
+  // tripHandler.addActivity(activity);
+  // tripHandler.addFlight(flight);
+  // tripHandler.addHotel(hotel);
+
+  // schedule.getSchedule();
+
+  // tripHandler.extractTrip(user);
+  user.importTrips();
+  Schedule schedule(user.tripStorage.at(0));
 
   schedule.getSchedule();
-
-  tripHandler.extractTrip(user);
 
   // menu.viewOptions();
   // validInput = false;

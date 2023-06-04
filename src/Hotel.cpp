@@ -43,5 +43,5 @@ std::string Hotel::getHotel(){
 
 void Hotel::extractHotel(std::ofstream& outFS) {
     outFS << "hotel ";
-    outFS << name << " " << location << " " << price << " " << rating << " " << time << " " << std::endl;
+    outFS << name << "/" << location << "/" << price << "/" << rating << "/" << time << std::endl;
 }
