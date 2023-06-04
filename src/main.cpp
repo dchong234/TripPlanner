@@ -84,89 +84,116 @@ int main()
       validInput = true;
       unsigned i;
       if (input == "1") {
-        cout << "PAGE 1 OF 3" << endl;
-        cout << "\n";
         for (i = 0; i < 5; ++i) {
           cout << i + 1 << ". " << dummyData.flights.at(i)->getFlight();
           cout << "\n";
         }
+        cout << "\n";
+        cout << "PAGE 1 OF 3" << endl;
+        cout << "\n";
         cout << "Show more flights? Yes or No" << endl;
         input = takeInput();
         if (input == "Yes" || input == "yes") {
-          cout << "PAGE 2 OF 3" << endl;
-          cout << "\n";
           for (i = 5; i < 10; ++i) {
             cout << i + 1 << ". " << dummyData.flights.at(i)->getFlight();
             cout << "\n";
           }
+          cout << "\n";
+          cout << "PAGE 2 OF 3" << endl;
+          cout << "\n";
+        }
+        else if (input == "No" || input == "no") {
+          break;
         }
         cout << "Show more flights? Yes or No" << endl;
         input = takeInput();
         if (input == "Yes" || input == "yes") {
-          cout << "PAGE 3 OF 3" << endl;
-          cout << "\n";
           for (i = 10; i < 15; ++i) {
             cout << i + 1 << ". " << dummyData.flights.at(i)->getFlight();
             cout << "\n";
           }
+          cout << "\n";
+          cout << "PAGE 3 OF 3" << endl;
+          cout << "\n";
+        }
+        else if (input == "No" || input == "no") {
+          break;
         }
       }
 
       if (input == "2") {
-        cout << "PAGE 1 OF 3" << endl;
-        cout << "\n";
         for (i = 0; i < 5; ++i) {
           cout << i + 1 << ". " << dummyData.activities.at(i)->getActivity();
           cout << "\n";
         }
+        cout << "\n";
+        cout << "PAGE 1 OF 3" << endl;
+        cout << "\n";
         cout << "Show more activities? Yes or No" << endl;
         input = takeInput();
         if (input == "Yes" || input == "yes") {
-          cout << "PAGE 2 OF 3" << endl;
-          cout << "\n";
           for (i = 5; i < 10; ++i) {
             cout << i + 1 << ". " << dummyData.activities.at(i)->getActivity();
             cout << "\n";
           }
+          cout << "\n";
+          cout << "PAGE 2 OF 3" << endl;
+          cout << "\n";
+        }
+        else if (input == "No" || input == "no") {
+          break;
         }
         cout << "Show more activities? Yes or No" << endl;
         input = takeInput();
         if (input == "Yes" || input == "yes") {
-          cout << "PAGE 3 OF 3" << endl;
-          cout << "\n";
           for (i = 10; i < 15; ++i) {
             cout << i + 1 << ". " << dummyData.activities.at(i)->getActivity();
             cout << "\n";
           }
+          cout << "\n";
+          cout << "PAGE 3 OF 3" << endl;
+          cout << "\n";
+        }
+        else if (input == "No" || input == "no") {
+          break;
         }
       }
 
       if (input == "3") {
-        cout << "PAGE 1 OF 3" << endl;
-        cout << "\n";
         for (i = 0; i < 5; ++i) {
           cout << i + 1 << ". " << dummyData.hotels.at(i)->getHotel();
           cout << "\n";
         }
+        cout << "\n";
+        cout << "PAGE 1 OF 3" << endl;
+        cout << "\n";
         cout << "Show more hotels? Yes or No" << endl;
         input = takeInput();
         if (input == "Yes" || input == "yes") {
-          cout << "PAGE 2 OF 3" << endl;
-          cout << "\n";
           for (i = 5; i < 10; ++i) {
             cout << i + 1 << ". " << dummyData.hotels.at(i)->getHotel();
             cout << "\n";
           }
+          cout << "\n";
+          cout << "PAGE 1 OF 3" << endl;
+          cout << "\n";
+        }
+        else if (input == "No" || input == "no") {
+          break;
         }
         cout << "Show more hotels? Yes or No" << endl;
         input = takeInput();
         if (input == "Yes" || input == "yes") {
-          cout << "PAGE 3 OF 3" << endl;
-          cout << "\n";
           for (i = 10; i < 15; ++i) {
             cout << i + 1 << ". " << dummyData.hotels.at(i)->getHotel();
             cout << "\n";
           }
+          cout << "\n";
+          cout << "PAGE 1 OF 3" << endl;
+          cout << "\n";
+        }
+        else if (input == "No" || input == "no") {
+          break;
         }
       }
     }
