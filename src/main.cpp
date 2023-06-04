@@ -100,5 +100,19 @@ int main()
     }
   }
 
+  if (input == "2") {
+    for (unsigned i = 0; i < 5; ++i) {
+      cout << i + 1 << ". " << dummyData.activities.at(i)->getActivity();
+      cout << "\n";
+    }
+  }
+
+  if (input == "3") {
+    for (unsigned i = 0; i < 5; ++i) {
+      cout << i + 1 << ". " << dummyData.hotels.at(i)->getHotel();
+      cout << "\n";
+    }
+  }
+
   return 0;
 }
