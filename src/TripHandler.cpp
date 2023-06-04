@@ -8,8 +8,7 @@ TripHandler::TripHandler() : trip(nullptr) {}
 
 TripHandler::TripHandler(Trip* trip) : trip(trip) {}
 
-TripHandler::~TripHandler() {
-}
+TripHandler::~TripHandler() {}
 
 void TripHandler::addActivity(Activity* activity) {
     trip->getActivities()->push_back(activity);

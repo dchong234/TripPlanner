@@ -35,6 +35,6 @@ double Activity::getPrice()
 
 void Activity::extractActivity(std::ofstream& outFS)
 {
-  outFS << "activity ";
-  outFS << name << "/" << time << "/" << price << std::endl;
+  outFS << "activity/";
+  outFS << name << "/" << time << "/" << price << "/" << std::endl;
 }
