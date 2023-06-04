@@ -13,6 +13,7 @@ class DummyData {
         std::vector<Hotel*> hotels;
         std::vector<Activity*> activities;
         DummyData();
+        ~DummyData();
 };
 
 #endif

@@ -50,7 +50,7 @@ std::string Flight::getFlight() {
 
 void Flight::extractFlight(std::ofstream& outFS)
 {
-    outFS << "flight ";
+    outFS << "flight/";
     outFS << airline << "/" << departureTime << "/" << arrivalTime << "/"
-          << origin << "/" << destination << "/" << price << std::endl;
+          << origin << "/" << destination << "/" << price << "/" << std::endl;
 }

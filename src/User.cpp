@@ -31,33 +31,26 @@ void User::importTrips() {
 
     while (true) {
         str = readString(inFS);
-        std::cout << "IDX: " << i << std::endl;
-        // std::cout << str << std::endl;
 
         if (str == "trip") {
             std::cout << "creating trip" << std::endl;
             str = readString(inFS);
-            std::cout << "Trip Name: " << str << std::endl;
+
             trip = new Trip(str);
             tripHandler.setTrip(trip);
 
-            // TODO: push trip to user storage
             tripStorage.push_back(trip);
         }
 
         if (str == "\nactivity") {
-            std::cout << "parsing activity" << std::endl;
             tripHandler.addActivity(parseActivity(inFS));
-            // std::cout << trip->getActivities()->at(0)->getActivity();
         }
 
         if (str == "\nflight") {
-            std::cout << "parsing flight" << std::endl;
             tripHandler.addFlight(parseFlight(inFS));
         }
 
         if (str == "\nhotel") {
-            std::cout << "parsing hotel" << std::endl;
             tripHandler.addHotel(parseHotel(inFS));
         }
 
