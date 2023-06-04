@@ -44,7 +44,7 @@ AccountHandler::AccountHandler(){
         }
     }
     else {
-        std::cerr << "Failed to open the file." << std::endl;
+        std::cerr << "Failed to open the file" << std::endl;
     }
 
     inFS.close();
