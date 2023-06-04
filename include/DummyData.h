@@ -8,11 +8,10 @@
 #include "../include/Activity.h"
 
 class DummyData {
-    private:
+    public:
         std::vector<Flight*> flights;
         std::vector<Hotel*> hotels;
         std::vector<Activity*> activities;
-    public:
         DummyData();
         ~DummyData();
 };
