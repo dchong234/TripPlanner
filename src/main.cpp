@@ -44,8 +44,6 @@ void printPage(string type, int page){
   cout << endl;
   cout << "PAGE " << page << " OF 3" << endl;
   cout << endl;
-  cout << "Show more " << type << "s? Yes or No" << endl;
-  input = takeInput();
 }
 
 int main()
@@ -110,14 +108,10 @@ int main()
       unsigned i;
       if (input == "1") {
         printPage("flight", 1);
+        cout << "Show more flights? Yes or No" << endl;
+        input = takeInput();
         if (input == "Yes" || input == "yes") {
-          for (i = 5; i < 10; ++i) {
-            cout << i + 1 << ". " << dummyData.flights.at(i)->getFlight();
-            cout << "\n";
-          }
-          cout << "\n";
-          cout << "PAGE 2 OF 3" << endl;
-          cout << "\n";
+          printPage("flight", 2);
         }
         else if (input == "No" || input == "no") {
           break;
@@ -125,13 +119,7 @@ int main()
         cout << "Show more flights? Yes or No" << endl;
         input = takeInput();
         if (input == "Yes" || input == "yes") {
-          for (i = 10; i < 15; ++i) {
-            cout << i + 1 << ". " << dummyData.flights.at(i)->getFlight();
-            cout << "\n";
-          }
-          cout << "\n";
-          cout << "PAGE 3 OF 3" << endl;
-          cout << "\n";
+          printPage("flight", 3);
         }
         else if (input == "No" || input == "no") {
           break;
