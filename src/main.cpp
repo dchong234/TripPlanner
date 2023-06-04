@@ -14,6 +14,8 @@ using std::endl;
 using std::cin;
 using std::string;
 
+DummyData dummyData;
+
 string takeInput()
 {
   string input;
@@ -22,12 +24,35 @@ string takeInput()
   return input;
 }
 
+void printPage(string type, int page){
+  unsigned i = 0;
+  unsigned upperLimit = i;
+  string input = "";
+
+  if (page == 2) {
+    i = 5;
+  } else if (page == 3) {
+    i = 10;
+  }
+
+  upperLimit = i + 5;
+
+  for (i; i < upperLimit; ++i) {
+    cout << i + 1 << ". " << dummyData.flights.at(i)->getFlight();
+    cout << endl;
+    }
+  cout << endl;
+  cout << "PAGE " << page << " OF 3" << endl;
+  cout << endl;
+  cout << "Show more " << type << "s? Yes or No" << endl;
+  input = takeInput();
+}
+
 int main()
 {
   MainMenu menu;
   AccountHandler accountHandler;
   User user;
-  DummyData dummyData;
 
   string input;
   bool validInput = false;
@@ -84,15 +109,7 @@ int main()
       validInput = true;
       unsigned i;
       if (input == "1") {
-        for (i = 0; i < 5; ++i) {
-          cout << i + 1 << ". " << dummyData.flights.at(i)->getFlight();
-          cout << "\n";
-        }
-        cout << "\n";
-        cout << "PAGE 1 OF 3" << endl;
-        cout << "\n";
-        cout << "Show more flights? Yes or No" << endl;
-        input = takeInput();
+        printPage("flight", 1);
         if (input == "Yes" || input == "yes") {
           for (i = 5; i < 10; ++i) {
             cout << i + 1 << ". " << dummyData.flights.at(i)->getFlight();
