@@ -3,7 +3,6 @@
     #include<string>
     #include<vector>
 
-
     DummyData::DummyData(){
         // Flight 1
         flights.push_back(new Flight("United Airlines", 800, 1130, "New York City", "Los Angeles", 250.00));

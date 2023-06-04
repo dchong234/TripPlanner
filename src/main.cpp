@@ -7,6 +7,7 @@
 #include "../include/Trip.h"
 #include "../include/TripHandler.h"
 #include "../include/Schedule.h"
+#include "../include/DummyData.h"
 
 using std::cout;
 using std::endl;
@@ -21,28 +22,12 @@ string takeInput()
   return input;
 }
 
-// int main() {
-//   Trip* trip = new Trip("test");
-//   TripHandler tripHandler(trip);
-//   Schedule schedule(trip);
-//   Activity activity("ACTIVITY 1", 830, 9.95);
-
-//   cout << activity.getActivity() << std::endl;
-
-//   tripHandler.addActivity(&activity);
-
-//   schedule.printStuff();
-
-//   schedule.getSchedule();
-
-//   return 0;
-// }
-
 int main()
 {
   MainMenu menu;
   AccountHandler accountHandler;
   User user;
+  DummyData dummyData;
 
   string input;
   bool validInput = false;
@@ -73,60 +58,47 @@ int main()
     }
   }
 
-  // Trip trip("test");
-  // TripHandler tripHandler(&trip);
-  // Schedule schedule(&trip);
-  // Activity* activity = new Activity("ACTIVITY", 830, 9.95);
-  // Flight* flight = new Flight("AIRLINE", 930, 1000, "ORIGIN", "DEST", 11.95);
-  // Hotel* hotel = new Hotel("HOTEL", "LOCATION", 9.95, 5, 1200);
+  menu.viewOptions();
+  validInput = false;
 
-  // tripHandler.addActivity(activity);
-  // tripHandler.addFlight(flight);
-  // tripHandler.addHotel(hotel);
+  input = "";
 
-  // schedule.getSchedule();
-
-  // tripHandler.extractTrip(user);
-  user.importTrips();
-  Schedule schedule(user.tripStorage.at(0));
-
-  schedule.getSchedule();
-
-  // menu.viewOptions();
-  // validInput = false;
-
-  // input = "";
-
-  // while(!validInput)
-  // {
-  //   if(input == "1")
-  //   {
-  //     menu.viewTrip();
-  //     input = takeInput();
-  //     validInput = true;
-  //   }
-  //   else if(input == "2")
-  //   {
-  //     menu.viewSchedule();
-  //     input = takeInput();
-  //     validInput = true;
-  //   }
-  //   else if(input == "3")
-  //   {
-  //     menu.viewBookingMenu();
-  //     input = takeInput();
-  //     validInput = true;
-  //   }
-  //   else if(input == "4")
-  //   {
-  //     return 0;
-  //   }
-  //   else
-  //   {
-  //     input = takeInput();
-  //   }
-  // }
+  while(!validInput)
+  {
+    if(input == "1")
+    {
+      menu.viewTrip();
+      input = takeInput();
+      validInput = true;
+    }
+    else if(input == "2")
+    {
+      menu.viewSchedule();
+      input = takeInput();
+      validInput = true;
+    }
+    else if(input == "3")
+    {
+      menu.viewBookingMenu();
+      input = takeInput();
+      validInput = true;
+    }
+    else if(input == "4")
+    {
+      return 0;
+    }
+    else
+    {
+      input = takeInput();
+    }
+  }
   
+  if (input == "1") {
+    for (unsigned i = 0; i < 5; ++i) {
+      cout << i + 1 << ". " << dummyData.flights.at(i)->getFlight();
+      cout << "\n";
+    }
+  }
 
   return 0;
 }
