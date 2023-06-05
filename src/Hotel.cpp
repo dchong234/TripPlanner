@@ -36,7 +36,7 @@ std::string Hotel::getItem(){
     hotelInfo += "Location: " + this->location + "\n";
     hotelInfo += "Price: $" + std::to_string(this->price) + "\n";
     hotelInfo += "Rating: " + std::to_string(this->rating) + " stars\n";
-    hotelInfo += "Check-in Time: " + std::to_string(this->time) + "\n";
+    hotelInfo += "Check-in Time: " + formatTime(this->time) + "\n";
     
     return hotelInfo;
 }

@@ -39,8 +39,8 @@ double Flight::getPrice() {
 
 std::string Flight::getItem() {
     std::string flightInformation = "Airline: " + this->airline + "\n"
-    + "Departure Time: " + std::to_string(this->departureTime) + "\n" 
-    + "Arrival Time: " + std::to_string(this->arrivalTime) + "\n" 
+    + "Departure Time: " + formatTime(this->departureTime) + "\n" 
+    + "Arrival Time: " + formatTime(this->arrivalTime) + "\n" 
     + "Origin: " + this->origin + "\n"
     + "Destination: " + this->destination + "\n"
     + "Price: $" + std::to_string(this->price) + "\n";
