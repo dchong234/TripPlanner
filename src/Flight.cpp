@@ -3,8 +3,8 @@
 #include <iostream>
 #include <fstream>
 
-Flight::Flight(std::string airline, int departureTime, int arrivalTime,
-std::string origin, std::string destination, double price) {
+Flight::Flight(std::string id, std::string airline, int departureTime, int arrivalTime,
+std::string origin, std::string destination, double price) : TripItem(id, FLIGHT) {
     this->airline = airline;
     this->departureTime = departureTime;
     this->arrivalTime = arrivalTime;
@@ -51,6 +51,6 @@ std::string Flight::getItem() {
 void Flight::extractFlight(std::ofstream& outFS)
 {
     outFS << "flight/";
-    outFS << airline << "/" << departureTime << "/" << arrivalTime << "/"
+    outFS << id << "/" << airline << "/" << departureTime << "/" << arrivalTime << "/"
           << origin << "/" << destination << "/" << price << "/" << std::endl;
 }

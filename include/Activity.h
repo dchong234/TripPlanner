@@ -12,7 +12,7 @@ class Activity : public TripItem {
         double time;
         double price;
     public:
-        Activity(std::string, double, double);
+        Activity(std::string, std::string, double, double);
         std::string getItem();
         double getTime();
         std::string getName();

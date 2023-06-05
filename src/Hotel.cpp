@@ -3,7 +3,7 @@
 #include <fstream>
 #include <iostream>
 
-Hotel::Hotel(std::string name, std::string location, double price, int rating, double time){
+Hotel::Hotel(std::string id, std::string name, std::string location, double price, int rating, double time) : TripItem(id, HOTEL) {
     this->name = name;
     this->location = location;
     this->price = price;
@@ -43,5 +43,5 @@ std::string Hotel::getItem(){
 
 void Hotel::extractHotel(std::ofstream& outFS) {
     outFS << "hotel ";
-    outFS << name << "/" << location << "/" << price << "/" << rating << "/" << time << "/" << std::endl;
+    outFS << id << "/" << name << "/" << location << "/" << price << "/" << rating << "/" << time << "/" << std::endl;
 }

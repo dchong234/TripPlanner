@@ -138,7 +138,7 @@ int main()
           else if (input == "No" || input == "no") {
             cout << "Please select a flight number" << endl;
             input = takeInput();
-            tripHandler.addFlight(static_cast<Flight*>(dummyData.flights.at(std::stoi(input)-1)));
+            tripHandler.addTripItem(dummyData.flights.at(std::stoi(input)-1));
             break;
           }
         }
@@ -155,7 +155,7 @@ int main()
           else if (input == "No" || input == "no") {
             cout << "Please select an activity number" << endl;
             input = takeInput();
-            tripHandler.addActivity(static_cast<Activity*>(dummyData.activities.at(std::stoi(input)-1)));
+            tripHandler.addTripItem(dummyData.activities.at(std::stoi(input)-1));
             break;
           }
         }
@@ -172,7 +172,7 @@ int main()
           else if (input == "No" || input == "no") {
             cout << "Please select a hotel number" << endl;
             input = takeInput();
-            tripHandler.addHotel(static_cast<Hotel*>(dummyData.hotels.at(std::stoi(input)-1)));
+            tripHandler.addTripItem(dummyData.hotels.at(std::stoi(input)-1));
             break;
           }
         }

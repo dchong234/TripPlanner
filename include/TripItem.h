@@ -2,10 +2,17 @@
 #define TRIPITEM_H
 #include <string>
 
-class TripItem{
+enum ItemType {ACTIVITY, FLIGHT, HOTEL};
 
-public:
-  virtual std::string getItem() = 0;
+class TripItem{
+  protected:
+    std::string id;
+    ItemType type;
+  public:
+    TripItem(std::string id, ItemType type) : id(id), type(type) {}
+    ItemType getItemType() { return type; }
+    std::string getID() { return id; }
+    virtual std::string getItem() = 0;
 };
 
 

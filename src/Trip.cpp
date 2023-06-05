@@ -4,50 +4,27 @@
 
 Trip::Trip() {
     this->name = "";
-    this->flights = new std::vector<Flight*>();
-    this->hotels = new std::vector<Hotel*>();
-    this->activities = new std::vector<Activity*>();
+    this->tripItems = new std::vector<TripItem*>();
 }
 
 Trip::Trip(std::string name){
     this->name = name;
-    this->flights = new std::vector<Flight*>();
-    this->hotels = new std::vector<Hotel*>();
-    this->activities = new std::vector<Activity*>();
+    this->tripItems = new std::vector<TripItem*>();
 }
 
 Trip::~Trip() {
-    for (Flight* flight : *flights) {
-        delete flight;
+    for (TripItem* item : *tripItems) {
+        delete item;
     }
-    delete flights;
-    flights = nullptr;
 
-    for (Hotel* hotel : *hotels) {
-        delete hotel;
-    }
-    delete hotels;
-    hotels = nullptr;
-
-    for (Activity* activity : *activities) {
-        delete activity;
-    }
-    delete activities;
-    activities = nullptr;
+    delete tripItems;
+    tripItems = nullptr;
 }
 
 std::string Trip::getTripName(){
     return this->name;
 }
 
-std::vector<Flight*> * Trip::getFlights() {
-    return this->flights;
-};
-
-std::vector<Hotel*> * Trip::getHotels() {
-    return this->hotels;
-};
-
-std::vector<Activity*> * Trip::getActivities() {
-    return this->activities;
-};
+std::vector<TripItem*> * Trip::getTripItems() {
+    return this->tripItems;
+}

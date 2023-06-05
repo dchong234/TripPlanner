@@ -7,25 +7,21 @@
 #include "../include/Flight.h"
 #include "../include/Hotel.h"
 #include "../include/Activity.h"
+#include "../include/TripItem.h"
 
 class Trip {
     private:
         std::string name;
-        std::vector<Flight*> * flights;
-        std::vector<Hotel*> * hotels;
-        std::vector<Activity*> * activities;
+        std::vector<TripItem*> * tripItems;
     public: 
         Trip();
         Trip(std::string);
         ~Trip();
         std::string getTripName();
-        std::vector<Flight*> * getFlights();
-        std::vector<Hotel*> * getHotels();
-        std::vector<Activity*> * getActivities();
+        std::vector<TripItem*> * getTripItems();
         friend std::ostream& operator<<(std::ostream& os, const Trip& trip) {
             os << "Trip Name operator: " << trip.name << std::endl;
             return os;
         }
-
 };
 #endif
