@@ -64,24 +64,27 @@ int main()
   AccountHandler accountHandler;
   User user;
 
+  Trip* currTrip = nullptr;
+  TripHandler tripHandler;
+
   string input;
   bool validInput = false;
 
   menu.viewLogin();
   input = takeInput();
   
-  while(!validInput)
+  while(true)
   {
     try {
       if(input == "1")
       {
         user = accountHandler.login();
-        validInput = true;
+        break;
       }
       else if(input == "2")
       {
         accountHandler.createAccount();
-        validInput = true;
+        break;
       }
       else
       {
@@ -93,31 +96,37 @@ int main()
     }
   }
 
-  menu.viewOptions();
-  validInput = false;
+  cout << endl;
 
-  input = "";
-
-  while(!validInput)
+  while(true)
   {
+    menu.viewOptions();
+    input = "";
+    input = takeInput();
+
     if(input == "1")
     {
       menu.viewTrip();
       input = takeInput();
-      validInput = true;
     }
     else if(input == "2")
     {
       menu.viewSchedule();
       input = takeInput();
-      validInput = true;
     }
+
     else if(input == "3")
     {
+      cout << "Name your new trip:" << endl;
+      cin >> input;
+      cout << endl;
+
+      currTrip = new Trip(input);
+      tripHandler.setTrip(currTrip);
+
       menu.viewBookingMenu();
       input = takeInput();
-      validInput = true;
-      unsigned i;
+
       if (input == "1") {
         for(unsigned i = 0; i < 3; i++){
           printPage("flight", i+1);
@@ -127,12 +136,15 @@ int main()
             continue;
           }
           else if (input == "No" || input == "no") {
+            cout << "Please select a flight number" << endl;
+            input = takeInput();
+            tripHandler.addFlight(static_cast<Flight*>(dummyData.flights.at(std::stoi(input)-1)));
             break;
           }
         }
       }
 
-      if (input == "2") {
+      else if (input == "2") {
         for(unsigned i = 0; i < 3; i++){
           printPage("activity", i+1);
           cout << "Show more activities? Yes or No" << endl;
@@ -141,12 +153,15 @@ int main()
             continue;
           }
           else if (input == "No" || input == "no") {
+            cout << "Please select an activity number" << endl;
+            input = takeInput();
+            tripHandler.addActivity(static_cast<Activity*>(dummyData.activities.at(std::stoi(input)-1)));
             break;
           }
         }
       }
 
-      if (input == "3") {
+      else if (input == "3") {
         for(unsigned i = 0; i < 3; i++){
           printPage("hotel", i+1);
           cout << "Show more hotels? Yes or No" << endl;
@@ -155,9 +170,13 @@ int main()
             continue;
           }
           else if (input == "No" || input == "no") {
+            cout << "Please select a hotel number" << endl;
+            input = takeInput();
+            tripHandler.addHotel(static_cast<Hotel*>(dummyData.hotels.at(std::stoi(input)-1)));
             break;
           }
         }
+      }
     }
 
     else if(input == "4")
@@ -169,6 +188,5 @@ int main()
       input = takeInput();
     }
   }
-
   return 0;
 }
