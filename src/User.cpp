@@ -43,15 +43,15 @@ void User::importTrips() {
         }
 
         if (str == "\nactivity") {
-            tripHandler.addActivity(parseActivity(inFS));
+            tripHandler.addTripItem(parseActivity(inFS));
         }
 
         if (str == "\nflight") {
-            tripHandler.addFlight(parseFlight(inFS));
+            tripHandler.addTripItem(parseFlight(inFS));
         }
 
         if (str == "\nhotel") {
-            tripHandler.addHotel(parseHotel(inFS));
+            tripHandler.addTripItem(parseHotel(inFS));
         }
 
         if (inFS.eof() == true) {
@@ -69,14 +69,14 @@ std::string User::readString(std::ifstream& file) {
 }
 
 Activity* User::parseActivity(std::ifstream& file) {
-    return new Activity(readString(file), std::stod(readString(file)), std::stod(readString(file)));
+    return new Activity(readString(file), readString(file), std::stod(readString(file)), std::stod(readString(file)));
 }
 
 Flight* User::parseFlight(std::ifstream& file) {
-    return new Flight(readString(file), std::stoi(readString(file)), std::stoi(readString(file)), 
+    return new Flight(readString(file), readString(file), std::stoi(readString(file)), std::stoi(readString(file)), 
                       readString(file), readString(file), std::stod(readString(file)));
 }
 
 Hotel* User::parseHotel(std::ifstream& file) {
-    return new Hotel(readString(file), readString(file), std::stod(readString(file)), std::stoi(readString(file)), std::stod(readString(file)));
+    return new Hotel(readString(file), readString(file), readString(file), std::stod(readString(file)), std::stoi(readString(file)), std::stod(readString(file)));
 }

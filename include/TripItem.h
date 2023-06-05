@@ -6,10 +6,12 @@ enum ItemType {ACTIVITY, FLIGHT, HOTEL};
 
 class TripItem{
   protected:
+    std::string id;
     ItemType type;
   public:
-    TripItem(ItemType type) : type(type) {}
+    TripItem(std::string id, ItemType type) : id(id), type(type) {}
     ItemType getItemType() { return type; }
+    std::string getID() { return id; }
     virtual std::string getItem() = 0;
 };
 

@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 
-Activity::Activity(std::string name, double time, double price) : TripItem(ACTIVITY)
+Activity::Activity(std::string id, std::string name, double time, double price) : TripItem(id, ACTIVITY)
 {
   this->name = name;
   this->time = time;
@@ -36,5 +36,5 @@ double Activity::getPrice()
 void Activity::extractActivity(std::ofstream& outFS)
 {
   outFS << "activity/";
-  outFS << name << "/" << time << "/" << price << "/" << std::endl;
+  outFS << id << "/" << name << "/" << time << "/" << price << "/" << std::endl;
 }
