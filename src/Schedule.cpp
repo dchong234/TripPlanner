@@ -53,39 +53,6 @@ void Schedule::getSchedule(){
       }
     }
 
-    // for (auto x :  *(this->trip->getFlights())) {
-      // if (x->getDepartureTime() == time) {
-      //   std::cout << time << " " << x->getAirline() << std::endl;
-      //   time += 30;
-      //   if (((time % 100) / 10) > 5) {
-      //     time += 40;
-      //   }
-      //   continue;
-      // }
-    // }
-
-    // for (auto x : *(this->trip->getHotels())) {
-    //   if (x->getHotelTime() == time) {
-    //     std::cout << time << " " << x->getName() << std::endl;
-    //     time += 30;
-    //     if (((time % 100) / 10) > 5) {
-    //       time += 40;
-    //     }
-    //     continue;
-    //   }
-    // }
-
-    // for (auto x : *(this->trip->getActivities())) {
-    //   if (x->getTime() == time) {
-    //     std::cout << time << " " << x->getName() << std::endl;
-    //     time += 30;
-    //     if (((time % 100) / 10) > 5) {
-    //       time += 40;
-    //     }
-    //     continue;
-    //   }
-    // }
-
     std::cout << time << std::endl;
     time += 30;
 

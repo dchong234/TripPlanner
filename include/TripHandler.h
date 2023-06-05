@@ -14,11 +14,6 @@ class TripHandler {
     private:
         Trip* trip;
 
-        // helper functions
-        // std::vector<Flight*>::iterator getFlightPosition(Flight*);
-        // std::vector<Hotel*>::iterator getHotelPosition(Hotel*);
-        // std::vector<Activity*>::iterator getActivityPosition(Activity*);
-
         std::vector<TripItem*>::iterator getItemPosition(TripItem*);
 
         std::string readString(std::ifstream& file);
@@ -33,13 +28,6 @@ class TripHandler {
         
         void addTripItem(TripItem* item);
         void removeTripItem(TripItem* item);
-
-        // void addActivity(Activity* activity);
-        // void removeActivity(Activity* activity);
-        // void addHotel(Hotel* hotel);
-        // void removeHotel(Hotel* hotel);
-        // void addFlight(Flight* flight);
-        // void removeFlight(Flight* flight);
 
         void setTrip(Trip*);
         void extractTrip(User&);
