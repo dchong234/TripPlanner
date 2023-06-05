@@ -4,7 +4,7 @@
 #include <fstream>
 #include "TripItem.h"
 
-class Hotel: TripItem {
+class Hotel : public TripItem {
     private:
         std::string name;
         std::string location;

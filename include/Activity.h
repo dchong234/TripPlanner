@@ -6,7 +6,7 @@
 #include <string>
 #include <fstream>
 
-class Activity : TripItem {
+class Activity : public TripItem {
     private:
         std::string name;
         double time;

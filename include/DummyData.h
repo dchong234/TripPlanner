@@ -9,9 +9,9 @@
 
 class DummyData {
     public:
-        std::vector<Flight*> flights;
-        std::vector<Hotel*> hotels;
-        std::vector<Activity*> activities;
+        std::vector<TripItem*> flights;
+        std::vector<TripItem*> hotels;
+        std::vector<TripItem*> activities;
         DummyData();
         ~DummyData();
 };
