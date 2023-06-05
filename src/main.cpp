@@ -28,6 +28,15 @@ void printPage(string type, int page){
   unsigned i = 0;
   unsigned upperLimit = i;
   string input = "";
+  if(type == "flight"){
+    std::vector<Flight*> dummyVector = dummyData.flights;
+  }
+  else if(type == "hotel"){
+    std::vector<Hotel*> dummyVector = dummyData.hotels;
+  }
+  else{
+    std::vector<Activity*> dummyVector = dummyData.activities;
+  }
 
   if (page == 2) {
     i = 5;
@@ -38,7 +47,7 @@ void printPage(string type, int page){
   upperLimit = i + 5;
 
   for (i; i < upperLimit; ++i) {
-    cout << i + 1 << ". " << dummyData.flights.at(i)->getFlight();
+    cout << i + 1 << ". " << dummyVector.at(i)->getFlight();
     cout << endl;
     }
   cout << endl;
