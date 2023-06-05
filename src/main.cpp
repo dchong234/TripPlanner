@@ -119,65 +119,47 @@ int main()
       validInput = true;
       unsigned i;
       if (input == "1") {
-        printPage("flight", 1);
-        cout << "Show more flights? Yes or No" << endl;
-        input = takeInput();
-        if (input == "Yes" || input == "yes") {
-          printPage("flight", 2);
-        }
-        else if (input == "No" || input == "no") {
-          break;
-        }
-        cout << "Show more flights? Yes or No" << endl;
-        input = takeInput();
-        if (input == "Yes" || input == "yes") {
-          printPage("flight", 3);
-        }
-        else if (input == "No" || input == "no") {
-          break;
+        for(unsigned i = 0; i < 3; i++){
+          printPage("flight", i+1);
+          cout << "Show more flights? Yes or No" << endl;
+          input = takeInput();
+          if (input == "Yes" || input == "yes") {
+            continue;
+          }
+          else if (input == "No" || input == "no") {
+            break;
+          }
         }
       }
 
       if (input == "2") {
-        printPage("activity", 1);
-        cout << "Show more activities? Yes or No" << endl;
-        input = takeInput();
-        if (input == "Yes" || input == "yes") {
-          printPage("activity", 2);
-        }
-        else if (input == "No" || input == "no") {
-          break;
-        }
-        cout << "Show more activities? Yes or No" << endl;
-        input = takeInput();
-        if (input == "Yes" || input == "yes") {
-          printPage("activity", 3);
-        }
-        else if (input == "No" || input == "no") {
-          break;
+        for(unsigned i = 0; i < 3; i++){
+          printPage("activity", i+1);
+          cout << "Show more activities? Yes or No" << endl;
+          input = takeInput();
+          if (input == "Yes" || input == "yes") {
+            continue;
+          }
+          else if (input == "No" || input == "no") {
+            break;
+          }
         }
       }
 
       if (input == "3") {
-        printPage("hotel", 1);
-        cout << "Show more hotels? Yes or No" << endl;
-        input = takeInput();
-        if (input == "Yes" || input == "yes") {
-          printPage("activity", 2);
+        for(unsigned i = 0; i < 3; i++){
+          printPage("hotel", i+1);
+          cout << "Show more hotels? Yes or No" << endl;
+          input = takeInput();
+          if (input == "Yes" || input == "yes") {
+            continue;
+          }
+          else if (input == "No" || input == "no") {
+            break;
+          }
         }
-        else if (input == "No" || input == "no") {
-          break;
-        }
-        cout << "Show more hotels? Yes or No" << endl;
-        input = takeInput();
-        if (input == "Yes" || input == "yes") {
-          printPage("activity", 3);
-        }
-        else if (input == "No" || input == "no") {
-          break;
-        }
-      }
     }
+
     else if(input == "4")
     {
       return 0;
