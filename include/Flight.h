@@ -4,7 +4,7 @@
 #include <string>
 #include <fstream>
 
-class Flight : TripItem {
+class Flight : public TripItem {
     private:
         std::string airline;
         int departureTime;
