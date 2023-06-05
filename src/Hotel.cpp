@@ -31,7 +31,7 @@ double Hotel::getHotelTime(){
     return this->time;
 }
 
-std::string Hotel::getHotel(){
+std::string Hotel::getItem(){
     std::string hotelInfo = "Hotel Name: " + this->name + "\n";
     hotelInfo += "Location: " + this->location + "\n";
     hotelInfo += "Price: $" + std::to_string(this->price) + "\n";

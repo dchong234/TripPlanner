@@ -2,8 +2,9 @@
 #define HOTEL_H
 #include <string>
 #include <fstream>
+#include "TripItem.h"
 
-class Hotel {
+class Hotel: TripItem {
     private:
         std::string name;
         std::string location;
@@ -16,7 +17,7 @@ class Hotel {
         std::string getLocation();
         double getPrice();
         int getRating();
-        std::string getHotel();
+        std::string getItem();
         double getHotelTime();
         void extractHotel(std::ofstream&);
 };

@@ -1,16 +1,19 @@
 #ifndef ACTIVITY_H
 #define ACTIVITY_H
+
+#include "TripItem.h"
+
 #include <string>
 #include <fstream>
 
-class Activity {
+class Activity : TripItem {
     private:
         std::string name;
         double time;
         double price;
     public:
         Activity(std::string, double, double);
-        std::string getActivity();
+        std::string getItem();
         double getTime();
         std::string getName();
         double getPrice();

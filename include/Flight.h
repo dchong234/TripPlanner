@@ -1,9 +1,10 @@
 #ifndef FLIGHT_H
 #define FLIGHT_H
+#include "TripItem.h"
 #include <string>
 #include <fstream>
 
-class Flight {
+class Flight : TripItem {
     private:
         std::string airline;
         int departureTime;
@@ -20,7 +21,7 @@ class Flight {
         std::string getOrigin();
         std::string getDestination();
         double getPrice();
-        std::string getFlight();
+        std::string getItem();
         void extractFlight(std::ofstream&);
 };
 

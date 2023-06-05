@@ -14,6 +14,8 @@ using std::endl;
 using std::cin;
 using std::string;
 
+DummyData dummyData;
+
 string takeInput()
 {
   string input;
@@ -22,12 +24,42 @@ string takeInput()
   return input;
 }
 
+void printPage(string type, int page){
+  unsigned i = 0;
+  unsigned upperLimit = i;
+  string input = "";
+  // if(type == "flight"){
+  //   std::vector<Flight*> dummyVector = dummyData.flights;
+  // }
+  // else if(type == "hotel"){
+  //   std::vector<Hotel*> dummyVector = dummyData.hotels;
+  // }
+  // else{
+  //   std::vector<Activity*> dummyVector = dummyData.activities;
+  // }
+
+  if (page == 2) {
+    i = 5;
+  } else if (page == 3) {
+    i = 10;
+  }
+
+  upperLimit = i + 5;
+
+  for (i; i < upperLimit; ++i) {
+    cout << i + 1 << ". " << dummyData.flights.at(i)->getItem();
+    cout << endl;
+    }
+  cout << endl;
+  cout << "PAGE " << page << " OF 3" << endl;
+  cout << endl;
+}
+
 int main()
 {
   MainMenu menu;
   AccountHandler accountHandler;
   User user;
-  DummyData dummyData;
 
   string input;
   bool validInput = false;
@@ -84,23 +116,11 @@ int main()
       validInput = true;
       unsigned i;
       if (input == "1") {
-        for (i = 0; i < 5; ++i) {
-          cout << i + 1 << ". " << dummyData.flights.at(i)->getFlight();
-          cout << "\n";
-        }
-        cout << "\n";
-        cout << "PAGE 1 OF 3" << endl;
-        cout << "\n";
+        printPage("flight", 1);
         cout << "Show more flights? Yes or No" << endl;
         input = takeInput();
         if (input == "Yes" || input == "yes") {
-          for (i = 5; i < 10; ++i) {
-            cout << i + 1 << ". " << dummyData.flights.at(i)->getFlight();
-            cout << "\n";
-          }
-          cout << "\n";
-          cout << "PAGE 2 OF 3" << endl;
-          cout << "\n";
+          printPage("flight", 2);
         }
         else if (input == "No" || input == "no") {
           break;
@@ -108,13 +128,7 @@ int main()
         cout << "Show more flights? Yes or No" << endl;
         input = takeInput();
         if (input == "Yes" || input == "yes") {
-          for (i = 10; i < 15; ++i) {
-            cout << i + 1 << ". " << dummyData.flights.at(i)->getFlight();
-            cout << "\n";
-          }
-          cout << "\n";
-          cout << "PAGE 3 OF 3" << endl;
-          cout << "\n";
+          printPage("flight", 3);
         }
         else if (input == "No" || input == "no") {
           break;
@@ -123,7 +137,7 @@ int main()
 
       if (input == "2") {
         for (i = 0; i < 5; ++i) {
-          cout << i + 1 << ". " << dummyData.activities.at(i)->getActivity();
+          cout << i + 1 << ". " << dummyData.activities.at(i)->getItem();
           cout << "\n";
         }
         cout << "\n";
@@ -133,7 +147,7 @@ int main()
         input = takeInput();
         if (input == "Yes" || input == "yes") {
           for (i = 5; i < 10; ++i) {
-            cout << i + 1 << ". " << dummyData.activities.at(i)->getActivity();
+            cout << i + 1 << ". " << dummyData.activities.at(i)->getItem();
             cout << "\n";
           }
           cout << "\n";
@@ -147,7 +161,7 @@ int main()
         input = takeInput();
         if (input == "Yes" || input == "yes") {
           for (i = 10; i < 15; ++i) {
-            cout << i + 1 << ". " << dummyData.activities.at(i)->getActivity();
+            cout << i + 1 << ". " << dummyData.activities.at(i)->getItem();
             cout << "\n";
           }
           cout << "\n";
@@ -161,7 +175,7 @@ int main()
 
       if (input == "3") {
         for (i = 0; i < 5; ++i) {
-          cout << i + 1 << ". " << dummyData.hotels.at(i)->getHotel();
+          cout << i + 1 << ". " << dummyData.hotels.at(i)->getItem();
           cout << "\n";
         }
         cout << "\n";
@@ -171,7 +185,7 @@ int main()
         input = takeInput();
         if (input == "Yes" || input == "yes") {
           for (i = 5; i < 10; ++i) {
-            cout << i + 1 << ". " << dummyData.hotels.at(i)->getHotel();
+            cout << i + 1 << ". " << dummyData.hotels.at(i)->getItem();
             cout << "\n";
           }
           cout << "\n";
@@ -185,7 +199,7 @@ int main()
         input = takeInput();
         if (input == "Yes" || input == "yes") {
           for (i = 10; i < 15; ++i) {
-            cout << i + 1 << ". " << dummyData.hotels.at(i)->getHotel();
+            cout << i + 1 << ". " << dummyData.hotels.at(i)->getItem();
             cout << "\n";
           }
           cout << "\n";
