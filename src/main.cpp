@@ -2,12 +2,15 @@
 #include <stdexcept>
 #include <limits>
 #include <string>
+#include <vector>
+
 #include "../include/MainMenu.h"
 #include "../include/AccountHandler.h"
 #include "../include/Trip.h"
 #include "../include/TripHandler.h"
 #include "../include/Schedule.h"
 #include "../include/DummyData.h"
+#include "../include/TripItem.h"
 
 using std::cout;
 using std::endl;
@@ -28,15 +31,15 @@ void printPage(string type, int page){
   unsigned i = 0;
   unsigned upperLimit = i;
   string input = "";
-  // if(type == "flight"){
-  //   std::vector<Flight*> dummyVector = dummyData.flights;
-  // }
-  // else if(type == "hotel"){
-  //   std::vector<Hotel*> dummyVector = dummyData.hotels;
-  // }
-  // else{
-  //   std::vector<Activity*> dummyVector = dummyData.activities;
-  // }
+  std::vector<TripItem*> dummyItems;
+
+  if (type == "flight") {
+    dummyItems = dummyData.flights;
+  } else if (type == "activity") {
+    dummyItems = dummyData.activities;
+  } else if (type == "hotel") {
+    dummyItems = dummyData.hotels;
+  }
 
   if (page == 2) {
     i = 5;
@@ -47,7 +50,7 @@ void printPage(string type, int page){
   upperLimit = i + 5;
 
   for (i; i < upperLimit; ++i) {
-    cout << i + 1 << ". " << dummyData.flights.at(i)->getItem();
+    cout << i + 1 << ". " << dummyItems.at(i)->getItem();
     cout << endl;
     }
   cout << endl;
