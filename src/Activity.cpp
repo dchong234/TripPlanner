@@ -9,7 +9,7 @@ Activity::Activity(std::string name, double time, double price)
   this->price = price;
 }
 
-std::string Activity::getActivity()
+std::string Activity::getItem()
 {
   std::string activityInfo = "Activity Name: " + name + "\n";
   activityInfo += "Time: " + std::to_string(time) + "\n";

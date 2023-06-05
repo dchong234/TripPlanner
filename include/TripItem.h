@@ -1,14 +1,11 @@
 #ifndef TRIPITEM_H
 #define TRIPITEM_H
+#include <string>
 
 class TripItem{
 
-private:
-
-
 public:
-  virtual void printItem() = 0;
-
+  virtual std::string getItem() = 0;
 
 }
 
