@@ -18,7 +18,7 @@ std::string Activity::getItem()
   return activityInfo;
 }
 
-double Activity::getTime()
+int Activity::getTime()
 {
   return this->time;
 }
