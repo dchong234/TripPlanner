@@ -9,12 +9,12 @@
 class Activity : public TripItem {
     private:
         std::string name;
-        double time;
+        int time;
         double price;
     public:
-        Activity(std::string, std::string, double, double);
+        Activity(std::string, std::string, int, double);
         std::string getItem();
-        double getTime();
+        int getTime();
         std::string getName();
         double getPrice();
         void extractActivity(std::ofstream&);

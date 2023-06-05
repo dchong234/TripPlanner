@@ -69,7 +69,7 @@ std::string User::readString(std::ifstream& file) {
 }
 
 Activity* User::parseActivity(std::ifstream& file) {
-    return new Activity(readString(file), readString(file), std::stod(readString(file)), std::stod(readString(file)));
+    return new Activity(readString(file), readString(file), std::stoi(readString(file)), std::stod(readString(file)));
 }
 
 Flight* User::parseFlight(std::ifstream& file) {
