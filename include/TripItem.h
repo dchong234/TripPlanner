@@ -7,7 +7,7 @@ class TripItem{
 public:
   virtual std::string getItem() = 0;
 
-}
+};
 
 
-#endif TRIPITEM_H
+#endif
