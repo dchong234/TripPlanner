@@ -6,7 +6,6 @@ class TripItem{
 
 public:
   virtual std::string getItem() = 0;
-
 };
 
 
