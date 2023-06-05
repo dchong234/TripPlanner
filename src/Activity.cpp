@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 
-Activity::Activity(std::string name, double time, double price)
+Activity::Activity(std::string name, double time, double price) : TripItem(ACTIVITY)
 {
   this->name = name;
   this->time = time;

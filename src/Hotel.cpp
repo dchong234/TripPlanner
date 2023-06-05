@@ -3,7 +3,7 @@
 #include <fstream>
 #include <iostream>
 
-Hotel::Hotel(std::string name, std::string location, double price, int rating, double time){
+Hotel::Hotel(std::string name, std::string location, double price, int rating, double time) : TripItem(HOTEL) {
     this->name = name;
     this->location = location;
     this->price = price;

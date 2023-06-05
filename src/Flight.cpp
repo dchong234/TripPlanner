@@ -4,7 +4,7 @@
 #include <fstream>
 
 Flight::Flight(std::string airline, int departureTime, int arrivalTime,
-std::string origin, std::string destination, double price) {
+std::string origin, std::string destination, double price) : TripItem(FLIGHT) {
     this->airline = airline;
     this->departureTime = departureTime;
     this->arrivalTime = arrivalTime;
