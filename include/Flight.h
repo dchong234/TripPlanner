@@ -7,8 +7,6 @@
 class Flight : public TripItem {
     private:
         std::string airline;
-        int departureTime;
-        int arrivalTime;
         std::string origin;
         std::string destination;
         double price;
@@ -16,8 +14,6 @@ class Flight : public TripItem {
         Flight(std::string id, std::string airline, int departureTime, int arrivalTime,
         std::string origin, std::string desination, double price);
         std::string getAirline();
-        int getDepartureTime();
-        int getArrivalTime();
         std::string getOrigin();
         std::string getDestination();
         double getPrice();

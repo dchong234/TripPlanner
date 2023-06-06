@@ -2,30 +2,18 @@
 #include <string>
 #include <iostream>
 
-Activity::Activity(std::string id, std::string name, int time, double price) : TripItem(id, ACTIVITY)
+Activity::Activity(std::string id, std::string name, int time, double price) : TripItem(id, ACTIVITY, time, 0, name)
 {
-  this->name = name;
-  this->time = time;
   this->price = price;
 }
 
 std::string Activity::getItem()
 {
   std::string activityInfo = "Activity Name: " + name + "\n";
-  activityInfo += "Time: " + formatTime(time) + "\n";
+  activityInfo += "Time: " + formatTime(startTime) + "\n";
   activityInfo += "Price: $" + std::to_string(price) + "\n";
 
   return activityInfo;
-}
-
-int Activity::getTime()
-{
-  return this->time;
-}
-
-std::string Activity::getName()
-{
-  return this->name;
 }
 
 double Activity::getPrice()

@@ -3,16 +3,10 @@
 #include <fstream>
 #include <iostream>
 
-Hotel::Hotel(std::string id, std::string name, std::string location, double price, int rating, double time) : TripItem(id, HOTEL) {
-    this->name = name;
+Hotel::Hotel(std::string id, std::string name, std::string location, double price, int rating, int time) : TripItem(id, HOTEL, time, 0, name) {
     this->location = location;
     this->price = price;
     this->rating = rating;
-    this->time = time;
-}
-
-std::string Hotel::getName(){
-    return this->name;
 }
 
 std::string Hotel::getLocation(){
@@ -27,21 +21,17 @@ int Hotel::getRating(){
     return this->rating;
 }
 
-double Hotel::getHotelTime(){
-    return this->time;
-}
-
 std::string Hotel::getItem(){
     std::string hotelInfo = "Hotel Name: " + this->name + "\n";
     hotelInfo += "Location: " + this->location + "\n";
     hotelInfo += "Price: $" + std::to_string(this->price) + "\n";
     hotelInfo += "Rating: " + std::to_string(this->rating) + " stars\n";
-    hotelInfo += "Check-in Time: " + formatTime(this->time) + "\n";
+    hotelInfo += "Check-in Time: " + formatTime(this->startTime) + "\n";
     
     return hotelInfo;
 }
 
 void Hotel::extractHotel(std::ofstream& outFS) {
     outFS << "hotel ";
-    outFS << id << "/" << name << "/" << location << "/" << price << "/" << rating << "/" << time << "/" << std::endl;
+    outFS << id << "/" << name << "/" << location << "/" << price << "/" << rating << "/" << startTime << "/" << std::endl;
 }

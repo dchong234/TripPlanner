@@ -10,9 +10,8 @@ class Hotel : public TripItem {
         std::string location;
         double price;
         int rating;
-        double time;
     public:
-        Hotel(std::string, std::string, std::string, double, int, double);
+        Hotel(std::string, std::string, std::string, double, int, int);
         std::string getName();
         std::string getLocation();
         double getPrice();
