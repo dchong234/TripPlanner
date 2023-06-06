@@ -11,6 +11,10 @@ User::~User() {
     }
 }
 
+std::vector<Trip*> User::getTripStorage() {
+    return this->tripStorage;
+}
+
 void User::importTrips() {
     std::string filename = "data/" + this->getUsername() + "Trips.dat";
 

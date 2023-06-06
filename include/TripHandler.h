@@ -28,6 +28,7 @@ class TripHandler {
         
         void addTripItem(TripItem* item);
         void removeTripItem(TripItem* item);
+        void removeTripItemByIndex(int idx);
 
         void setTrip(Trip*);
         void extractTrip(User&);

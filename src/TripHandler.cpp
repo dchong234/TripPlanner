@@ -34,6 +34,10 @@ void TripHandler::removeTripItem(TripItem* item) {
     trip->getTripItems()->erase(it);
 }
 
+void TripHandler::removeTripItemByIndex(int idx) {
+    trip->getTripItems()->erase(trip->getTripItems()->begin() + idx);
+}
+
 void TripHandler::extractTrip(User& user) {
     std::string filename = "data/" + user.getUsername() + "Trips.dat";
 

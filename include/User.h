@@ -13,7 +13,6 @@ class User {
     private:
         std::string username;
         std::string password;
-    public:
         std::vector<Trip*> tripStorage;
     public:
         User() : username(""), password("") {}
@@ -28,6 +27,8 @@ class User {
         }
         void importTrips();
         std::string readString(std::ifstream&);
+        std::vector<Trip*> getTripStorage();
+
         Activity* parseActivity(std::ifstream&);
         Flight* parseFlight(std::ifstream&);
         Hotel* parseHotel(std::ifstream&);

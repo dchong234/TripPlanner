@@ -71,12 +71,55 @@ int main()
     if(input == "1")
     {
       menu.viewTrip(user);
+      input = takeInput();
 
+      user.getTripStorage().at(std::stoi(input)-1)->printTripItemsList();
+      tripHandler.setTrip(user.getTripStorage().at(std::stoi(input)-1));
+
+      cout << "Would you like to add or remove an item from this trip?" << endl;
+      cout << "1. Add" << endl;
+      cout << "2. Remove" << endl;
+      cout << "3. None" << endl;
+
+      input = takeInput();
+
+      while (true) {
+        if (input == "1") {
+          // TODO: Refactor into its own function in main menu
+          while (true) {
+            menu.viewBookingMenu();
+            input = takeInput();
+
+            if (input == "1") {
+              menu.printSelectionPage("flight", tripHandler);
+            }
+
+            else if (input == "2") {
+              menu.printSelectionPage("activity", tripHandler);
+            }
+
+            else if (input == "3") {
+              menu.printSelectionPage("hotel", tripHandler);
+            } 
+            else if (input == "4") {
+              break;
+            }
+          }
+        } else if (input == "2") {
+          cout << "Select which item you would like to remove" << endl;
+          input = takeInput();
+          tripHandler.removeTripItemByIndex(std::stoi(input)-1);
+        } else if (input == "3") {
+          break;
+        } else {
+          input = takeInput();
+        }
+      }
     }
     else if(input == "2") {
       menu.viewSchedule(user);
       input = takeInput();
-      schedule.setTrip(user.tripStorage.at(std::stoi(input)-1));
+      schedule.setTrip(user.getTripStorage().at(std::stoi(input)-1));
 
       schedule.getSchedule();
     }
@@ -87,7 +130,7 @@ int main()
       cout << endl;
 
       currTrip = new Trip(input);
-      user.tripStorage.push_back(currTrip);
+      user.getTripStorage().push_back(currTrip);
       tripHandler.setTrip(currTrip);
 
       while (true) {
