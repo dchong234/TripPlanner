@@ -6,15 +6,23 @@
 
 enum ItemType {ACTIVITY, FLIGHT, HOTEL};
 
-class TripItem{
+class TripItem {
   protected:
     std::string id;
     ItemType type;
+    std::string name;
+    int startTime;
+    int endTime = 0;
   public:
-    TripItem(std::string id, ItemType type) : id(id), type(type) {}
+    TripItem(std::string id, ItemType type, int startTime, int endTime, std::string name) : id(id), type(type), startTime(startTime), endTime(endTime), name(name) {}
     ItemType getItemType() { return type; }
     std::string getID() { return id; }
+
+    int getStartTime() { return startTime; }
+    int getEndTime() { return endTime; }
+    std::string getName() { return name; }
     virtual std::string getItem() = 0;
+
     std::string formatTime(int time) const {
         int hours = time / 100;
         int minutes = time % 100;

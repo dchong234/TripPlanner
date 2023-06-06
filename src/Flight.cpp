@@ -4,25 +4,11 @@
 #include <fstream>
 
 Flight::Flight(std::string id, std::string airline, int departureTime, int arrivalTime,
-std::string origin, std::string destination, double price) : TripItem(id, FLIGHT) {
+std::string origin, std::string destination, double price) : TripItem(id, FLIGHT, departureTime, arrivalTime, name) {
     this->airline = airline;
-    this->departureTime = departureTime;
-    this->arrivalTime = arrivalTime;
     this->origin = origin;
     this->destination = destination;
     this->price = price;
-}
-
-std::string Flight::getAirline() {
-    return this->airline;
-}
-
-int Flight::getDepartureTime() {
-    return this->departureTime;
-}
-
-int Flight::getArrivalTime() {
-    return this->arrivalTime;
 }
 
 std::string Flight::getOrigin() {

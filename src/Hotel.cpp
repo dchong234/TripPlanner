@@ -3,16 +3,10 @@
 #include <fstream>
 #include <iostream>
 
-Hotel::Hotel(std::string id, std::string name, std::string location, double price, int rating, double time) : TripItem(id, HOTEL) {
-    this->name = name;
+Hotel::Hotel(std::string id, std::string name, std::string location, double price, int rating, int time) : TripItem(id, HOTEL, time, 0, name) {
     this->location = location;
     this->price = price;
     this->rating = rating;
-    this->time = time;
-}
-
-std::string Hotel::getName(){
-    return this->name;
 }
 
 std::string Hotel::getLocation(){
@@ -25,10 +19,6 @@ double Hotel::getPrice(){
 
 int Hotel::getRating(){
     return this->rating;
-}
-
-double Hotel::getHotelTime(){
-    return this->time;
 }
 
 std::string Hotel::getItem(){
