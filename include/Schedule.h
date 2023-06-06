@@ -4,6 +4,7 @@
 
 #include "Trip.h"
 #include <vector>
+#include <string>
 
 class Schedule {
     private:
@@ -18,6 +19,7 @@ class Schedule {
         void viewUpcomingTrip();
 
         void printStuff();
+        std::string formatTime(int) const;
 };
 
 #endif
