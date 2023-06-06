@@ -10,7 +10,7 @@ Activity::Activity(std::string id, std::string name, int time, double price) : T
 std::string Activity::getItem()
 {
   std::string activityInfo = "Activity Name: " + name + "\n";
-  activityInfo += "Time: " + formatTime(startTime) + "\n";
+  activityInfo += "Time: " + formatTime(time) + "\n";
   activityInfo += "Price: $" + std::to_string(price) + "\n";
 
   return activityInfo;

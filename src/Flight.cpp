@@ -4,7 +4,7 @@
 #include <fstream>
 
 Flight::Flight(std::string id, std::string airline, int departureTime, int arrivalTime,
-std::string origin, std::string destination, double price) : TripItem(id, FLIGHT, departureTime, arrivalTime, airline) {
+std::string origin, std::string destination, double price) : TripItem(id, FLIGHT, departureTime, arrivalTime, name) {
     this->airline = airline;
     this->origin = origin;
     this->destination = destination;
@@ -25,8 +25,8 @@ double Flight::getPrice() {
 
 std::string Flight::getItem() {
     std::string flightInformation = "Airline: " + this->airline + "\n"
-    + "Departure Time: " + formatTime(this->startTime) + "\n" 
-    + "Arrival Time: " + formatTime(this->endTime) + "\n" 
+    + "Departure Time: " + formatTime(this->departureTime) + "\n" 
+    + "Arrival Time: " + formatTime(this->arrivalTime) + "\n" 
     + "Origin: " + this->origin + "\n"
     + "Destination: " + this->destination + "\n"
     + "Price: $" + std::to_string(this->price) + "\n";
@@ -37,6 +37,6 @@ std::string Flight::getItem() {
 void Flight::extractFlight(std::ofstream& outFS)
 {
     outFS << "flight/";
-    outFS << id << "/" << airline << "/" << startTime << "/" << endTime << "/"
+    outFS << id << "/" << airline << "/" << departureTime << "/" << arrivalTime << "/"
           << origin << "/" << destination << "/" << price << "/" << std::endl;
 }

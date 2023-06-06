@@ -34,7 +34,7 @@ void MainMenu::printUserTrips(User &user){
   }
   else{
     for(int i = 0; i<user.tripStorage.size(); i++){
-      std::cout << i+1 <<". " <<user.tripStorage.at(i)->getTripName() << std::endl;
+      std::cout << i+1 <<". " <<user.tripStorage.at(i)->getName() << std::endl;
     }
   }
 }

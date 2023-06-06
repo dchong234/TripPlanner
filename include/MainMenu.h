@@ -20,8 +20,8 @@ class MainMenu {
         void printSelectionPage(std::string type, TripHandler& tripHandler);
     public:
         void viewOptions();
-        void viewTrip(User &);
-        void viewSchedule(User &);
+        void viewTrip();
+        void viewSchedule();
         void viewBookingMenu();
         void viewLogin();
         MainMenu();
