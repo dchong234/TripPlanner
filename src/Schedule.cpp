@@ -12,16 +12,23 @@ Schedule::~Schedule() {
 
 void Schedule::getSchedule(){
   int time = 800;
+  bool flag = false;
 
   for(int i = 0; i < 10; i++){
     for (TripItem* item : *(this->trip->getTripItems())) {
       if (item->getStartTime() == time) {
         std::cout << formatTime(time) << " " << item->getName() << std::endl;
+        flag = true;
         break;
       }
     }
 
-    std::cout << formatTime(time) << std::endl;
+    if (!flag) {
+      std::cout << formatTime(time) << std::endl;
+    } else {
+      flag = false;
+    }
+
     time += 30;
 
     if (((time % 100) / 10) > 5) {
