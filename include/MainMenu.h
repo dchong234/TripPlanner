@@ -27,6 +27,7 @@ class MainMenu {
         MainMenu();
     private:
         std::string takeInput();
+        void printUserTrips(User &);
 };
 
 #endif
