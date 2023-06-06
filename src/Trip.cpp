@@ -1,6 +1,7 @@
 #include "../include/Trip.h"
 #include <string>
 #include <vector>
+#include <iostream>
 
 Trip::Trip() {
     this->name = "";
@@ -14,7 +15,9 @@ Trip::Trip(std::string name){
 
 Trip::~Trip() {
     for (TripItem* item : *tripItems) {
-        delete item;
+        if (item != nullptr) {
+            delete item;
+        }
     }
 
     delete tripItems;
@@ -27,4 +30,20 @@ std::string Trip::getTripName(){
 
 std::vector<TripItem*> * Trip::getTripItems() {
     return this->tripItems;
+}
+
+void Trip::printTripItemsList() {
+    unsigned i = 1;
+
+    for (TripItem* item : *tripItems) {
+        std::cout << i << ". " << item->getName() << "(";
+        if (item->getItemType() == ACTIVITY) {
+            std::cout << "ACTIVITY)" << std::endl;
+        } else if (item->getItemType() == HOTEL) {
+            std::cout << "HOTEL)" << std::endl;
+        } else if (item->getItemType() == FLIGHT) {
+            std::cout << "FLIGHT)" << std::endl;
+        }
+        ++i;
+    }
 }

@@ -6,7 +6,7 @@ MainMenu::MainMenu() {}
 
 void MainMenu::viewOptions() {
     std::cout << "Welcome!" << std::endl; // TODO: Add username
-    std::cout << "1. View Trips" << std::endl;
+    std::cout << "1. Edit Trips" << std::endl;
     std::cout << "2. View Schedule" << std::endl;
     std::cout << "3. Plan Trip" << std::endl;
     std::cout << "4. Logout" << std::endl;
@@ -21,6 +21,7 @@ void MainMenu::viewBookingMenu() {
     std::cout << "1. Book Flight" << std::endl;
     std::cout << "2. Book Activities" << std::endl;
     std::cout << "3. Book Hotel" << std::endl;
+    std::cout << "4. Done Planning" << std::endl;
 }
 
 void MainMenu::viewSchedule(User &user) {
@@ -29,12 +30,12 @@ void MainMenu::viewSchedule(User &user) {
 }
 
 void MainMenu::printUserTrips(User &user){
-  if(user.tripStorage.empty()){
+  if(user.getTripStorage().empty()){
     std::cout << "There are no trips in your account" << std::endl;
   }
   else{
-    for(int i = 0; i<user.tripStorage.size(); i++){
-      std::cout << i+1 <<". " <<user.tripStorage.at(i)->getTripName() << std::endl;
+    for(int i = 0; i<user.getTripStorage().size(); i++){
+      std::cout << i+1 <<". " << user.getTripStorage().at(i)->getTripName() << std::endl;
     }
   }
 }
@@ -50,14 +51,14 @@ void MainMenu::printPage(std::string type, int page)
   unsigned i = 0;
   unsigned upperLimit = i;
   std::string input = "";
-  std::vector<TripItem*> dummyItems;
+  std::vector<TripItem*> * dummyItems;
 
   if (type == "flight") {
-    dummyItems = dummyData.flights;
+    dummyItems = &dummyData.flights;
   } else if (type == "activity") {
-    dummyItems = dummyData.activities;
+    dummyItems = &dummyData.activities;
   } else if (type == "hotel") {
-    dummyItems = dummyData.hotels;
+    dummyItems = &dummyData.hotels;
   }
 
   if (page == 2) {
@@ -69,7 +70,7 @@ void MainMenu::printPage(std::string type, int page)
   upperLimit = i + 5;
 
   for (i; i < upperLimit; ++i) {
-    std::cout << i + 1 << ". " << dummyItems.at(i)->getItem();
+    std::cout << i + 1 << ". " << dummyItems->at(i)->getItem();
     std::cout << std::endl;
   }
 
@@ -126,7 +127,7 @@ void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
 
 std::string MainMenu::takeInput() {
   std::string input;
-  std::cout << std::endl << "Enter an option:" << std::endl;
+  std::cout << "Enter an option:" << std::endl;
   std::cin >> input;
   return input;
 }

@@ -1,6 +1,8 @@
 #include  "../include/Schedule.h"
 #include <iostream>
 
+Schedule::Schedule() : trip(nullptr) {}
+
 Schedule::Schedule(Trip* trip){
   this->trip = trip;
 }
@@ -10,16 +12,23 @@ Schedule::~Schedule() {
 
 void Schedule::getSchedule(){
   int time = 800;
+  bool flag = false;
 
   for(int i = 0; i < 10; i++){
     for (TripItem* item : *(this->trip->getTripItems())) {
       if (item->getStartTime() == time) {
         std::cout << formatTime(time) << " " << item->getName() << std::endl;
+        flag = true;
         break;
       }
     }
 
-    std::cout << formatTime(time) << std::endl;
+    if (!flag) {
+      std::cout << formatTime(time) << std::endl;
+    } else {
+      flag = false;
+    }
+
     time += 30;
 
     if (((time % 100) / 10) > 5) {
@@ -46,6 +55,10 @@ void Schedule::viewPrevTrip(){
 
 void Schedule::viewUpcomingTrip(){
   return;
+}
+
+void Schedule::setTrip(Trip* trip) {
+  this->trip = trip;
 }
 
 std::string  Schedule::formatTime(int time) const {
