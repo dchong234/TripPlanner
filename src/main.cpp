@@ -19,44 +19,7 @@ using std::string;
 
 DummyData dummyData;
 
-string takeInput()
-{
-  string input;
-  cout << "Enter an option:" << endl;
-  cin >> input;
-  return input;
-}
-
-void printPage(string type, int page){
-  unsigned i = 0;
-  unsigned upperLimit = i;
-  string input = "";
-  std::vector<TripItem*> dummyItems;
-
-  if (type == "flight") {
-    dummyItems = dummyData.flights;
-  } else if (type == "activity") {
-    dummyItems = dummyData.activities;
-  } else if (type == "hotel") {
-    dummyItems = dummyData.hotels;
-  }
-
-  if (page == 2) {
-    i = 5;
-  } else if (page == 3) {
-    i = 10;
-  }
-
-  upperLimit = i + 5;
-
-  for (i; i < upperLimit; ++i) {
-    cout << i + 1 << ". " << dummyItems.at(i)->getItem();
-    cout << endl;
-    }
-  cout << endl;
-  cout << "PAGE " << page << " OF 3" << endl;
-  cout << endl;
-}
+string takeInput();
 
 int main()
 {
@@ -118,7 +81,7 @@ int main()
     else if(input == "3")
     {
       cout << "Name your new trip:" << endl;
-      cin >> input;
+      getline(cin, input);
       cout << endl;
 
       currTrip = new Trip(input);
@@ -128,56 +91,16 @@ int main()
       input = takeInput();
 
       if (input == "1") {
-        for(unsigned i = 0; i < 3; i++){
-          printPage("flight", i+1);
-          cout << "Show more flights? Yes or No" << endl;
-          input = takeInput();
-          if (input == "Yes" || input == "yes") {
-            continue;
-          }
-          else if (input == "No" || input == "no") {
-            cout << "Please select a flight number" << endl;
-            input = takeInput();
-            tripHandler.addTripItem(dummyData.flights.at(std::stoi(input)-1));
-            break;
-          }
-        }
+        menu.printSelectionPage("flight", tripHandler);
       }
 
       else if (input == "2") {
-        for(unsigned i = 0; i < 3; i++){
-          printPage("activity", i+1);
-          cout << "Show more activities? Yes or No" << endl;
-          input = takeInput();
-          if (input == "Yes" || input == "yes") {
-            continue;
-          }
-          else if (input == "No" || input == "no") {
-            cout << "Please select an activity number" << endl;
-            input = takeInput();
-            tripHandler.addTripItem(dummyData.activities.at(std::stoi(input)-1));
-            break;
-          }
-        }
+        menu.printSelectionPage("activity", tripHandler);
       }
 
       else if (input == "3") {
-        for(unsigned i = 0; i < 3; i++){
-          printPage("hotel", i+1);
-          cout << "Show more hotels? Yes or No" << endl;
-          input = takeInput();
-          if (input == "Yes" || input == "yes") {
-            continue;
-          }
-          else if (input == "No" || input == "no") {
-            cout << "Please select a hotel number" << endl;
-            input = takeInput();
-            tripHandler.addTripItem(dummyData.hotels.at(std::stoi(input)-1));
-            break;
-          }
-        }
+        menu.printSelectionPage("hotel", tripHandler);
       }
-    }
 
     else if(input == "4")
     {
@@ -188,5 +111,13 @@ int main()
       input = takeInput();
     }
   }
-  return 0;
+    return 0;
+  }
+}
+
+string takeInput() {
+  string input;
+  cout << endl << "Enter an option:" << endl;
+  cin >> input;
+  return input;
 }

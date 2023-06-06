@@ -34,3 +34,76 @@ void MainMenu::viewLogin() {
     std::cout << "1. Login" << std::endl;
     std::cout << "2. Create Account" << std::endl;
 }
+
+void MainMenu::printPage(std::string type, int page)
+{
+  unsigned i = 0;
+  unsigned upperLimit = i;
+  std::string input = "";
+  std::vector<TripItem*> dummyItems;
+
+  if (type == "flight") {
+    dummyItems = dummyData.flights;
+  } else if (type == "activity") {
+    dummyItems = dummyData.activities;
+  } else if (type == "hotel") {
+    dummyItems = dummyData.hotels;
+  }
+
+  if (page == 2) {
+    i = 5;
+  } else if (page == 3) {
+    i = 10;
+  }
+
+  upperLimit = i + 5;
+
+  for (i; i < upperLimit; ++i) {
+    std::cout << i + 1 << ". " << dummyItems.at(i)->getItem();
+    std::cout << std::endl;
+  }
+
+  std::cout << std::endl;
+  std::cout << "PAGE " << page << " OF 3" << std::endl;
+  std::cout << std::endl;
+}
+
+void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
+  std::vector<TripItem*> dummyItems;
+
+  std::string input = "";
+
+  if (type == "flight") {
+    dummyItems = dummyData.flights;
+  } else if (type == "activity") {
+    dummyItems = dummyData.activities;
+  } else if (type == "hotel") {
+    dummyItems = dummyData.hotels;
+  }
+
+  for(unsigned i = 0; i < 3; i++) {
+    printPage(type, i+1);
+    if (type == "activity") {
+      std::cout << "Show more activities? Yes or No" << std::endl;
+    } else {
+      std::cout << "Show more " << type << "s? Yes or No" << std::endl;
+    }
+    input = takeInput();
+    if (input == "Yes" || input == "yes") {
+      continue;
+    }
+    else if (input == "No" || input == "no") {
+      std::cout << "Please select a " << type << " number" << std::endl;
+      input = takeInput();
+      tripHandler.addTripItem(dummyItems.at(std::stoi(input)-1));
+      break;
+    }
+  }
+}
+
+std::string MainMenu::takeInput() {
+  std::string input;
+  std::cout << std::endl << "Enter an option:" << std::endl;
+  std::cin >> input;
+  return input;
+}

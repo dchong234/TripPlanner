@@ -7,13 +7,13 @@
 #include "../include/Hotel.h"
 #include "../include/Activity.h"
 
-class DummyData {
-    public:
-        std::vector<TripItem*> flights;
-        std::vector<TripItem*> hotels;
-        std::vector<TripItem*> activities;
-        DummyData();
-        ~DummyData();
+struct DummyData {
+    std::vector<TripItem*> flights;
+    std::vector<TripItem*> hotels;
+    std::vector<TripItem*> activities;
+
+    DummyData();
+    ~DummyData();
 };
 
 #endif
