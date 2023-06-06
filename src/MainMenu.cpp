@@ -1,5 +1,6 @@
 #include "../include/MainMenu.h"
 #include <iostream>
+#include <stdexcept>
 
 MainMenu::MainMenu() {}
 
@@ -94,8 +95,21 @@ void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
     }
     else if (input == "No" || input == "no") {
       std::cout << "Please select a " << type << " number" << std::endl;
-      input = takeInput();
-      tripHandler.addTripItem(dummyItems.at(std::stoi(input)-1));
+      while (true) {
+        try {
+            input = takeInput();
+            tripHandler.addTripItem(dummyItems.at(std::stoi(input)-1));
+            break;
+        } catch (std::invalid_argument& e) {
+            std::cerr << "Please enter a valid number" << std::endl;
+            std::cin.clear();
+            continue;
+        } catch (std::out_of_range& e) {
+            std::cerr << "Please enter a valid number" << std::endl;
+            std::cin.clear();
+            continue;
+        }
+      }
       break;
     }
   }
