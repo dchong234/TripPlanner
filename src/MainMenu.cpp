@@ -21,6 +21,7 @@ void MainMenu::viewBookingMenu() {
     std::cout << "1. Book Flight" << std::endl;
     std::cout << "2. Book Activities" << std::endl;
     std::cout << "3. Book Hotel" << std::endl;
+    std::cout << "4. Done Planning" << std::endl;
 }
 
 void MainMenu::viewSchedule(User &user) {
@@ -126,7 +127,7 @@ void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
 
 std::string MainMenu::takeInput() {
   std::string input;
-  std::cout << std::endl << "Enter an option:" << std::endl;
+  std::cout << "Enter an option:" << std::endl;
   std::cin >> input;
   return input;
 }

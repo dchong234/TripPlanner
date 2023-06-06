@@ -106,13 +106,22 @@ DummyData::DummyData(){
 DummyData::~DummyData(){
     for (TripItem* flight : flights) {
         delete flight;
+        flight = nullptr;
     }
+
+    flights.clear();
 
     for (TripItem* hotel : hotels) {
         delete hotel;
+        hotel = nullptr;
     }
+
+    hotels.clear();
 
     for (TripItem* activity : activities) {
         delete activity;
+        activity = nullptr;
     }
+
+    activities.clear();
 }

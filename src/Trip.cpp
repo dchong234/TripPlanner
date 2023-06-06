@@ -14,7 +14,9 @@ Trip::Trip(std::string name){
 
 Trip::~Trip() {
     for (TripItem* item : *tripItems) {
-        delete item;
+        if (item != nullptr) {
+            delete item;
+        }
     }
 
     delete tripItems;

@@ -10,6 +10,7 @@ class Schedule {
     private:
         Trip* trip;
     public:
+        Schedule();
         Schedule(Trip*);
         ~Schedule();
         void getSchedule();
@@ -17,6 +18,8 @@ class Schedule {
         void cancelActivity();
         void viewPrevTrip();
         void viewUpcomingTrip();
+
+        void setTrip(Trip*);
 
         void printStuff();
         std::string formatTime(int) const;

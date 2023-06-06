@@ -17,9 +17,8 @@ using std::endl;
 using std::cin;
 using std::string;
 
-DummyData dummyData;
-
 string takeInput();
+string checkValidInput(string);
 
 int main()
 {
@@ -30,8 +29,9 @@ int main()
   Trip* currTrip = nullptr;
   TripHandler tripHandler;
 
+  Schedule schedule;
+
   string input;
-  bool validInput = false;
 
   menu.viewLogin();
   input = takeInput();
@@ -63,61 +63,65 @@ int main()
 
   while(true)
   {
+    std::cout << std::endl;
     menu.viewOptions();
     input = "";
     input = takeInput();
 
     if(input == "1")
     {
-      menu.viewTrip();
-      input = takeInput();
-    }
-    else if(input == "2")
-    {
-      menu.viewSchedule();
-      input = takeInput();
-    }
+      menu.viewTrip(user);
 
-    else if(input == "3")
-    {
+    }
+    else if(input == "2") {
+      menu.viewSchedule(user);
+      input = takeInput();
+      schedule.setTrip(user.tripStorage.at(std::stoi(input)-1));
+
+      schedule.getSchedule();
+    }
+    else if(input == "3") {
       cout << "Name your new trip:" << endl;
+      cin.ignore();
       getline(cin, input);
       cout << endl;
 
       currTrip = new Trip(input);
+      user.tripStorage.push_back(currTrip);
       tripHandler.setTrip(currTrip);
 
-      menu.viewBookingMenu();
-      input = takeInput();
+      while (true) {
+        menu.viewBookingMenu();
+        input = takeInput();
 
-      if (input == "1") {
-        menu.printSelectionPage("flight", tripHandler);
+        if (input == "1") {
+          menu.printSelectionPage("flight", tripHandler);
+        }
+
+        else if (input == "2") {
+          menu.printSelectionPage("activity", tripHandler);
+        }
+
+        else if (input == "3") {
+          menu.printSelectionPage("hotel", tripHandler);
+        } 
+        else if (input == "4") {
+          break;
+        }
       }
-
-      else if (input == "2") {
-        menu.printSelectionPage("activity", tripHandler);
-      }
-
-      else if (input == "3") {
-        menu.printSelectionPage("hotel", tripHandler);
-      }
-
-    else if(input == "4")
-    {
+    } 
+    else if(input == "4") {
       return 0;
-    }
-    else
-    {
+    } else {
       input = takeInput();
     }
   }
-    return 0;
-  }
+  return 0;
 }
 
 string takeInput() {
   string input;
-  cout << endl << "Enter an option:" << endl;
+  cout << "Enter an option:" << endl;
   cin >> input;
   return input;
 }

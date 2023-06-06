@@ -1,6 +1,8 @@
 #include  "../include/Schedule.h"
 #include <iostream>
 
+Schedule::Schedule() : trip(nullptr) {}
+
 Schedule::Schedule(Trip* trip){
   this->trip = trip;
 }
@@ -46,6 +48,10 @@ void Schedule::viewPrevTrip(){
 
 void Schedule::viewUpcomingTrip(){
   return;
+}
+
+void Schedule::setTrip(Trip* trip) {
+  this->trip = trip;
 }
 
 std::string  Schedule::formatTime(int time) const {
