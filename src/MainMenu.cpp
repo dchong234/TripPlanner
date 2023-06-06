@@ -22,11 +22,16 @@ void MainMenu::viewBookingMenu() {
     std::cout << "3. Book Hotel" << std::endl;
 }
 
-void MainMenu::viewSchedule() {
+void MainMenu::viewSchedule(User &user) {
     std::cout << "Which trip do you want to access?" << std::endl;
-    std::cout << "1. TEST TRIP 1" << std::endl;
-    std::cout << "2. TEST TRIP 2" << std::endl;
-    std::cout << "3. TEST TRIP 3" << std::endl;
+    if(user.tripStorage.empty()){
+      std::cout << "There are no trips in your account" << std::endl;
+    }
+    else{
+      for(int i = 0; i<user.tripStorage.size(); i++){
+        std::cout << i+1 <<". " <<user.tripStorage.at(i)->getName() << std::endl;
+      }
+    }
 }
 
 void MainMenu::viewLogin() {
