@@ -11,9 +11,9 @@ void MainMenu::viewOptions() {
     std::cout << "4. Logout" << std::endl;
 }
 
-void MainMenu::viewTrip() {
+void MainMenu::viewTrip(User &user) {
     std::cout << "Select your trip:" << std::endl;
-    // TODO: Add User based Trips
+    printUserTrips(user);
 }
 
 void MainMenu::viewBookingMenu() {
@@ -24,14 +24,18 @@ void MainMenu::viewBookingMenu() {
 
 void MainMenu::viewSchedule(User &user) {
     std::cout << "Which trip do you want to access?" << std::endl;
-    if(user.tripStorage.empty()){
-      std::cout << "There are no trips in your account" << std::endl;
+    printUserTrips(user);
+}
+
+void MainMenu::printUserTrips(User &user){
+  if(user.tripStorage.empty()){
+    std::cout << "There are no trips in your account" << std::endl;
+  }
+  else{
+    for(int i = 0; i<user.tripStorage.size(); i++){
+      std::cout << i+1 <<". " <<user.tripStorage.at(i)->getName() << std::endl;
     }
-    else{
-      for(int i = 0; i<user.tripStorage.size(); i++){
-        std::cout << i+1 <<". " <<user.tripStorage.at(i)->getName() << std::endl;
-      }
-    }
+  }
 }
 
 void MainMenu::viewLogin() {
