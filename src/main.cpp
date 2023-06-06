@@ -63,7 +63,7 @@ int main()
 
   while(true)
   {
-    std::cout << std::endl;
+    cout << endl;
     menu.viewOptions();
     input = "";
     input = takeInput();
