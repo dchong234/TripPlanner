@@ -130,7 +130,7 @@ int main()
       cout << endl;
 
       currTrip = new Trip(input);
-      user.getTripStorage().push_back(currTrip);
+      user.addTripToStorage(currTrip);
       tripHandler.setTrip(currTrip);
 
       while (true) {

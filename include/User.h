@@ -28,6 +28,7 @@ class User {
         void importTrips();
         std::string readString(std::ifstream&);
         std::vector<Trip*> getTripStorage();
+        void addTripToStorage(Trip*);
 
         Activity* parseActivity(std::ifstream&);
         Flight* parseFlight(std::ifstream&);
