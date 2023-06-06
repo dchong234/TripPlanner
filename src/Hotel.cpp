@@ -26,12 +26,12 @@ std::string Hotel::getItem(){
     hotelInfo += "Location: " + this->location + "\n";
     hotelInfo += "Price: $" + std::to_string(this->price) + "\n";
     hotelInfo += "Rating: " + std::to_string(this->rating) + " stars\n";
-    hotelInfo += "Check-in Time: " + formatTime(this->time) + "\n";
+    hotelInfo += "Check-in Time: " + formatTime(this->startTime) + "\n";
     
     return hotelInfo;
 }
 
 void Hotel::extractHotel(std::ofstream& outFS) {
     outFS << "hotel ";
-    outFS << id << "/" << name << "/" << location << "/" << price << "/" << rating << "/" << time << "/" << std::endl;
+    outFS << id << "/" << name << "/" << location << "/" << price << "/" << rating << "/" << startTime << "/" << std::endl;
 }

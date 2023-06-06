@@ -13,43 +13,9 @@ void Schedule::getSchedule(){
 
   for(int i = 0; i < 10; i++){
     for (TripItem* item : *(this->trip->getTripItems())) {
-      if (item->getItemType() == FLIGHT) {
-        if (static_cast<Flight*>(item)->getDepartureTime() == time) {
-          std::cout << formatTime(time) << " " << static_cast<Flight*>(item)->getAirline() << std::endl;
-          time += 30;
-          if (((time % 100) / 10) > 5) {
-            time += 40;
-          }
-          continue;
-        }
-      }
-
-      if (item->getItemType() == HOTEL) {
-        if (static_cast<Hotel*>(item)->getHotelTime() == time) {
-          std::cout << formatTime(time) << " " << static_cast<Hotel*>(item)->getName() << std::endl;
-          time += 30;
-          if (((time % 100) / 10) > 5) {
-            time += 40;
-          }
-          continue;
-        }
-      }
-
-      if (item->getItemType() == ACTIVITY) {
-        if (static_cast<Activity*>(item)->getTime() == time) {
-          std::cout << formatTime(time) << " " << static_cast<Activity*>(item)->getName() << std::endl;
-          time += 30;
-          if (((time % 100) / 10) > 5) {
-            time += 40;
-          }
-          continue;
-        }
-      }
-      std::cout << formatTime(time) << std::endl;
-      time += 30;
-
-      if (((time % 100) / 10) > 5) {
-        time += 40;
+      if (item->getStartTime() == time) {
+        std::cout << formatTime(time) << " " << item->getName() << std::endl;
+        break;
       }
     }
 
