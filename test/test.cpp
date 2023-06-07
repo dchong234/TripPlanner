@@ -96,3 +96,17 @@ TEST(TripTests, getTripItemsTest) {
     tripHandler.addTripItem(new Hotel("H1", "La Quinta", "New York City", 150.25, 4, 1300));
     EXPECT_EQ(trip.getTripItems()->size(), 1);
 }
+
+TEST(TripTests, removeByIndexTest) {
+    Trip trip("Hawaii Trip");
+    TripHandler tripHandler(&trip);
+
+    tripHandler.addTripItem(new Hotel("H1", "La Quinta", "New York City", 150.25, 4, 1300));
+    tripHandler.addTripItem(new Flight("F1", "Southwest", 800, 1200, 
+    "San Diego", "New York City", 550.75));
+    tripHandler.removeTripItemByIndex(0);
+    EXPECT_EQ(trip.getTripItems()->size(), 1);
+}
+
+
+
