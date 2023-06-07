@@ -11,6 +11,7 @@ Schedule::~Schedule() {
 }
 
 void Schedule::getSchedule(){
+  system("clear");
   int time = 800;
   bool flag = false;
 

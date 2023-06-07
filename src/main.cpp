@@ -61,7 +61,7 @@ int main()
     }
   }
 
-  // user.importTrips();
+  user.importTrips();
 
   cout << endl;
 

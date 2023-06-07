@@ -10,6 +10,7 @@
 MainMenu::MainMenu() {}
 
 void MainMenu::viewOptions(User &user) {
+    //system("clear");
     std::cout << "Welcome " << user.getUsername() << "!" << std::endl; // TODO: Add username
     std::cout << "1. Edit Trips" << std::endl;
     std::cout << "2. View Schedule" << std::endl;
@@ -23,6 +24,7 @@ void MainMenu::viewTrip(User &user) {
 }
 
 void MainMenu::viewBookingMenu() {
+    system("clear");
     std::cout << "1. Book Flight" << std::endl;
     std::cout << "2. Book Activities" << std::endl;
     std::cout << "3. Book Hotel" << std::endl;
@@ -39,6 +41,7 @@ void MainMenu::printUserTrips(User &user){
     std::cout << RED << "There are no trips in your account" << RESET << std::endl;
   }
   else{
+    system("clear");
     for(int i = 0; i<user.getTripStorage().size(); i++){
       std::cout << i+1 <<". " << user.getTripStorage().at(i)->getTripName() << std::endl;
     }
@@ -86,6 +89,7 @@ void MainMenu::printPage(std::string type, int page)
 }
 
 void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
+  system("clear");
   std::vector<TripItem*> dummyItems;
 
   std::string input = "";
@@ -132,6 +136,7 @@ void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
 }
 
 void MainMenu::printInput(TripHandler& tripHandler){
+  system("clear");
   std::string input = "";
   while (true) {
     viewBookingMenu();
