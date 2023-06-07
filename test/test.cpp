@@ -7,6 +7,7 @@
 #include "../include/DummyData.h"
 #include "../include/TripItem.h"
 #include "../include/Activity.h"
+#include "../include/Flight.h"
 
 #include <string>
 
@@ -23,3 +24,8 @@ TEST(ActivityTests, itemTest) {
     ASSERT_EQ(activity.getItem(), correctString);
 }
 
+TEST(FlightTests, originTest) {
+    Flight flight("F1", "Southwest", 800, 1200, 
+    "San Diego", "New York City", 550.75);
+    EXPECT_EQ(flight.getOrigin(), "San Diego");
+}
