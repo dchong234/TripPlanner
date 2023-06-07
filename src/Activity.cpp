@@ -4,6 +4,7 @@
 
 Activity::Activity(std::string id, std::string name, int time, double price) : TripItem(id, ACTIVITY, time, 0, name)
 {
+  this->name = name;
   this->price = price;
 }
 

@@ -17,7 +17,6 @@ class TripItem {
     TripItem(std::string id, ItemType type, int startTime, int endTime, std::string name) : id(id), type(type), startTime(startTime), endTime(endTime), name(name) {}
     ItemType getItemType() { return type; }
     std::string getID() { return id; }
-
     int getStartTime() { return startTime; }
     int getEndTime() { return endTime; }
     std::string getName() { return name; }
