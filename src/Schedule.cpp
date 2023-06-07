@@ -12,9 +12,9 @@ Schedule::~Schedule() {
 
 void Schedule::getSchedule(){
   system("clear");
-  int time = 800;
+  int time = 100;
   bool flag = false;
-  for(int i = 0; i < 10; i++){
+  for(int i = 0; i < 46; i++){
     for (TripItem* item : *(this->trip->getTripItems())) {
       if (item->getStartTime() == time) {
         std::cout << formatTime(time) << " " << item->getName() << std::endl;
