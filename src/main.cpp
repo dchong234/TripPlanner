@@ -81,30 +81,15 @@ int main()
       cout << "2. Remove" << endl;
       cout << "3. None" << endl;
 
+      menu.printInput();
+
       input = takeInput();
 
       while (true) {
         if (input == "1") {
           // TODO: Refactor into its own function in main menu
-          while (true) {
-            menu.viewBookingMenu();
-            input = takeInput();
+          menu.printInput();
 
-            if (input == "1") {
-              menu.printSelectionPage("flight", tripHandler);
-            }
-
-            else if (input == "2") {
-              menu.printSelectionPage("activity", tripHandler);
-            }
-
-            else if (input == "3") {
-              menu.printSelectionPage("hotel", tripHandler);
-            } 
-            else if (input == "4") {
-              break;
-            }
-          }
         } else if (input == "2") {
           cout << "Select which item you would like to remove" << endl;
           input = takeInput();
@@ -133,26 +118,8 @@ int main()
       user.addTripToStorage(currTrip);
       tripHandler.setTrip(currTrip);
 
-      while (true) {
-        menu.viewBookingMenu();
-        input = takeInput();
-
-        if (input == "1") {
-          menu.printSelectionPage("flight", tripHandler);
-        }
-
-        else if (input == "2") {
-          menu.printSelectionPage("activity", tripHandler);
-        }
-
-        else if (input == "3") {
-          menu.printSelectionPage("hotel", tripHandler);
-        } 
-        else if (input == "4") {
-          break;
-        }
-      }
-    } 
+      menu.printInput();
+    }
     else if(input == "4") {
       return 0;
     } else {

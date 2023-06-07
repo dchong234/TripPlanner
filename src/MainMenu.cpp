@@ -1,4 +1,5 @@
 #include "../include/MainMenu.h"
+#include "../include/TripHandler.h"
 #include <iostream>
 #include <stdexcept>
 
@@ -122,6 +123,32 @@ void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
     }
   }
 }
+
+void MainMenu::printInput(){
+  std::string input = "";
+  TripHandler tripHandler;
+  while (true) {
+    viewBookingMenu();
+    input = takeInput();
+
+    if (input == "1") {
+      printSelectionPage("flight", tripHandler);
+    }
+
+    else if (input == "2") {
+      printSelectionPage("activity", tripHandler);
+    }
+
+    else if (input == "3") {
+      printSelectionPage("hotel", tripHandler);
+    } 
+    else if (input == "4") {
+      break;
+    }
+  }
+}
+
+
 
 std::string MainMenu::takeInput() {
   std::string input;
