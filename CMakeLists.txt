@@ -15,3 +15,5 @@ add_executable(TripPlanner
     src/TripHandler.cpp
     src/User.cpp
 )
+
+add_subdirectory(test)

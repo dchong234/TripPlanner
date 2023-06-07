@@ -6,7 +6,7 @@
 #include "../include/DummyData.h"
 #include "../include/TripItem.h"
 #include "../include/Flight.h"
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 TEST(FlightTests, nameOfAirline) {
     Flight flight("id", "Southwest", 800, 1200, "San Jose", "Tokyo", 115.25);
