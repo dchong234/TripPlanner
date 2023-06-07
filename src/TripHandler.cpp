@@ -25,7 +25,13 @@ std::vector<TripItem*>::iterator TripHandler::getItemPosition(TripItem* item) {
 }
 
 void TripHandler::addTripItem(TripItem* item) {
-    trip->getTripItems()->push_back(item);
+    if (item->getItemType() == ACTIVITY) {
+        trip->getTripItems()->push_back(new Activity(*static_cast<Activity*>(item)));
+    } else if (item->getItemType() == FLIGHT) {
+        trip->getTripItems()->push_back(new Flight(*static_cast<Flight*>(item)));
+    } else if (item->getItemType() == HOTEL) {
+        trip->getTripItems()->push_back(new Hotel(*static_cast<Hotel*>(item)));
+    }
 }
 
 void TripHandler::removeTripItem(TripItem* item) {

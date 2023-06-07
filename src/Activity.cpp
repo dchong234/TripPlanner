@@ -7,6 +7,10 @@ Activity::Activity(std::string id, std::string name, int time, double price) : T
   this->price = price;
 }
 
+Activity::Activity(const Activity& other) : TripItem(other.id, ACTIVITY, other.startTime, 0, other.name) {
+  this->price = other.price;
+}
+
 std::string Activity::getItem()
 {
   std::string activityInfo = "Activity Name: " + name + "\n";

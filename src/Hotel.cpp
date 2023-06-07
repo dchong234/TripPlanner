@@ -9,6 +9,12 @@ Hotel::Hotel(std::string id, std::string name, std::string location, double pric
     this->rating = rating;
 }
 
+Hotel::Hotel(const Hotel& other) : TripItem(other.id, HOTEL, other.startTime, 0, other.name) {
+    this->location = other.location;
+    this->price = other.price;
+    this->rating = other.rating;
+}
+
 std::string Hotel::getLocation(){
     return this->location;
 }

@@ -18,6 +18,8 @@ Trip::~Trip() {
         if (item != nullptr) {
             delete item;
         }
+
+        item = nullptr;
     }
 
     delete tripItems;
