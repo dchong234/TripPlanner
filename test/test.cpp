@@ -63,3 +63,14 @@ TEST(HotelTests, ratingTest) {
     Hotel hotel("H1", "La Quinta", "New York City", 150.25, 4, 1300);
     ASSERT_EQ(hotel.getRating(), 4);
 }
+
+TEST(HotelTests, HotelItemTest) {
+    Hotel hotel("H1", "La Quinta", "New York City", 150.25, 4, 1300);
+    std::string correctString = "Hotel Name: La Quinta\n";
+    correctString += "Location: New York City\n";
+    correctString += "Price: $" + std::to_string(hotel.getPrice()) + "\n";
+    correctString += "Rating: " + std::to_string(hotel.getRating()) + " stars\n";
+    correctString += "Check-in Time: 01:00 PM\n";
+    ASSERT_EQ(hotel.getItem(), correctString);  
+}
+
