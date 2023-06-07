@@ -10,6 +10,7 @@
 #include "../include/Flight.h"
 #include "../include/Hotel.h"
 #include "../include/Schedule.h"
+#include "../include/User.h"
 
 #include <string>
 
@@ -108,5 +109,14 @@ TEST(TripTests, removeByIndexTest) {
     EXPECT_EQ(trip.getTripItems()->size(), 1);
 }
 
+TEST(UserTests, usernameTest) {
+    User user("khandrew", "password");
+    ASSERT_EQ(user.getUsername(), "khandrew");
+}
+
+TEST(UserTests, passwordTest) {
+    User user("khandrew", "password");
+    ASSERT_EQ(user.getPassword(), "password");
+}
 
 
