@@ -22,6 +22,8 @@ string checkValidInput(string);
 
 #define RESET   "\033[0m"
 #define GREEN   "\033[32m"
+#define RED     "\033[31m"
+#define YELLOW  "\033[33m"
 
 int main()
 {
@@ -84,9 +86,9 @@ int main()
       tripHandler.setTrip(user.getTripStorage().at(std::stoi(input)-1));
 
       cout << "Would you like to add or remove an item from this trip?" << endl;
-      cout << "1. Add" << endl;
-      cout << "2. Remove" << endl;
-      cout << "3. None" << endl;
+      cout << GREEN << "1. Add" << RESET << endl;
+      cout << RED << "2. Remove" << RESET<< endl;
+      cout << YELLOW << "3. None" << RESET<< endl;
 
       input = takeInput();
 

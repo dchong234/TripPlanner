@@ -4,6 +4,7 @@
 #include <stdexcept>
 
 #define RESET   "\033[0m"
+#define GREEN   "\033[32m"
 #define RED     "\033[31m"
 #define YELLOW  "\033[33m"
 
@@ -105,9 +106,9 @@ void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
   for(unsigned i = 0; i < 2; i++) {
     printPage(type, i+1);
     if (type == "activity") {
-      std::cout << "Show more activities? Yes or No" << std::endl;
+      std::cout << "Show more activities? " << GREEN << "Yes" << RESET << " or " << RED << "No" << RESET << std::endl;
     } else {
-      std::cout << "Show more " << type << "s? Yes or No" << std::endl;
+      std::cout << "Show more " << type << "s? " << GREEN << "Yes" << RESET << " or " << RED << "No" << RESET<< std::endl;
     }
     input = takeInput();
     if (input == "Yes" || input == "yes") {
