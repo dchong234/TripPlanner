@@ -14,7 +14,6 @@ void Schedule::getSchedule(){
   system("clear");
   int time = 800;
   bool flag = false;
-
   for(int i = 0; i < 10; i++){
     for (TripItem* item : *(this->trip->getTripItems())) {
       if (item->getStartTime() == time) {
