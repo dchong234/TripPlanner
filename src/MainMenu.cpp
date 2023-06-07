@@ -63,8 +63,6 @@ void MainMenu::printPage(std::string type, int page)
 
   if (page == 2) {
     i = 5;
-  } else if (page == 3) {
-    i = 10;
   }
 
   upperLimit = i + 5;
@@ -75,24 +73,24 @@ void MainMenu::printPage(std::string type, int page)
   }
 
   std::cout << std::endl;
-  std::cout << "PAGE " << page << " OF 3" << std::endl;
+  std::cout << "PAGE " << page << " OF 2" << std::endl;
   std::cout << std::endl;
 }
 
 void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
-  std::vector<TripItem*> dummyItems;
+  std::vector<TripItem*> * dummyItems;
 
   std::string input = "";
 
   if (type == "flight") {
-    dummyItems = dummyData.flights;
+    dummyItems = &dummyData.flights;
   } else if (type == "activity") {
-    dummyItems = dummyData.activities;
+    dummyItems = &dummyData.activities;
   } else if (type == "hotel") {
-    dummyItems = dummyData.hotels;
+    dummyItems = &dummyData.hotels;
   }
 
-  for(unsigned i = 0; i < 3; i++) {
+  for(unsigned i = 0; i < 2; i++) {
     printPage(type, i+1);
     if (type == "activity") {
       std::cout << "Show more activities? Yes or No" << std::endl;
@@ -108,7 +106,7 @@ void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
       while (true) {
         try {
             input = takeInput();
-            tripHandler.addTripItem(dummyItems.at(std::stoi(input)-1));
+            tripHandler.addTripItem(dummyItems->at(std::stoi(input)-1));
             break;
         } catch (std::invalid_argument& e) {
             std::cerr << "Please enter a valid number" << std::endl;

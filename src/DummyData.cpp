@@ -56,8 +56,6 @@ DummyData::DummyData(){
     // Hotel 15
     hotels.push_back(new Hotel("H15", "Historic Mansion", "Rome", 250.00, 4, 800));
 
-
-
     // Activity 1
     activities.push_back(new Activity("A1", "City Tour", 1130, 50.00));
     // Activity 2
