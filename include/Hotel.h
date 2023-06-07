@@ -13,6 +13,7 @@ class Hotel : public TripItem {
     public:
         Hotel(std::string, std::string, std::string, double, int, int);
         Hotel(const Hotel& other);
+        Hotel& operator=(const Hotel& other);
         std::string getName();
         std::string getLocation();
         double getPrice();

@@ -23,6 +23,7 @@ string checkValidInput(string);
 int main()
 {
   MainMenu menu;
+
   AccountHandler accountHandler;
   User user;
 
@@ -47,7 +48,8 @@ int main()
       else if(input == "2")
       {
         accountHandler.createAccount();
-        break;
+        cout << "Account successfully created!" << endl;
+        return 0;
       }
       else
       {
@@ -58,6 +60,8 @@ int main()
       return 1;
     }
   }
+
+  // user.importTrips();
 
   cout << endl;
 
@@ -81,14 +85,12 @@ int main()
       cout << "2. Remove" << endl;
       cout << "3. None" << endl;
 
-      menu.printInput();
-
       input = takeInput();
 
       while (true) {
         if (input == "1") {
-          // TODO: Refactor into its own function in main menu
-          menu.printInput();
+          // // TODO: Refactor into its own function in main menu
+          // menu.printInput(tripHandler);
 
         } else if (input == "2") {
           cout << "Select which item you would like to remove" << endl;
@@ -118,9 +120,10 @@ int main()
       user.addTripToStorage(currTrip);
       tripHandler.setTrip(currTrip);
 
-      menu.printInput();
+      menu.printInput(tripHandler);
     }
     else if(input == "4") {
+      // user.exportTrips();
       return 0;
     } else {
       input = takeInput();

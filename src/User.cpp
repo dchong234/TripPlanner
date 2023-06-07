@@ -40,8 +40,7 @@ void User::importTrips() {
     while (true) {
         str = readString(inFS);
 
-        if (str == "trip") {
-            std::cout << "creating trip" << std::endl;
+        if (str == "\ntrip") {
             str = readString(inFS);
 
             trip = new Trip(str);
@@ -75,19 +74,21 @@ void User::exportTrips() {
 
     std::ofstream outFS(filename, std::fstream::out);
 
+    outFS << std::endl;
+
     if (outFS.is_open()) {
         for (Trip* trip : tripStorage) {
-            outFS << "trip/" << trip->getTripName() << std::endl;
+            outFS << "trip/" << trip->getTripName() << "/" << std::endl;
 
             for (TripItem* item : *(trip->getTripItems())) {
                 if (item->getItemType() == ACTIVITY) {
-                    static_cast<Activity*>(item)->extractActivity(outFS);
+                    static_cast<Activity*>(item)->extractItem(outFS);
                 }
                 if (item->getItemType() == HOTEL) {
-                    static_cast<Hotel*>(item)->extractHotel(outFS);
+                    static_cast<Hotel*>(item)->extractItem(outFS);
                 }
                 if (item->getItemType() == FLIGHT) {
-                    static_cast<Flight*>(item)->extractFlight(outFS);
+                    static_cast<Flight*>(item)->extractItem(outFS);
                 }
             }
         }
@@ -103,15 +104,15 @@ std::string User::readString(std::ifstream& file) {
     return line;
 }
 
-Activity* User::parseActivity(std::ifstream& file) {
+Activity * User::parseActivity(std::ifstream& file) {
     return new Activity(readString(file), readString(file), std::stoi(readString(file)), std::stod(readString(file)));
 }
 
-Flight* User::parseFlight(std::ifstream& file) {
+Flight * User::parseFlight(std::ifstream& file) {
     return new Flight(readString(file), readString(file), std::stoi(readString(file)), std::stoi(readString(file)), 
                       readString(file), readString(file), std::stod(readString(file)));
 }
 
-Hotel* User::parseHotel(std::ifstream& file) {
+Hotel * User::parseHotel(std::ifstream& file) {
     return new Hotel(readString(file), readString(file), readString(file), std::stod(readString(file)), std::stoi(readString(file)), std::stod(readString(file)));
 }

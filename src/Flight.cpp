@@ -18,6 +18,23 @@ Flight::Flight(const Flight& other) : TripItem(other.id, FLIGHT, other.startTime
     this->price = other.price;
 }
 
+Flight& Flight::operator=(const Flight& other) {
+    if (this == &other) {
+        return *this;
+    }
+
+    this->id = other.id;
+    this->name = other.name;
+    this->airline = other.airline;
+    this->startTime = other.startTime;
+    this->endTime = other.endTime;
+    this->origin = other.origin;
+    this->destination = other.destination;
+    this->price = other.price;
+
+    return *this;
+}
+
 std::string Flight::getOrigin() {
     return this->origin;
 }

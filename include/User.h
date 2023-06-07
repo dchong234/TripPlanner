@@ -33,9 +33,9 @@ class User {
         std::vector<Trip*> getTripStorage();
         void addTripToStorage(Trip*);
 
-        Activity* parseActivity(std::ifstream&);
-        Flight* parseFlight(std::ifstream&);
-        Hotel* parseHotel(std::ifstream&);
+        Activity * parseActivity(std::ifstream&);
+        Flight * parseFlight(std::ifstream&);
+        Hotel * parseHotel(std::ifstream&);
 };
 
 #endif

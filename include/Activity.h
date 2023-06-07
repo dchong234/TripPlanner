@@ -13,6 +13,7 @@ class Activity : public TripItem {
     public:
         Activity(std::string, std::string, int, double);
         Activity(const Activity& other);
+        Activity& operator=(const Activity& other);
         std::string getItem();
         std::string getName();
         double getPrice();

@@ -19,6 +19,20 @@ class TripItem {
 
     TripItem(const TripItem& other) : id(other.id), type(other.type), startTime(other.startTime), endTime(other.endTime), name(other.name) {}
 
+    TripItem& operator=(const TripItem& other) {
+      if (this == &other) {
+        return *this;
+      }
+
+      this->id = other.id;
+      this->type = other.type;
+      this->startTime = other.startTime;
+      this->endTime = other.endTime;
+      this->name = name;
+
+      return *this;
+    }
+
     ItemType getItemType() { return type; }
     std::string getID() { return id; }
     int getStartTime() { return startTime; }

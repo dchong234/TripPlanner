@@ -24,7 +24,7 @@ class MainMenu {
         void viewSchedule(User &);
         void viewBookingMenu();
         void viewLogin();
-        void printInput();
+        void printInput(TripHandler&);
         MainMenu();
     private:
         std::string takeInput();
