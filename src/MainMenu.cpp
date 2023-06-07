@@ -3,10 +3,16 @@
 #include <iostream>
 #include <stdexcept>
 
+#define RESET   "\033[0m"
+#define GREEN   "\033[32m"
+#define RED     "\033[31m"
+#define YELLOW  "\033[33m"
+
 MainMenu::MainMenu() {}
 
-void MainMenu::viewOptions() {
-    std::cout << "Welcome!" << std::endl; // TODO: Add username
+void MainMenu::viewOptions(User &user) {
+    //system("clear");
+    std::cout << "Welcome " << user.getUsername() << "!" << std::endl; // TODO: Add username
     std::cout << "1. Edit Trips" << std::endl;
     std::cout << "2. View Schedule" << std::endl;
     std::cout << "3. Plan Trip" << std::endl;
@@ -19,6 +25,7 @@ void MainMenu::viewTrip(User &user) {
 }
 
 void MainMenu::viewBookingMenu() {
+    system("clear");
     std::cout << "1. Book Flight" << std::endl;
     std::cout << "2. Book Activities" << std::endl;
     std::cout << "3. Book Hotel" << std::endl;
@@ -32,9 +39,10 @@ void MainMenu::viewSchedule(User &user) {
 
 void MainMenu::printUserTrips(User &user){
   if(user.getTripStorage().empty()){
-    std::cout << "There are no trips in your account" << std::endl;
+    std::cout << RED << "There are no trips in your account" << RESET << std::endl;
   }
   else{
+    system("clear");
     for(int i = 0; i<user.getTripStorage().size(); i++){
       std::cout << i+1 <<". " << user.getTripStorage().at(i)->getTripName() << std::endl;
     }
@@ -42,9 +50,12 @@ void MainMenu::printUserTrips(User &user){
 }
 
 void MainMenu::viewLogin() {
-    std::cout << "--Travel Planner--" << std::endl;
-    std::cout << "1. Login" << std::endl;
-    std::cout << "2. Create Account" << std::endl;
+  std::cout << std::endl;
+  std::cout << "-----------------" << std::endl;
+  std::cout << YELLOW << " Travel Planner " << RESET << std::endl;
+  std::cout << "-----------------" << std::endl;
+  std::cout << "1. Login" << std::endl;
+  std::cout << "2. Create Account" << std::endl;
 }
 
 void MainMenu::printPage(std::string type, int page)
@@ -79,6 +90,7 @@ void MainMenu::printPage(std::string type, int page)
 }
 
 void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
+  system("clear");
   std::vector<TripItem*> dummyItems;
 
   std::string input = "";
@@ -94,9 +106,9 @@ void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
   for(unsigned i = 0; i < 2; i++) {
     printPage(type, i+1);
     if (type == "activity") {
-      std::cout << "Show more activities? Yes or No" << std::endl;
+      std::cout << "Show more activities? " << GREEN << "Yes" << RESET << " or " << RED << "No" << RESET << std::endl;
     } else {
-      std::cout << "Show more " << type << "s? Yes or No" << std::endl;
+      std::cout << "Show more " << type << "s? " << GREEN << "Yes" << RESET << " or " << RED << "No" << RESET<< std::endl;
     }
     input = takeInput();
     if (input == "Yes" || input == "yes") {
@@ -125,6 +137,7 @@ void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
 }
 
 void MainMenu::printInput(TripHandler& tripHandler){
+  system("clear");
   std::string input = "";
   while (true) {
     viewBookingMenu();

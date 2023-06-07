@@ -13,17 +13,17 @@ DummyData::DummyData(){
     // Flight 4
     flights.push_back(new Flight("F4", "Air Canada", 1500, 1930, "Toronto", "Vancouver", 380.50));
     // Flight 5
-    flights.push_back(new Flight("F5", "Lufthansa", 645, 930, "Frankfurt", "London", 280.75));
+    flights.push_back(new Flight("F5", "Lufthansa", 630, 930, "Frankfurt", "London", 280.75));
     // Flight 6
     flights.push_back(new Flight("F6", "Emirates", 1130, 1615, "Sydney", "Dubai", 850.00));
     // Flight 7
-    flights.push_back(new Flight("F7", "British Airways", 1415, 1900, "London", "New York City", 550.25));
+    flights.push_back(new Flight("F7", "British Airways", 1400, 1900, "London", "New York City", 550.25));
     // Flight 8
     flights.push_back(new Flight("F8", "Qantas", 800, 1030, "Sydney", "Melbourne", 180.00));
     // Flight 9
     flights.push_back(new Flight("F9", "Cathay Pacific", 1200, 1830, "Hong Kong", "San Francisco", 720.75));
     // Flight 10
-    flights.push_back(new Flight("F10", "Air France", 615, 1400, "Johannesburg", "Paris", 580.00));
+    flights.push_back(new Flight("F10", "Air France", 630, 1400, "Johannesburg", "Paris", 580.00));
 
     // Hotel 1
     hotels.push_back(new Hotel("H1", "Grand Hotel", "New York City", 200.00, 4, 800));

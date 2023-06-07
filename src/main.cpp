@@ -20,6 +20,11 @@ using std::string;
 string takeInput();
 string checkValidInput(string);
 
+#define RESET   "\033[0m"
+#define GREEN   "\033[32m"
+#define RED     "\033[31m"
+#define YELLOW  "\033[33m"
+
 int main()
 {
   MainMenu menu;
@@ -48,7 +53,7 @@ int main()
       else if(input == "2")
       {
         accountHandler.createAccount();
-        cout << "Account successfully created!" << endl;
+        cout << GREEN << "Account successfully created!" << RESET << endl;
         return 0;
       }
       else
@@ -68,7 +73,7 @@ int main()
   while(true)
   {
     cout << endl;
-    menu.viewOptions();
+    menu.viewOptions(user);
     input = "";
     input = takeInput();
 
@@ -81,9 +86,9 @@ int main()
       tripHandler.setTrip(user.getTripStorage().at(std::stoi(input)-1));
 
       cout << "Would you like to add or remove an item from this trip?" << endl;
-      cout << "1. Add" << endl;
-      cout << "2. Remove" << endl;
-      cout << "3. None" << endl;
+      cout << GREEN << "1. Add" << RESET << endl;
+      cout << RED << "2. Remove" << RESET<< endl;
+      cout << YELLOW << "3. None" << RESET<< endl;
 
       input = takeInput();
 
