@@ -20,7 +20,7 @@ void User::addTripToStorage(Trip* trip) {
 }
 
 void User::importTrips() {
-    std::string filename = "data/" + this->getUsername() + "Trips.dat";
+    std::string filename = "../data/" + this->getUsername() + "Trips.dat";
 
     std::string str;
 
@@ -70,7 +70,7 @@ void User::importTrips() {
 }
 
 void User::exportTrips() {
-    std::string filename = "data/" + username + "Trips.dat";
+    std::string filename = "../data/" + username + "Trips.dat";
 
     std::ofstream outFS(filename, std::fstream::out);
 
