@@ -5,8 +5,8 @@
 
 MainMenu::MainMenu() {}
 
-void MainMenu::viewOptions() {
-    std::cout << "Welcome!" << std::endl; // TODO: Add username
+void MainMenu::viewOptions(User &user) {
+    std::cout << "Welcome " << user.getUsername() << "!" << std::endl; // TODO: Add username
     std::cout << "1. Edit Trips" << std::endl;
     std::cout << "2. View Schedule" << std::endl;
     std::cout << "3. Plan Trip" << std::endl;

@@ -61,14 +61,14 @@ int main()
     }
   }
 
-  user.importTrips();
+  // user.importTrips();
 
   cout << endl;
 
   while(true)
   {
     cout << endl;
-    menu.viewOptions();
+    menu.viewOptions(user);
     input = "";
     input = takeInput();
 
