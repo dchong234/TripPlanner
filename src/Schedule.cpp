@@ -37,26 +37,6 @@ void Schedule::getSchedule(){
   }
 }
 
-void Schedule::printStuff() {
-  return;
-}
-
-void Schedule::addActvity(Activity* activity){
-  return;
-}
-
-void Schedule::cancelActivity(){
-  return;
-}
-
-void Schedule::viewPrevTrip(){
-  return;
-}
-
-void Schedule::viewUpcomingTrip(){
-  return;
-}
-
 void Schedule::setTrip(Trip* trip) {
   this->trip = trip;
 }

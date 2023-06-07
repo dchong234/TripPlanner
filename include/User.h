@@ -25,14 +25,17 @@ class User {
             os << "Password: " << user.password << std::endl;
             return os;
         }
+
         void importTrips();
+        void exportTrips();
+
         std::string readString(std::ifstream&);
         std::vector<Trip*> getTripStorage();
         void addTripToStorage(Trip*);
 
-        Activity* parseActivity(std::ifstream&);
-        Flight* parseFlight(std::ifstream&);
-        Hotel* parseHotel(std::ifstream&);
+        Activity * parseActivity(std::ifstream&);
+        Flight * parseFlight(std::ifstream&);
+        Hotel * parseHotel(std::ifstream&);
 };
 
 #endif

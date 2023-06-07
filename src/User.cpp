@@ -40,8 +40,7 @@ void User::importTrips() {
     while (true) {
         str = readString(inFS);
 
-        if (str == "trip") {
-            std::cout << "creating trip" << std::endl;
+        if (str == "\ntrip") {
             str = readString(inFS);
 
             trip = new Trip(str);
@@ -51,15 +50,15 @@ void User::importTrips() {
         }
 
         if (str == "\nactivity") {
-            tripHandler.addTripItem(parseActivity(inFS));
+            tripHandler.importTripItem(parseActivity(inFS));
         }
 
         if (str == "\nflight") {
-            tripHandler.addTripItem(parseFlight(inFS));
+            tripHandler.importTripItem(parseFlight(inFS));
         }
 
         if (str == "\nhotel") {
-            tripHandler.addTripItem(parseHotel(inFS));
+            tripHandler.importTripItem(parseHotel(inFS));
         }
 
         if (inFS.eof() == true) {
@@ -70,21 +69,50 @@ void User::importTrips() {
     }
 }
 
+void User::exportTrips() {
+    std::string filename = "data/" + username + "Trips.dat";
+
+    std::ofstream outFS(filename, std::fstream::out);
+
+    outFS << std::endl;
+
+    if (outFS.is_open()) {
+        for (Trip* trip : tripStorage) {
+            outFS << "trip/" << trip->getTripName() << "/" << std::endl;
+
+            for (TripItem* item : *(trip->getTripItems())) {
+                if (item->getItemType() == ACTIVITY) {
+                    static_cast<Activity*>(item)->extractItem(outFS);
+                }
+                if (item->getItemType() == HOTEL) {
+                    static_cast<Hotel*>(item)->extractItem(outFS);
+                }
+                if (item->getItemType() == FLIGHT) {
+                    static_cast<Flight*>(item)->extractItem(outFS);
+                }
+            }
+        }
+    } else {
+        std::cerr << "Failed to open the file." << std::endl;
+    }
+    outFS.close();
+}
+
 std::string User::readString(std::ifstream& file) {
     std::string line;
     getline(file, line, '/');
     return line;
 }
 
-Activity* User::parseActivity(std::ifstream& file) {
+Activity * User::parseActivity(std::ifstream& file) {
     return new Activity(readString(file), readString(file), std::stoi(readString(file)), std::stod(readString(file)));
 }
 
-Flight* User::parseFlight(std::ifstream& file) {
+Flight * User::parseFlight(std::ifstream& file) {
     return new Flight(readString(file), readString(file), std::stoi(readString(file)), std::stoi(readString(file)), 
                       readString(file), readString(file), std::stod(readString(file)));
 }
 
-Hotel* User::parseHotel(std::ifstream& file) {
+Hotel * User::parseHotel(std::ifstream& file) {
     return new Hotel(readString(file), readString(file), readString(file), std::stod(readString(file)), std::stoi(readString(file)), std::stod(readString(file)));
 }

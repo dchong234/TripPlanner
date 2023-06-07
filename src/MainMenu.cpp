@@ -52,14 +52,14 @@ void MainMenu::printPage(std::string type, int page)
   unsigned i = 0;
   unsigned upperLimit = i;
   std::string input = "";
-  std::vector<TripItem*> * dummyItems;
+  std::vector<TripItem*> dummyItems;
 
   if (type == "flight") {
-    dummyItems = &dummyData.flights;
+    dummyItems = dummyData.flights;
   } else if (type == "activity") {
-    dummyItems = &dummyData.activities;
+    dummyItems = dummyData.activities;
   } else if (type == "hotel") {
-    dummyItems = &dummyData.hotels;
+    dummyItems = dummyData.hotels;
   }
 
   if (page == 2) {
@@ -69,7 +69,7 @@ void MainMenu::printPage(std::string type, int page)
   upperLimit = i + 5;
 
   for (i; i < upperLimit; ++i) {
-    std::cout << i + 1 << ". " << dummyItems->at(i)->getItem();
+    std::cout << i + 1 << ". " << dummyItems.at(i)->getItem();
     std::cout << std::endl;
   }
 
@@ -79,16 +79,16 @@ void MainMenu::printPage(std::string type, int page)
 }
 
 void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
-  std::vector<TripItem*> * dummyItems;
+  std::vector<TripItem*> dummyItems;
 
   std::string input = "";
 
   if (type == "flight") {
-    dummyItems = &dummyData.flights;
+    dummyItems = dummyData.flights;
   } else if (type == "activity") {
-    dummyItems = &dummyData.activities;
+    dummyItems = dummyData.activities;
   } else if (type == "hotel") {
-    dummyItems = &dummyData.hotels;
+    dummyItems = dummyData.hotels;
   }
 
   for(unsigned i = 0; i < 2; i++) {
@@ -107,7 +107,7 @@ void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
       while (true) {
         try {
             input = takeInput();
-            tripHandler.addTripItem(dummyItems->at(std::stoi(input)-1));
+            tripHandler.addTripItem(dummyItems.at(std::stoi(input)-1));
             break;
         } catch (std::invalid_argument& e) {
             std::cerr << "Please enter a valid number" << std::endl;
@@ -124,9 +124,8 @@ void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
   }
 }
 
-void MainMenu::printInput(){
+void MainMenu::printInput(TripHandler& tripHandler){
   std::string input = "";
-  TripHandler tripHandler;
   while (true) {
     viewBookingMenu();
     input = takeInput();

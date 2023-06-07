@@ -13,13 +13,15 @@ class Hotel : public TripItem {
     public:
         Hotel(std::string, std::string, std::string, double, int, int);
         Hotel(const Hotel& other);
+        ~Hotel() {}
+        Hotel& operator=(const Hotel& other);
         std::string getName();
         std::string getLocation();
         double getPrice();
         int getRating();
         std::string getItem();
         double getHotelTime();
-        void extractHotel(std::ofstream&);
+        void extractItem(std::ofstream&);
 };
 
 #endif
