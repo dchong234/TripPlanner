@@ -50,15 +50,15 @@ void User::importTrips() {
         }
 
         if (str == "\nactivity") {
-            tripHandler.addTripItem(parseActivity(inFS));
+            tripHandler.importTripItem(parseActivity(inFS));
         }
 
         if (str == "\nflight") {
-            tripHandler.addTripItem(parseFlight(inFS));
+            tripHandler.importTripItem(parseFlight(inFS));
         }
 
         if (str == "\nhotel") {
-            tripHandler.addTripItem(parseHotel(inFS));
+            tripHandler.importTripItem(parseHotel(inFS));
         }
 
         if (inFS.eof() == true) {

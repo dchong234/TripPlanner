@@ -34,6 +34,10 @@ void TripHandler::addTripItem(TripItem* item) {
     }
 }
 
+void TripHandler::importTripItem(TripItem* item) {
+    trip->getTripItems()->push_back(item);
+}
+
 void TripHandler::removeTripItem(TripItem* item) {
     std::vector<TripItem*>::iterator it = getItemPosition(item);
 

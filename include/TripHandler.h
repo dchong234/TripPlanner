@@ -31,8 +31,8 @@ class TripHandler {
         void removeTripItemByIndex(int idx);
 
         void setTrip(Trip*);
-        void exportTrip(User&);
-        void importTrip(User&);
+
+        void importTripItem(TripItem* item);
 };
 
 #endif

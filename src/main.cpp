@@ -61,7 +61,7 @@ int main()
     }
   }
 
-  // user.importTrips();
+  user.importTrips();
 
   cout << endl;
 
@@ -123,7 +123,7 @@ int main()
       menu.printInput(tripHandler);
     }
     else if(input == "4") {
-      // user.exportTrips();
+      user.exportTrips();
       return 0;
     } else {
       input = takeInput();
