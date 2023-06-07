@@ -53,3 +53,8 @@ TEST(HotelTests, locationTest) {
     Hotel hotel("H1", "La Quinta", "New York City", 150.25, 4, 1300);
     EXPECT_EQ(hotel.getLocation(), "New York City");
 }
+
+TEST(HotelTests, priceTest) {
+    Hotel hotel("H1", "La Quinta", "New York City", 150.25, 4, 1300);
+    EXPECT_DOUBLE_EQ(hotel.getPrice(), 150.25);
+}
