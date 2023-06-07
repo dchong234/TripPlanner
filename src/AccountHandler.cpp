@@ -7,6 +7,9 @@
 #include <stdexcept>
 #include <limits>
 
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+
 User AccountHandler::login() {
     bool flag = false;
     int idx = 0;
@@ -26,7 +29,7 @@ User AccountHandler::login() {
     }
 
     if (!flag || userStorage.at(idx).getPassword() != password) {
-        throw std::runtime_error("Incorrect username or password");
+        throw std::runtime_error(std::string(RED) + "Incorrect username or password" + std::string(RESET));
     }
 
     return userStorage.at(idx);
