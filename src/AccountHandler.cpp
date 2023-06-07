@@ -6,6 +6,7 @@
 #include <string>
 #include <stdexcept>
 #include <limits>
+#include <unistd.h>
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
@@ -17,8 +18,9 @@ User AccountHandler::login() {
     std::cout << "Enter a username: ";
     std::cin >> username;
     
-    std::cout << "Enter a password: ";
-    std::cin >> password;
+
+    std::string password = getpass("Enter a password: ");
+    std::string passwordStr(password);
 
     for (auto x : userStorage) {
         if (x.getUsername() == username) {
@@ -29,6 +31,7 @@ User AccountHandler::login() {
     }
 
     if (!flag || userStorage.at(idx).getPassword() != password) {
+        std::cout << std::endl;
         throw std::runtime_error(std::string(RED) + "Incorrect username or password" + std::string(RESET));
     }
 
