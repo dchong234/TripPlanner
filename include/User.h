@@ -25,7 +25,10 @@ class User {
             os << "Password: " << user.password << std::endl;
             return os;
         }
+
         void importTrips();
+        void exportTrips();
+
         std::string readString(std::ifstream&);
         std::vector<Trip*> getTripStorage();
         void addTripToStorage(Trip*);

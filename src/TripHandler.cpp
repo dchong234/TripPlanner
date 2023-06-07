@@ -44,31 +44,6 @@ void TripHandler::removeTripItemByIndex(int idx) {
     trip->getTripItems()->erase(trip->getTripItems()->begin() + idx);
 }
 
-void TripHandler::extractTrip(User& user) {
-    std::string filename = "data/" + user.getUsername() + "Trips.dat";
-
-    std::ofstream outFS(filename, std::fstream::out);
-
-    if (outFS.is_open()) {
-        outFS << "trip/" << trip->getTripName() << std::endl;
-
-        for (TripItem* item : *(trip->getTripItems())) {
-            if (item->getItemType() == ACTIVITY) {
-                static_cast<Activity*>(item)->extractActivity(outFS);
-            }
-            if (item->getItemType() == HOTEL) {
-                static_cast<Hotel*>(item)->extractHotel(outFS);
-            }
-            if (item->getItemType() == FLIGHT) {
-                static_cast<Flight*>(item)->extractFlight(outFS);
-            }
-        }
-    } else {
-        std::cerr << "Failed to open the file." << std::endl;
-    }
-    outFS.close();
-}
-
 std::string TripHandler::readString(std::ifstream& file) {
     std::string line;
     getline(file, line, '/');

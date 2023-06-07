@@ -31,7 +31,7 @@ class TripHandler {
         void removeTripItemByIndex(int idx);
 
         void setTrip(Trip*);
-        void extractTrip(User&);
+        void exportTrip(User&);
         void importTrip(User&);
 };
 
