@@ -9,6 +9,7 @@
 #include "../include/Activity.h"
 #include "../include/Flight.h"
 #include "../include/Hotel.h"
+#include "../include/Schedule.h"
 
 #include <string>
 
@@ -74,3 +75,11 @@ TEST(HotelTests, HotelItemTest) {
     ASSERT_EQ(hotel.getItem(), correctString);  
 }
 
+TEST(ScheduleTests, formatTimeTest) {
+    Trip* trip = new Trip("Hawaii Trip");
+    Schedule schedule(trip);
+    std::string correctString = "02:00 PM";
+    ASSERT_EQ(schedule.formatTime(1400), correctString);
+    delete trip;
+    trip = nullptr;
+}
