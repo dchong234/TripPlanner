@@ -35,3 +35,15 @@ TEST(FlightTests, destinationTest) {
     "San Diego", "New York City", 550.75);
     EXPECT_EQ(flight.getDestination(), "New York City");
 }
+
+TEST(FlightTests, getFlightItemTest) {
+    Flight flight("F1", "Southwest", 800, 1200, 
+    "San Diego", "New York City", 550.75);
+    std::string correctString = "Airline: Southwest\n";
+    correctString += "Departure Time: 08:00 AM\n";
+    correctString += "Arrival Time: 12:00 PM\n";
+    correctString += "Origin: San Diego\n";
+    correctString += "Destination: New York City\n";
+    correctString += "Price: $" + std::to_string(flight.getPrice()) + "\n";
+    ASSERT_EQ(flight.getItem(), correctString);
+}
