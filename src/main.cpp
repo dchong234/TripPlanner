@@ -23,6 +23,7 @@ string checkValidInput(string);
 int main()
 {
   MainMenu menu;
+
   AccountHandler accountHandler;
   User user;
 
@@ -47,7 +48,8 @@ int main()
       else if(input == "2")
       {
         accountHandler.createAccount();
-        break;
+        cout << "Account successfully created!" << endl;
+        return 0;
       }
       else
       {
@@ -58,6 +60,8 @@ int main()
       return 1;
     }
   }
+
+  user.importTrips();
 
   cout << endl;
 
@@ -85,26 +89,9 @@ int main()
 
       while (true) {
         if (input == "1") {
-          // TODO: Refactor into its own function in main menu
-          while (true) {
-            menu.viewBookingMenu();
-            input = takeInput();
+          // // TODO: Refactor into its own function in main menu
+          // menu.printInput(tripHandler);
 
-            if (input == "1") {
-              menu.printSelectionPage("flight", tripHandler);
-            }
-
-            else if (input == "2") {
-              menu.printSelectionPage("activity", tripHandler);
-            }
-
-            else if (input == "3") {
-              menu.printSelectionPage("hotel", tripHandler);
-            } 
-            else if (input == "4") {
-              break;
-            }
-          }
         } else if (input == "2") {
           cout << "Select which item you would like to remove" << endl;
           input = takeInput();
@@ -133,27 +120,10 @@ int main()
       user.addTripToStorage(currTrip);
       tripHandler.setTrip(currTrip);
 
-      while (true) {
-        menu.viewBookingMenu();
-        input = takeInput();
-
-        if (input == "1") {
-          menu.printSelectionPage("flight", tripHandler);
-        }
-
-        else if (input == "2") {
-          menu.printSelectionPage("activity", tripHandler);
-        }
-
-        else if (input == "3") {
-          menu.printSelectionPage("hotel", tripHandler);
-        } 
-        else if (input == "4") {
-          break;
-        }
-      }
-    } 
+      menu.printInput(tripHandler);
+    }
     else if(input == "4") {
+      user.exportTrips();
       return 0;
     } else {
       input = takeInput();

@@ -1,4 +1,5 @@
 #include "../include/MainMenu.h"
+#include "../include/TripHandler.h"
 #include <iostream>
 #include <stdexcept>
 
@@ -51,31 +52,29 @@ void MainMenu::printPage(std::string type, int page)
   unsigned i = 0;
   unsigned upperLimit = i;
   std::string input = "";
-  std::vector<TripItem*> * dummyItems;
+  std::vector<TripItem*> dummyItems;
 
   if (type == "flight") {
-    dummyItems = &dummyData.flights;
+    dummyItems = dummyData.flights;
   } else if (type == "activity") {
-    dummyItems = &dummyData.activities;
+    dummyItems = dummyData.activities;
   } else if (type == "hotel") {
-    dummyItems = &dummyData.hotels;
+    dummyItems = dummyData.hotels;
   }
 
   if (page == 2) {
     i = 5;
-  } else if (page == 3) {
-    i = 10;
   }
 
   upperLimit = i + 5;
 
   for (i; i < upperLimit; ++i) {
-    std::cout << i + 1 << ". " << dummyItems->at(i)->getItem();
+    std::cout << i + 1 << ". " << dummyItems.at(i)->getItem();
     std::cout << std::endl;
   }
 
   std::cout << std::endl;
-  std::cout << "PAGE " << page << " OF 3" << std::endl;
+  std::cout << "PAGE " << page << " OF 2" << std::endl;
   std::cout << std::endl;
 }
 
@@ -92,7 +91,7 @@ void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
     dummyItems = dummyData.hotels;
   }
 
-  for(unsigned i = 0; i < 3; i++) {
+  for(unsigned i = 0; i < 2; i++) {
     printPage(type, i+1);
     if (type == "activity") {
       std::cout << "Show more activities? Yes or No" << std::endl;
@@ -124,6 +123,31 @@ void MainMenu::printSelectionPage(std::string type, TripHandler& tripHandler) {
     }
   }
 }
+
+void MainMenu::printInput(TripHandler& tripHandler){
+  std::string input = "";
+  while (true) {
+    viewBookingMenu();
+    input = takeInput();
+
+    if (input == "1") {
+      printSelectionPage("flight", tripHandler);
+    }
+
+    else if (input == "2") {
+      printSelectionPage("activity", tripHandler);
+    }
+
+    else if (input == "3") {
+      printSelectionPage("hotel", tripHandler);
+    } 
+    else if (input == "4") {
+      break;
+    }
+  }
+}
+
+
 
 std::string MainMenu::takeInput() {
   std::string input;

@@ -25,6 +25,16 @@ std::vector<TripItem*>::iterator TripHandler::getItemPosition(TripItem* item) {
 }
 
 void TripHandler::addTripItem(TripItem* item) {
+    if (item->getItemType() == ACTIVITY) {
+        trip->getTripItems()->push_back(new Activity(*static_cast<Activity*>(item)));
+    } else if (item->getItemType() == FLIGHT) {
+        trip->getTripItems()->push_back(new Flight(*static_cast<Flight*>(item)));
+    } else if (item->getItemType() == HOTEL) {
+        trip->getTripItems()->push_back(new Hotel(*static_cast<Hotel*>(item)));
+    }
+}
+
+void TripHandler::importTripItem(TripItem* item) {
     trip->getTripItems()->push_back(item);
 }
 
@@ -36,31 +46,6 @@ void TripHandler::removeTripItem(TripItem* item) {
 
 void TripHandler::removeTripItemByIndex(int idx) {
     trip->getTripItems()->erase(trip->getTripItems()->begin() + idx);
-}
-
-void TripHandler::extractTrip(User& user) {
-    std::string filename = "data/" + user.getUsername() + "Trips.dat";
-
-    std::ofstream outFS(filename, std::fstream::out);
-
-    if (outFS.is_open()) {
-        outFS << "trip/" << trip->getTripName() << std::endl;
-
-        for (TripItem* item : *(trip->getTripItems())) {
-            if (item->getItemType() == ACTIVITY) {
-                static_cast<Activity*>(item)->extractActivity(outFS);
-            }
-            if (item->getItemType() == HOTEL) {
-                static_cast<Hotel*>(item)->extractHotel(outFS);
-            }
-            if (item->getItemType() == FLIGHT) {
-                static_cast<Flight*>(item)->extractFlight(outFS);
-            }
-        }
-    } else {
-        std::cerr << "Failed to open the file." << std::endl;
-    }
-    outFS.close();
 }
 
 std::string TripHandler::readString(std::ifstream& file) {

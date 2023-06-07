@@ -11,6 +11,30 @@ std::string origin, std::string destination, double price) : TripItem(id, FLIGHT
     this->price = price;
 }
 
+Flight::Flight(const Flight& other) : TripItem(other.id, FLIGHT, other.startTime, other.endTime, other.airline) {
+    this->airline = other.airline;
+    this->origin = other.origin;
+    this->destination = other.destination;
+    this->price = other.price;
+}
+
+Flight& Flight::operator=(const Flight& other) {
+    if (this == &other) {
+        return *this;
+    }
+
+    this->id = other.id;
+    this->name = other.name;
+    this->airline = other.airline;
+    this->startTime = other.startTime;
+    this->endTime = other.endTime;
+    this->origin = other.origin;
+    this->destination = other.destination;
+    this->price = other.price;
+
+    return *this;
+}
+
 std::string Flight::getOrigin() {
     return this->origin;
 }
@@ -34,7 +58,7 @@ std::string Flight::getItem() {
     return flightInformation;
 }
 
-void Flight::extractFlight(std::ofstream& outFS)
+void Flight::extractItem(std::ofstream& outFS)
 {
     outFS << "flight/";
     outFS << id << "/" << airline << "/" << startTime << "/" << endTime << "/"

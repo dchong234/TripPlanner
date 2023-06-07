@@ -13,12 +13,15 @@ class Flight : public TripItem {
     public:
         Flight(std::string id, std::string airline, int departureTime, int arrivalTime,
         std::string origin, std::string desination, double price);
+        Flight(const Flight& other);
+        Flight& operator=(const Flight& other);
+        ~Flight() {}
         std::string getAirline();
         std::string getOrigin();
         std::string getDestination();
         double getPrice();
         std::string getItem();
-        void extractFlight(std::ofstream&);
+        void extractItem(std::ofstream&);
 };
 
 #endif
