@@ -1,3 +1,8 @@
 a.out
 data/
 debug
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+CMakeFiles/
+TripPlanner
