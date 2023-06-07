@@ -8,6 +8,7 @@
 #include "../include/TripItem.h"
 #include "../include/Activity.h"
 #include "../include/Flight.h"
+#include "../include/Hotel.h"
 
 #include <string>
 
@@ -46,4 +47,9 @@ TEST(FlightTests, getFlightItemTest) {
     correctString += "Destination: New York City\n";
     correctString += "Price: $" + std::to_string(flight.getPrice()) + "\n";
     ASSERT_EQ(flight.getItem(), correctString);
+}
+
+TEST(HotelTests, locationTest) {
+    Hotel hotel("H1", "La Quinta", "New York City", 150.25, 4, 1300);
+    EXPECT_EQ(hotel.getLocation(), "New York City");
 }
