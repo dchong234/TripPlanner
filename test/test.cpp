@@ -29,3 +29,9 @@ TEST(FlightTests, originTest) {
     "San Diego", "New York City", 550.75);
     EXPECT_EQ(flight.getOrigin(), "San Diego");
 }
+
+TEST(FlightTests, destinationTest) {
+    Flight flight("F1", "Southwest", 800, 1200, 
+    "San Diego", "New York City", 550.75);
+    EXPECT_EQ(flight.getDestination(), "New York City");
+}
