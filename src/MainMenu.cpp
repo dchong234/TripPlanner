@@ -3,6 +3,10 @@
 #include <iostream>
 #include <stdexcept>
 
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define YELLOW  "\033[33m"
+
 MainMenu::MainMenu() {}
 
 void MainMenu::viewOptions(User &user) {
@@ -32,7 +36,7 @@ void MainMenu::viewSchedule(User &user) {
 
 void MainMenu::printUserTrips(User &user){
   if(user.getTripStorage().empty()){
-    std::cout << "There are no trips in your account" << std::endl;
+    std::cout << RED << "There are no trips in your account" << RESET << std::endl;
   }
   else{
     for(int i = 0; i<user.getTripStorage().size(); i++){
@@ -44,7 +48,7 @@ void MainMenu::printUserTrips(User &user){
 void MainMenu::viewLogin() {
   std::cout << std::endl;
   std::cout << "-----------------" << std::endl;
-  std::cout << " Travel Planner " << std::endl;
+  std::cout << YELLOW << " Travel Planner " << RESET << std::endl;
   std::cout << "-----------------" << std::endl;
   std::cout << "1. Login" << std::endl;
   std::cout << "2. Create Account" << std::endl;
