@@ -83,3 +83,16 @@ TEST(ScheduleTests, formatTimeTest) {
     delete trip;
     trip = nullptr;
 }
+
+TEST(TripTests, tripNameTest) {
+    Trip trip("Hawaii Trip");
+    EXPECT_EQ(trip.getTripName(), "Hawaii Trip");
+}
+
+TEST(TripTests, getTripItemsTest) {
+    Trip trip("Hawaii Trip");
+    TripHandler tripHandler(&trip);
+
+    tripHandler.addTripItem(new Hotel("H1", "La Quinta", "New York City", 150.25, 4, 1300));
+    EXPECT_EQ(trip.getTripItems()->size(), 1);
+}
