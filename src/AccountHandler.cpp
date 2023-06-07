@@ -35,7 +35,7 @@ User AccountHandler::login() {
 AccountHandler::AccountHandler(){
     std::ifstream inFS;
 
-    inFS.open("data/AccountStorage", std::ios::in);
+    inFS.open("../data/AccountStorage", std::ios::in);
     if (inFS.is_open()) {
         while(inFS >> username) {
             if (inFS >> password) {
@@ -52,7 +52,7 @@ AccountHandler::AccountHandler(){
 
 void AccountHandler::createAccount() {
     std::ofstream outFS;
-    outFS.open("data/AccountStorage", std::fstream::app);
+    outFS.open("../data/AccountStorage", std::fstream::app);
 
     if (outFS.is_open()) {
         std::string username, password;
