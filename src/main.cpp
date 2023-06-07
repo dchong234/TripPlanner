@@ -20,6 +20,9 @@ using std::string;
 string takeInput();
 string checkValidInput(string);
 
+#define RESET   "\033[0m"
+#define GREEN   "\033[32m"
+
 int main()
 {
   MainMenu menu;
@@ -48,7 +51,7 @@ int main()
       else if(input == "2")
       {
         accountHandler.createAccount();
-        cout << "Account successfully created!" << endl;
+        cout << GREEN << "Account successfully created!" << RESET << endl;
         return 0;
       }
       else
