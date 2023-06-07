@@ -14,6 +14,7 @@ class Activity : public TripItem {
         Activity(std::string, std::string, int, double);
         Activity(const Activity& other);
         Activity& operator=(const Activity& other);
+        ~Activity() {}
         std::string getItem();
         std::string getName();
         double getPrice();

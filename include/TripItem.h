@@ -19,6 +19,8 @@ class TripItem {
 
     TripItem(const TripItem& other) : id(other.id), type(other.type), startTime(other.startTime), endTime(other.endTime), name(other.name) {}
 
+    virtual ~TripItem() {}
+
     TripItem& operator=(const TripItem& other) {
       if (this == &other) {
         return *this;
