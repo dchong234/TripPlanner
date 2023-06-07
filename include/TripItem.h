@@ -15,6 +15,9 @@ class TripItem {
     int endTime = 0;
   public:
     TripItem(std::string id, ItemType type, int startTime, int endTime, std::string name) : id(id), type(type), startTime(startTime), endTime(endTime), name(name) {}
+
+    TripItem(const TripItem& other) : id(other.id), type(other.type), startTime(other.startTime), endTime(other.endTime), name(other.name) {}
+
     ItemType getItemType() { return type; }
     std::string getID() { return id; }
     int getStartTime() { return startTime; }

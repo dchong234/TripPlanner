@@ -12,6 +12,7 @@ class Activity : public TripItem {
         double price;
     public:
         Activity(std::string, std::string, int, double);
+        Activity(const Activity& other);
         std::string getItem();
         std::string getName();
         double getPrice();

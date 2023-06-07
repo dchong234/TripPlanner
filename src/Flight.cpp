@@ -11,6 +11,13 @@ std::string origin, std::string destination, double price) : TripItem(id, FLIGHT
     this->price = price;
 }
 
+Flight::Flight(const Flight& other) : TripItem(other.id, FLIGHT, other.startTime, other.endTime, other.airline) {
+    this->airline = other.airline;
+    this->origin = other.origin;
+    this->destination = other.destination;
+    this->price = other.price;
+}
+
 std::string Flight::getOrigin() {
     return this->origin;
 }

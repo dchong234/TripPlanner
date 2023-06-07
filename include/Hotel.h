@@ -12,6 +12,7 @@ class Hotel : public TripItem {
         int rating;
     public:
         Hotel(std::string, std::string, std::string, double, int, int);
+        Hotel(const Hotel& other);
         std::string getName();
         std::string getLocation();
         double getPrice();
