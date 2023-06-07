@@ -26,7 +26,7 @@ double Activity::getPrice()
   return this->price;
 }
 
-void Activity::extractActivity(std::ofstream& outFS)
+void Activity::extractItem(std::ofstream& outFS)
 {
   outFS << "activity/";
   outFS << id << "/" << name << "/" << time << "/" << price << "/" << std::endl;

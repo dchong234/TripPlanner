@@ -19,7 +19,7 @@ class Hotel : public TripItem {
         int getRating();
         std::string getItem();
         double getHotelTime();
-        void extractHotel(std::ofstream&);
+        void extractItem(std::ofstream&);
 };
 
 #endif

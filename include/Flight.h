@@ -19,7 +19,7 @@ class Flight : public TripItem {
         std::string getDestination();
         double getPrice();
         std::string getItem();
-        void extractFlight(std::ofstream&);
+        void extractItem(std::ofstream&);
 };
 
 #endif

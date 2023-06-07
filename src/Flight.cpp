@@ -41,7 +41,7 @@ std::string Flight::getItem() {
     return flightInformation;
 }
 
-void Flight::extractFlight(std::ofstream& outFS)
+void Flight::extractItem(std::ofstream& outFS)
 {
     outFS << "flight/";
     outFS << id << "/" << airline << "/" << startTime << "/" << endTime << "/"

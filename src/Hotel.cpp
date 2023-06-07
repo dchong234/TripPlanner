@@ -37,7 +37,7 @@ std::string Hotel::getItem(){
     return hotelInfo;
 }
 
-void Hotel::extractHotel(std::ofstream& outFS) {
+void Hotel::extractItem(std::ofstream& outFS) {
     outFS << "hotel/";
     outFS << id << "/" << name << "/" << location << "/" << price << "/" << rating << "/" << startTime << "/" << std::endl;
 }

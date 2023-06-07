@@ -1,6 +1,7 @@
 #ifndef TRIPITEM_H
 #define TRIPITEM_H
 #include <string>
+#include <fstream>
 #include <ctime>
 #include <iomanip>
 
@@ -23,7 +24,9 @@ class TripItem {
     int getStartTime() { return startTime; }
     int getEndTime() { return endTime; }
     std::string getName() { return name; }
+
     virtual std::string getItem() = 0;
+    virtual void extractItem(std::ofstream& outFS) = 0;
 
     std::string formatTime(int time) const {
         int hours = time / 100;

@@ -16,7 +16,7 @@ class Activity : public TripItem {
         std::string getItem();
         std::string getName();
         double getPrice();
-        void extractActivity(std::ofstream&);
+        void extractItem(std::ofstream&);
 };
 
 #endif
