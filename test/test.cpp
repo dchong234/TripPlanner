@@ -10,8 +10,16 @@
 
 #include <string>
 
-TEST(FlightTests, originTest) {
-    Activity activity("F1", "kayaking", 800, 115.25);
+TEST(ActivityTests, priceTest) {
+    Activity activity("A1", "kayaking", 800, 115.25);
     ASSERT_DOUBLE_EQ(activity.getPrice(), 115.25);
+}
+
+TEST(ActivityTests, itemTest) {
+    Activity activity("A1", "kayaking", 800, 115.25);
+    std::string correctString = "Activity Name: kayaking\n";
+    correctString += "Time: 08:00 AM\n";
+    correctString += "Price: $" + std::to_string(activity.getPrice()) + "\n"; 
+    ASSERT_EQ(activity.getItem(), correctString);
 }
 
