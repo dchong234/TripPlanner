@@ -42,9 +42,12 @@ void MainMenu::printUserTrips(User &user){
 }
 
 void MainMenu::viewLogin() {
-    std::cout << "--Travel Planner--" << std::endl;
-    std::cout << "1. Login" << std::endl;
-    std::cout << "2. Create Account" << std::endl;
+  std::cout << std::endl;
+  std::cout << "-----------------" << std::endl;
+  std::cout << " Travel Planner " << std::endl;
+  std::cout << "-----------------" << std::endl;
+  std::cout << "1. Login" << std::endl;
+  std::cout << "2. Create Account" << std::endl;
 }
 
 void MainMenu::printPage(std::string type, int page)
