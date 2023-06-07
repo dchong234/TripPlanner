@@ -119,4 +119,12 @@ TEST(UserTests, passwordTest) {
     ASSERT_EQ(user.getPassword(), "password");
 }
 
+TEST(UserTests, tripStorageTest) {
+    Trip* trip = new Trip("Hawaii Trip");
+    User user("khandrew", "password");
+    user.addTripToStorage(trip);
+    EXPECT_EQ(user.getTripStorage().size(), 1);
+}
+
+
 
