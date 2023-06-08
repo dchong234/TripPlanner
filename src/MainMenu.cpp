@@ -33,8 +33,16 @@ void MainMenu::viewBookingMenu() {
 }
 
 void MainMenu::viewSchedule(User &user) {
-    std::cout << "Which trip do you want to access?" << std::endl;
-    printUserTrips(user);
+  std::string input;
+  Schedule schedule;
+
+  std::cout << "Which trip do you want to access?" << std::endl;
+  printUserTrips(user);
+
+  input = takeInput();
+  schedule.setTrip(user.getTripStorage().at(std::stoi(input)-1));
+
+  schedule.getSchedule();
 }
 
 void MainMenu::printUserTrips(User &user){

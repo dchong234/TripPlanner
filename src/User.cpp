@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <algorithm>
 
 User::~User() {
     for (Trip* trip : tripStorage) {
@@ -17,6 +18,15 @@ std::vector<Trip*> User::getTripStorage() {
 
 void User::addTripToStorage(Trip* trip) {
     this->tripStorage.push_back(trip);
+}
+
+void User::removeTripFromStorage(Trip* trip) {
+    auto it = std::find(tripStorage.begin(), tripStorage.end(), trip);
+
+    if (it != tripStorage.end()) {
+        delete *it;
+        tripStorage.erase(it);
+    }
 }
 
 void User::importTrips() {
@@ -33,8 +43,7 @@ void User::importTrips() {
     int i = 0;
 
     if (!inFS.is_open()) {
-        std::cerr << "Failed to open the file." << std::endl;
-        exit(1);
+        return;
     }  
 
     while (true) {
