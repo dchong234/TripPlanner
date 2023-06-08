@@ -35,7 +35,7 @@ User AccountHandler::login() {
         throw std::runtime_error(std::string(RED) + "Incorrect username or password" + std::string(RESET));
     }
 
-    delete password;
+    free(password);
     
     return userStorage.at(idx);
 }
