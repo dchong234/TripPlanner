@@ -110,10 +110,6 @@ int main()
     }
     else if(input == "2") {
       menu.viewSchedule(user);
-      input = takeInput();
-      schedule.setTrip(user.getTripStorage().at(std::stoi(input)-1));
-
-      schedule.getSchedule();
     }
     else if(input == "3") {
       cout << "Name your new trip:" << endl;
