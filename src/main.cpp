@@ -82,28 +82,42 @@ int main()
       menu.viewTrip(user);
       input = takeInput();
 
-      currTrip = user.getTripStorage().at(std::stoi(input)-1);
+      int storageIdx = std::stoi(input)-1;
+
+      currTrip = user.getTripStorage().at(storageIdx);
       tripHandler.setTrip(currTrip);
 
-      cout << "Would you like to add or remove an item from this trip?" << endl;
-      cout << GREEN << "1. Add" << RESET << endl;
-      cout << RED << "2. Remove" << RESET<< endl;
-      cout << YELLOW << "3. None" << RESET<< endl;
+      cout << "Would you like to remove or edit this trip?" << endl;
+      cout << YELLOW << "1. Edit" << RESET << endl;
+      cout << RED << "2. Remove (This action is irreversible)" << RESET << endl;
 
       input = takeInput();
 
       if (input == "1") {
-        menu.viewBookingMenu();
-        menu.printInput(tripHandler);
+        cout << "Would you like to add or remove an item from this trip?" << endl;
+        cout << GREEN << "1. Add" << RESET << endl;
+        cout << RED << "2. Remove" << RESET<< endl;
+        cout << YELLOW << "3. None" << RESET<< endl;
+
+        input = takeInput();
+
+        if (input == "1") {
+          menu.viewBookingMenu();
+          menu.printInput(tripHandler);
+        } else if (input == "2") {
+          cout << "Select which item you would like to remove" << endl;
+          currTrip->printTripItemsList();
+          input = takeInput();
+          tripHandler.removeTripItemByIndex(std::stoi(input)-1);
+        } else if (input == "3") {
+          break;
+        } else {
+          input = takeInput();
+        }
       } else if (input == "2") {
-        cout << "Select which item you would like to remove" << endl;
-        currTrip->printTripItemsList();
-        input = takeInput();
-        tripHandler.removeTripItemByIndex(std::stoi(input)-1);
-      } else if (input == "3") {
-        break;
-      } else {
-        input = takeInput();
+        cout << "Trip: " << currTrip->getTripName() << " deleted." << endl;
+        user.removeTripFromStorage(currTrip);
+        currTrip = nullptr;
       }
     }
     else if(input == "2") {
