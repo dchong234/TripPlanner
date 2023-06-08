@@ -43,8 +43,7 @@ void User::importTrips() {
     int i = 0;
 
     if (!inFS.is_open()) {
-        std::cerr << "Failed to open the file." << std::endl;
-        exit(1);
+        return;
     }  
 
     while (true) {
