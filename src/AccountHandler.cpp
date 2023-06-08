@@ -19,7 +19,7 @@ User AccountHandler::login() {
     std::cin >> username;
     
 
-    std::string password = getpass("Enter a password: ");
+    char* password = getpass("Enter a password: ");
     std::string passwordStr(password);
 
     for (auto x : userStorage) {
@@ -35,6 +35,8 @@ User AccountHandler::login() {
         throw std::runtime_error(std::string(RED) + "Incorrect username or password" + std::string(RESET));
     }
 
+    free(password);
+    
     return userStorage.at(idx);
 }
 
