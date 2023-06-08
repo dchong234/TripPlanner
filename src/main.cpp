@@ -82,8 +82,8 @@ int main()
       menu.viewTrip(user);
       input = takeInput();
 
-      user.getTripStorage().at(std::stoi(input)-1)->printTripItemsList();
-      tripHandler.setTrip(user.getTripStorage().at(std::stoi(input)-1));
+      currTrip = user.getTripStorage().at(std::stoi(input)-1);
+      tripHandler.setTrip(currTrip);
 
       cout << "Would you like to add or remove an item from this trip?" << endl;
       cout << GREEN << "1. Add" << RESET << endl;
@@ -92,20 +92,18 @@ int main()
 
       input = takeInput();
 
-      while (true) {
-        if (input == "1") {
-          // // TODO: Refactor into its own function in main menu
-          // menu.printInput(tripHandler);
-
-        } else if (input == "2") {
-          cout << "Select which item you would like to remove" << endl;
-          input = takeInput();
-          tripHandler.removeTripItemByIndex(std::stoi(input)-1);
-        } else if (input == "3") {
-          break;
-        } else {
-          input = takeInput();
-        }
+      if (input == "1") {
+        menu.viewBookingMenu();
+        menu.printInput(tripHandler);
+      } else if (input == "2") {
+        cout << "Select which item you would like to remove" << endl;
+        currTrip->printTripItemsList();
+        input = takeInput();
+        tripHandler.removeTripItemByIndex(std::stoi(input)-1);
+      } else if (input == "3") {
+        break;
+      } else {
+        input = takeInput();
       }
     }
     else if(input == "2") {
