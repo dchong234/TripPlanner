@@ -132,6 +132,46 @@ In our UML, we have 12 classes. The User class is the class that will contain al
  > Screenshots of the input/output after running your application
  ## Installation/Usage
  > Instructions on installing and running your application
+Currently this project only runs on Linux/macOS. Windows has not been tested and may result in unexpected results.
+### Dependencies
+* C++ compiler (g++ is fine)
+* Git
+* Cmake
+* Make
+* A terminal
+
+### Step 1
+Clone the repo with this command
+ ```
+ git clone --recursive https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002.git TripPlanner
+ ```
+ ### Step 2
+ CD into the new directory
+ ```
+ cd TripPlanner/
+ ```
+ ### Step 3
+ Run CMake in the current director in order to generate the build files
+ ``` 
+ cmake . 
+ ```
+ ### Step 4
+ Run make in the current directory to build the executable
+ ``` 
+ make 
+ ```
+ ### Step 5
+CD into the bin folder now where you should see the TripPlanner executable
+ ``` 
+ cd bin/ 
+ ```
+ ### Step 6
+ Run the executable and create an account. Log back in and now start planning!
+ ```
+ ./TripPlanner 
+ ```
+ **!!! IMPORTANT !!!**  
+ It is crucial that you are inside the bin/ directory before running the executable in order to make sure the program can properly read the data files properly
+ 
  ## Testing
 For our project, we used Unit Testing from the Google Test submodule to test our functions and see if they were functioning properly. We were able to add tests for the most important part of our projects, incluiding the Flight, Hotel, Activity, Trip, Schedule, and User classes. All the tests have passed, and we used a combination of ASSERT and EXPECT to ensure that our tests were diverse. Additionally, we continually used Valgrind to ensure that there were no memory leaks within our project, and this was used after every use of a pointer was created. We attempted to test every function we have, and the ones that were private or void were able tobe tested through our runs of adding various inputs when testing our overall project.
- 
