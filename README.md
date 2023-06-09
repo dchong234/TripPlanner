@@ -43,7 +43,6 @@ Enter an Option:
 **Login Page**  
 This page is opened once the user opts to login.
 ```
-Please Enter Credentials 
 Enter Username:
 Enter Password:
 ```
@@ -81,8 +80,10 @@ Enter an Option:
 **Trip Activities Page**
 Here the user can add or cancel activities that are on the trip.
 ```
-1. Add Activity
-2. Cancel Activity
+Would you like to remove or edit this trip
+1. Edit
+2. Remove (This action is irreversible)
+3. None
 Enter an Option:
 ```
 
@@ -92,6 +93,7 @@ Here the user can book flights,activities, and hotels
 1. Book Flight
 2. Book Activities
 3. Book Hotel
+4. Done Planning
 Enter an Option:
 ```
 
