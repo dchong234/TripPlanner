@@ -12,9 +12,11 @@ Schedule::~Schedule() {
 
 void Schedule::getSchedule(){
   system("clear");
-  int time = 100;
+  int time = 600;
   bool flag = false;
-  for(int i = 0; i < 46; i++){
+
+  std::cout << "Schedule for \'" << trip->getTripName() << "\'" << std::endl;
+  for(int i = 0; i < 30; i++){
     for (TripItem* item : *(this->trip->getTripItems())) {
       if (item->getStartTime() == time) {
         std::cout << formatTime(time) << " " << item->getName() << std::endl;
