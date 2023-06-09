@@ -27,7 +27,7 @@ The first thing this program will do is ask a user to create an account or log i
 ### Navigation Diagram
 The Navigation Diagram below displays the interface that the user will be interacting with when they want to view the travel planner. They will start with a log in and create an account option, and then they will be able to see the Main Menu. In the Main Menu, they will be allowed to view their trips, view their schedules, and plan a new trip. In the view trips menu, they can see their past and previous trips, as well as cancel future trips. In the schedule menu, the user can add or cancel activities on their trip. In the plan a new trip menu, the user will be able to book a flight, hotel, and trip activities of their choice. 
 
-![image](https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/54488379/4b8dc62f-a166-44c9-98d8-c720e9902208)
+![image](https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/54488379/7e73e6e0-e099-4e15-95d9-bf4c3ff3e016)
 
 ### Screen Layouts
 
