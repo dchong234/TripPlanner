@@ -133,6 +133,5 @@ In our UML, we have 12 classes. The User class is the class that will contain al
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
 For our project, we used Unit Testing from the Google Test submodule to test our functions and see if they were functioning properly. We were able to add tests for the most important part of our projects, incluiding the Flight, Hotel, Activity, Trip, Schedule, and User classes. All the tests have passed, and we used a combination of ASSERT and EXPECT to ensure that our tests were diverse. Additionally, we continually used Valgrind to ensure that there were no memory leaks within our project, and this was used after every use of a pointer was created. We attempted to test every function we have, and the ones that were private or void were able tobe tested through our runs of adding various inputs when testing our overall project.
  
