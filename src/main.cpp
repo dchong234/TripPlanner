@@ -113,7 +113,7 @@ int main()
             input = takeInput();
             tripHandler.removeTripItemByIndex(std::stoi(input)-1);
           } else if (input == "3") {
-            break;
+            continue;
           } else {
             input = takeInput();
           }
