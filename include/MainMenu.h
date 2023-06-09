@@ -25,10 +25,10 @@ class MainMenu {
         void viewBookingMenu();
         void viewLogin();
         void printInput(TripHandler&);
+        void printUserTrips(User &);
         MainMenu();
     private:
         std::string takeInput();
-        void printUserTrips(User &);
 };
 
 #endif
