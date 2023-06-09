@@ -11,7 +11,6 @@
 MainMenu::MainMenu() {}
 
 void MainMenu::viewOptions(User &user) {
-    //system("clear");
     std::cout << "Welcome " << user.getUsername() << "!" << std::endl; // TODO: Add username
     std::cout << "1. Edit Trips" << std::endl;
     std::cout << "2. View Schedule" << std::endl;
