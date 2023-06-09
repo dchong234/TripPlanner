@@ -45,6 +45,7 @@ void TripHandler::removeTripItem(TripItem* item) {
 }
 
 void TripHandler::removeTripItemByIndex(int idx) {
+    delete trip->getTripItems()->at(idx);
     trip->getTripItems()->erase(trip->getTripItems()->begin() + idx);
 }
 
