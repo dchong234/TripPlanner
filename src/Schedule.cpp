@@ -16,7 +16,7 @@ void Schedule::getSchedule(){
   bool flag = false;
 
   std::cout << "Schedule for \'" << trip->getTripName() << "\'" << std::endl;
-  for(int i = 0; i < 30; i++){
+  for(int i = 0; i < 32; i++){
     for (TripItem* item : *(this->trip->getTripItems())) {
       if (item->getStartTime() == time) {
         std::cout << formatTime(time) << " " << item->getName() << std::endl;
