@@ -91,8 +91,9 @@ int main()
         tripHandler.setTrip(currTrip);
 
         cout << "Would you like to remove or edit this trip?" << endl;
-        cout << YELLOW << "1. Edit" << RESET << endl;
+        cout << GREEN << "1. Edit" << RESET << endl;
         cout << RED << "2. Remove (This action is irreversible)" << RESET << endl;
+        cout << YELLOW << "3. None" << RESET << endl;
 
         input = takeInput();
 
@@ -121,7 +122,12 @@ int main()
           cout << "Trip: " << currTrip->getTripName() << " deleted." << endl;
           user.removeTripFromStorage(currTrip);
           currTrip = nullptr;
+        } else if (input == "3"){
+          continue;
+        } else {
+          input = takeInput();
         }
+
       }
     }
     else if(input == "2") {
