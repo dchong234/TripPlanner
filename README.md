@@ -129,7 +129,42 @@ In our UML, we have 12 classes. The User class is the class that will contain al
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ ### Main Login Page
+ <img width="300" alt="Screenshot 2023-06-09 at 12 42 26 PM" src="https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/60557050/dc12206c-dc1f-499a-90dd-ba2b45b8ee9d">
+ 
+ ### Create Account Page
+ <img width="300" alt="Screenshot 2023-06-09 at 12 43 16 PM" src="https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/60557050/610ac495-625c-4b4d-8ee9-e62ecda2323a">
+ 
+ ### Failed Login Page
+ <img width="300" alt="Screenshot 2023-06-09 at 12 44 06 PM" src="https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/60557050/14639baa-6f21-4262-95fa-61f04b8859b4">
+ 
+ ### Home Page
+ <img width="300" alt="Screenshot 2023-06-09 at 12 44 33 PM" src="https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/60557050/2d598073-0e7a-468a-bb01-4be2eb17f0af">
+ 
+ ### Plan Trip Page
+ <img width="300" alt="Screenshot 2023-06-09 at 12 45 19 PM" src="https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/60557050/d4e554a0-895f-4ed0-847c-c8e3b77a2e5e">
+ 
+ ### Flight Selection Page
+ <img width="300" alt="Screenshot 2023-06-09 at 12 45 48 PM" src="https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/60557050/dc717017-becd-4493-8cc0-4c4e1eba672f">
+ 
+ ### Activity Selection Page
+ <img width="300" alt="Screenshot 2023-06-09 at 12 46 47 PM" src="https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/60557050/e702ccf0-5f59-4cb2-972c-34d50d4afe4a">
+ 
+ ### Hotel Selection Page
+ <img width="300" alt="Screenshot 2023-06-09 at 12 48 22 PM" src="https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/60557050/d51a533a-c54c-466d-adf1-c974f4157a52">
+ 
+ ###  View Schedule Trip Selection Page
+ <img width="300" alt="Screenshot 2023-06-09 at 12 48 52 PM" src="https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/60557050/e17d6bbc-26c5-44d1-b440-9e14a9cf31a9">
+ 
+ ### Schedule Page
+ <img width="300" alt="Screenshot 2023-06-09 at 12 49 03 PM" src="https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/60557050/d7e14c32-8588-4d58-aae2-cfb40db015d8">
+ 
+ ### Edit Trip Selection Page
+ <img width="312" alt="Screenshot 2023-06-09 at 12 49 26 PM" src="https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/60557050/cd3073df-53ea-4bc8-b577-7e35cb078be3">
+ 
+ ### Edit Trip Page
+ <img width="404" alt="Screenshot 2023-06-09 at 12 49 54 PM" src="https://github.com/cs100/final-project-kmann022-akhad007-dchon022-cthek002/assets/60557050/12242b24-425a-4aa4-bdcd-0875747b22b3">
+
  ## Installation/Usage
  > Instructions on installing and running your application
 Currently this project only runs on Linux/macOS. Windows has not been tested and may result in unexpected results.
